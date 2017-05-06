@@ -7,6 +7,8 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_player_mask</sprite>
+    <sprite>sprites\spr_current_player_over</sprite>
+    <sprite>sprites\sprite12</sprite>
     <sprite>sprites\spr_player_current</sprite>
     <sprite>sprites\spr_player_recorded</sprite>
     <sprite>sprites\spr_player_dead</sprite>
@@ -14,6 +16,12 @@
     <sprite>sprites\spr_wall_breakable</sprite>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_marker</sprite>
+    <sprite>sprites\sprite9</sprite>
+    <sprite>sprites\sprite10</sprite>
+    <sprite>sprites\sprite11</sprite>
+    <sprite>sprites\sprite8</sprite>
+    <sprite>sprites\spr_footstep</sprite>
+    <sprite>sprites\sprite15</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -37,7 +45,6 @@
     <object>objects\obj_player_controls</object>
     <object>objects\obj_player_joystick</object>
     <object>objects\obj_player_current</object>
-    <object>objects\obj_player_stopped</object>
     <object>objects\parent_block</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_wall_breakable</object>
@@ -45,6 +52,9 @@
     <object>objects\obj_bullet_player</object>
     <object>objects\obj_get_name</object>
     <object>objects\obj_placeholder</object>
+    <object>objects\parent_ai</object>
+    <object>objects\obj_ai_1</object>
+    <object>objects\obj_footstep</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_menu</room>

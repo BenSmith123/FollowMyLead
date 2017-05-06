@@ -27,5 +27,7 @@
     <frame index="4">images\spr_player_current_4.png</frame>
     <frame index="5">images\spr_player_current_5.png</frame>
     <frame index="6">images\spr_player_current_6.png</frame>
+    <frame index="7">images\spr_player_current_7.png</frame>
+    <frame index="8">images\spr_player_current_8.png</frame>
   </frames>
 </sprite>

@@ -47,6 +47,12 @@ counter_max = 0 // highest size the array reached
 number = global.player_number
 name = global.name
 
+alarm[0] = 10 // create a "footstep"
+
+// add this object to the array list
+global.player_array[global.player_number] = id
+
+
 MAX_ARRAY_SIZE = 3600 // one minute max
 
 // initialize recording array and movement variables
@@ -90,8 +96,51 @@ if record_me = true
           <argument>
             <kind>1</kind>
             <string>
+/*
 obj = instance_create(x,y,obj_player_stopped)
 obj.image_angle = image_angle
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// footsteps!
+if record_me = true // if I am the current player
+{
+    //if not (place_meeting(x,y,obj_footstep)) // if theres not already a footstep here
+    //if not (xprevious = x) // if the player has moved
+    {
+        obj = instance_create(x,y,obj_footstep) // create a footstep
+        
+        if (hspeed = 0 and vspeed = 0) // if the player has moved since last step but is stopped atm
+        {obj.image_index = 1} // create a dot
+        else
+        {obj.image_angle = direction} // footsteo face the way I was heading (NOT FACING)
+        
+        
+    }
+    
+    alarm[0] = 10 // repeat
+    
+}
 
 </string>
           </argument>
@@ -142,46 +191,6 @@ if record_me = true
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="parent_block">
-      <action>
-        <libid>1</libid>
-        <id>425</id>
-        <kind>4</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed)) or 
-
-{move_contact_solid(270,2)} vspeed = 0
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -201,24 +210,26 @@ if record_me = true
             <kind>1</kind>
             <string>
 
-if record_me = false
+if record_me = false // RECORDING OF THE PLAYER
 {
-    if counter &lt; counter_max
+    if counter &lt; counter_max // if the recording has NOT ended
     {
         if stop_counter = false {counter += 1} // stop counter if player walks into wall
     
+        // set the x/y position to the values stored in the array (values recorded)
         x = array_x[counter]
         y = array_y[counter]
-        image_angle = array_angle[counter]
+        image_angle = array_angle[counter] // angle the recorded player
         
+        // create bullet when the recorded player fired a shot
         if state = PLAYER_STATE.is_alive {if array_shoot[counter] = true {shoot()}}
     }
     else
     {
-        state = PLAYER_STATE.is_dead
+        state = PLAYER_STATE.is_dead // if the recording has ended, kill the player
     }
 }
-else
+else // CURRENT PLAYER
 {    
     stop_counter = false // never stop counter if player is playing
     counter += 1
@@ -243,6 +254,8 @@ else
 
 image_index = number-1
 
+if record_me = true {draw_sprite(spr_current_player_over,0,x,y)}
+
 draw_self()
 
 if global.final_playthrough = true
@@ -254,6 +267,8 @@ if global.final_playthrough = true
 
 
 /*
+
+debug - delete
 draw_text(x-60,y-40,counter)
 draw_text(x-60,y-20,number)
 

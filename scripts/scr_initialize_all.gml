@@ -12,6 +12,10 @@ global.player_number = 1 // start off as the first player
 
 global.final_playthrough = false // show player number/name and their colour
 
+// global.player_array[0] = 0
+
+
+
 enum PLAYER_STATE {
 is_alive,
 is_dead
