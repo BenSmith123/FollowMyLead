@@ -8,7 +8,7 @@ global.name = "Fred"
 
 global.debug_msg = ""
 
-global.player_number = 1 // start off as the first player
+global.player_number = 0 // start off as the first player
 
 global.final_playthrough = false // show player number/name and their colour
 
@@ -21,7 +21,14 @@ is_alive,
 is_dead
 }
 
-instance_create(irandom_range(100,300),irandom_range(100,300),obj_player_current)
+instance_create(x,y,obj_background)
+
+// set the spawn globals depending on where the player spawn object is
+global.player_spawn_x = obj_spawn_point.x
+global.player_spawn_y = obj_spawn_point.y
+with (obj_spawn_point) instance_destroy() // destroy the object, SAVE MEMORY
+
+instance_create(global.player_spawn_x,global.player_spawn_y,obj_player_current)
 
 /*
 // get each player name before starting

@@ -19,6 +19,8 @@ if global.overall_view = true // debug (show whole room)
 
 obj = id
 
+scr_round_pos()
+
 if (not obj = 0)
 {
     // ROOM END X

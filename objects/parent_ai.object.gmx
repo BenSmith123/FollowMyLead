@@ -35,7 +35,7 @@ can_be_hit = true
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -56,13 +56,13 @@ can_be_hit = true
 if instance_exists(obj_player_current)
 {
     // go through array of players
-    for(i = 1; i &lt;= global.player_number; i++)
+    for(i = 0; i &lt;= instance_number(obj_player_current) i++)
     {
-        if global.player_array[global.player_number].state = PLAYER_STATE.is_alive // if player is alive
+        if global.player_array[i].state = PLAYER_STATE.is_alive // if player is alive
         {
-            if distance_to_object(global.player_array[global.player_number]) &lt; distance_to_object(closest_player)
+            if distance_to_object(global.player_array[i]) &lt; distance_to_object(closest_player)
             {
-                closest_player = global.player_array[global.player_number]
+                closest_player = global.player_array[i]
             }
         }
     }

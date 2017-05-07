@@ -150,7 +150,7 @@ scr_initialize_all()
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -168,13 +168,18 @@ scr_initialize_all()
           <argument>
             <kind>1</kind>
             <string>/// debug mode text
+
+x2 = 10
+draw_text(x2,20,"DEBUG MODE")
+draw_text(x2,40,"FPS: "+string(fps))
+draw_text(x2,60,global.debug_msg)
+
+
 if global.debug = true
 {
     scr_text1()
 
-    x2 = 30
-    draw_text(x2,20,"DEBUG MODE")
-    draw_text(x2,50,global.debug_msg)
+
     
     draw_text(x2,80,"
     F12 = Restart Game

@@ -81,8 +81,6 @@ create_placeholder()
           <argument>
             <kind>1</kind>
             <string>
-event_inherited()
-
 if instance_exists(obj_player_current)
 {
     // move towards closest object

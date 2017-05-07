@@ -8,22 +8,28 @@
   <sprites name="sprites">
     <sprite>sprites\spr_player_mask</sprite>
     <sprite>sprites\spr_current_player_over</sprite>
-    <sprite>sprites\sprite12</sprite>
     <sprite>sprites\spr_player_current</sprite>
     <sprite>sprites\spr_player_recorded</sprite>
     <sprite>sprites\spr_player_dead</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_wall_breakable</sprite>
-    <sprite>sprites\spr_bullet</sprite>
-    <sprite>sprites\spr_marker</sprite>
-    <sprite>sprites\sprite9</sprite>
-    <sprite>sprites\sprite10</sprite>
-    <sprite>sprites\sprite11</sprite>
-    <sprite>sprites\sprite8</sprite>
-    <sprite>sprites\spr_footstep</sprite>
     <sprite>sprites\sprite15</sprite>
+    <sprite>sprites\spr_footstep</sprite>
+    <sprite>sprites\spr_marker</sprite>
+    <sprite>sprites\spr_projectile_1</sprite>
+    <sprite>sprites\spr_bullet</sprite>
+    <sprite>sprites\spr_turret_barrel</sprite>
+    <sprite>sprites\spr_turret</sprite>
+    <sprites name="scraps">
+      <sprite>sprites\sprite16</sprite>
+      <sprite>sprites\sprite12</sprite>
+      <sprite>sprites\sprite8</sprite>
+      <sprite>sprites\sprite17</sprite>
+    </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_initialize_all.gml</script>
@@ -42,19 +48,23 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_controller</object>
-    <object>objects\obj_player_controls</object>
-    <object>objects\obj_player_joystick</object>
     <object>objects\obj_player_current</object>
-    <object>objects\parent_block</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_wall_breakable</object>
     <object>objects\parent_projectile</object>
     <object>objects\obj_bullet_player</object>
-    <object>objects\obj_get_name</object>
-    <object>objects\obj_placeholder</object>
     <object>objects\parent_ai</object>
     <object>objects\obj_ai_1</object>
-    <object>objects\obj_footstep</object>
+    <object>objects\obj_ai_2</object>
+    <objects name="other">
+      <object>objects\obj_placeholder</object>
+      <object>objects\parent_block</object>
+      <object>objects\obj_footstep</object>
+      <object>objects\obj_get_name</object>
+      <object>objects\obj_spawn_point</object>
+      <object>objects\obj_background</object>
+      <object>objects\obj_player_joystick</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_menu</room>
