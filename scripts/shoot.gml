@@ -1,6 +1,7 @@
 
 
 // idd = instance_create(x+lengthdir_x(len,angle+image_angle),y+lengthdir_y(len,angle+image_angle),obj_bullet_player)
+//instance_create(x+lengthdir_x(len,image_angle),y+lengthdir_y(len,image_angle),obj_bullet_spark)
 idd = instance_create(x+lengthdir_x(len,image_angle),y+lengthdir_y(len,image_angle),obj_bullet_player)
 idd.direction = image_angle
 idd.image_angle = image_angle

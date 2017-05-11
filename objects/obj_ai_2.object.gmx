@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>parent_ai</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -31,64 +31,9 @@ event_inherited()
 hp = 3
 max_hp = hp
 
-can_shoot = true
-SHOOT_TIME = 30
-
 closest_player = instance_nearest(x,y,obj_player_current)
 
 len = point_distance(0,0,26,26)
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-create_placeholder()
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// can_shoot = true
-
-can_shoot = true
-
 </string>
           </argument>
         </arguments>
@@ -111,28 +56,31 @@ can_shoot = true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if instance_exists(closest_player)
-{
-    dir = point_direction(x,y,closest_player.x,closest_player.y)
-    
-    image_angle = (image_angle+(sin(degtorad(dir-image_angle))*7))
+            <string>/// aim, fire at closest player
+event_inherited()
 
-    if distance_to_object(closest_player) &lt; 300
+if is_alive = true
+{
+    if instance_exists(closest_player)
     {
-        if can_shoot = true
+        dir = point_direction(x,y,closest_player.x,closest_player.y)
+        
+        image_angle = (image_angle+(sin(degtorad(dir-image_angle))*7))
+    
+        if distance_to_object(closest_player) &lt; 300
         {
-            idd = instance_create(x+lengthdir_x(len,image_angle),y+lengthdir_y(len,image_angle),obj_bullet_player)
-            idd.direction = image_angle
-            idd.image_angle = image_angle
-            idd.speed = 14
-            
-            
-            can_shoot = false
-            alarm[0] = SHOOT_TIME
+            if can_shoot = true
+            {
+                idd = instance_create(x+lengthdir_x(len,image_angle),y+lengthdir_y(len,image_angle),obj_bullet_player)
+                idd.direction = image_angle
+                idd.image_angle = image_angle
+                idd.speed = 14
+                
+                can_shoot = false
+                alarm[0] = SHOOT_TIME
+            }
         }
     }
-
 }
 </string>
           </argument>
@@ -156,38 +104,13 @@ if instance_exists(closest_player)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>// debug
+//if instance_exists(closest_player) {draw_text(closest_player.x,closest_player.y,"CLOESTPLAYER!!!!")}
+
 draw_sprite(sprite_index,image_index,x,y)
 
-draw_sprite_ext(spr_turret_barrel,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="16">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-x = xstart
-y = ystart
-
-event_perform(ev_create,0)
+if is_alive = true
+{draw_sprite_ext(spr_turret_barrel,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)}
 
 </string>
           </argument>

@@ -32,7 +32,7 @@ if move_attack = true
 // MOVEMENT
 if move_left = true
 {
-    if place_meeting(x-collision_distance,y,parent_block) 
+    if !place_free(x-collision_distance,y) 
     {hspeed = 0}
     else
     {
@@ -42,7 +42,7 @@ if move_left = true
 
 if move_right = true
 {
-    if place_meeting(x+collision_distance,y,parent_block) 
+    if !place_free(x+collision_distance,y) 
     {hspeed = 0}
     else
     {
@@ -52,7 +52,7 @@ if move_right = true
 
 if move_up = true
 {
-    if place_meeting(x,y-collision_distance,parent_block) 
+    if !place_free(x,y-collision_distance) 
     {vspeed = 0}
     else
     {
@@ -63,7 +63,7 @@ if move_up = true
 
 if move_down = true
 {
-    if place_meeting(x,y+collision_distance,parent_block) 
+    if !place_free(x,y+collision_distance) 
     {vspeed = 0}
     else
     {

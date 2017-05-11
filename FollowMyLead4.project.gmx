@@ -7,28 +7,35 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_player_mask</sprite>
-    <sprite>sprites\spr_current_player_over</sprite>
     <sprite>sprites\spr_player_current</sprite>
     <sprite>sprites\spr_player_recorded</sprite>
     <sprite>sprites\spr_player_dead</sprite>
+    <sprite>sprites\spr_ai_boss</sprite>
+    <sprite>sprites\spr_ai_1</sprite>
+    <sprite>sprites\spr_turret</sprite>
+    <sprite>sprites\spr_turret_large</sprite>
+    <sprite>sprites\spr_turret_barrel_large</sprite>
+    <sprite>sprites\spr_turret_barrel</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_wall_breakable</sprite>
-    <sprite>sprites\sprite15</sprite>
+    <sprite>sprites\spr_explosive</sprite>
     <sprite>sprites\spr_footstep</sprite>
     <sprite>sprites\spr_marker</sprite>
     <sprite>sprites\spr_projectile_1</sprite>
-    <sprite>sprites\spr_bullet</sprite>
-    <sprite>sprites\spr_turret_barrel</sprite>
-    <sprite>sprites\spr_turret</sprite>
-    <sprites name="scraps">
-      <sprite>sprites\sprite16</sprite>
-      <sprite>sprites\sprite12</sprite>
-      <sprite>sprites\sprite8</sprite>
-      <sprite>sprites\sprite17</sprite>
-    </sprites>
+    <sprite>sprites\spr_explosion</sprite>
+    <sprite>sprites\spr_flash</sprite>
+    <sprite>sprites\spr_portal</sprite>
+    <sprite>sprites\spr_pointer</sprite>
+    <sprite>sprites\spr_arrow</sprite>
+    <sprite>sprites\spr_switch_button</sprite>
+    <sprite>sprites\spr_lazer_ver</sprite>
+    <sprite>sprites\spr_bullet_spark</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\bg_tile_2x2</background>
+    <background>background\bg_tile_3x3</background>
+    <background>background\bg_tile_6x6</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -36,11 +43,13 @@
     <script>scripts\scr_camera.gml</script>
     <script>scripts\scr_debug_msg.gml</script>
     <script>scripts\scr_controls.gml</script>
+    <script>scripts\script11.gml</script>
     <script>scripts\scr_joystick_controls.gml</script>
     <script>scripts\scr_text1.gml</script>
     <script>scripts\scr_round_pos.gml</script>
     <script>scripts\create_placeholder.gml</script>
     <script>scripts\shoot.gml</script>
+    <script>scripts\particle_effects.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_arial_1</font>
@@ -51,11 +60,15 @@
     <object>objects\obj_player_current</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_wall_breakable</object>
+    <object>objects\obj_block_explosive</object>
     <object>objects\parent_projectile</object>
     <object>objects\obj_bullet_player</object>
     <object>objects\parent_ai</object>
     <object>objects\obj_ai_1</object>
     <object>objects\obj_ai_2</object>
+    <object>objects\obj_ai_3</object>
+    <object>objects\obj_ai_4</object>
+    <object>objects\obj_ai_5</object>
     <objects name="other">
       <object>objects\obj_placeholder</object>
       <object>objects\parent_block</object>
@@ -65,6 +78,12 @@
       <object>objects\obj_background</object>
       <object>objects\obj_player_joystick</object>
     </objects>
+    <object>objects\obj_explosion</object>
+    <object>objects\obj_bullet_spark</object>
+    <object>objects\obj_portal</object>
+    <object>objects\obj_mark_death</object>
+    <object>objects\obj_lazer_ver</object>
+    <object>objects\obj_switch</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_menu</room>

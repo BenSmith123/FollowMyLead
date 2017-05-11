@@ -32,10 +32,10 @@ record_me = true
 
 stop_counter = false
 
-max_hp = 3
+max_hp = 2
 hp = max_hp
 
-collision_distance = 2
+collision_distance = 3
 player_speed = 4
 len = point_distance(0,0,26,26) // This is the distance between the tip and the origin
 // angle = point_distance(0,0,20,20)
@@ -44,13 +44,21 @@ state = PLAYER_STATE.is_alive
 counter = 0
 counter_max = 0 // highest size the array reached
 
-global.player_spawn_x += 120 // increase the spawn x position for each player
-
-number = global.player_number
-name = global.name
-
 FOOTSTEP_TIME = 5
 alarm[0] = FOOTSTEP_TIME // create a "footstep"
+
+if global.player_spawn_x &gt; 1420
+{
+    global.player_spawn_x = 896
+    global.player_spawn_y += 100
+} 
+else 
+{global.player_spawn_x += 100} // increase the spawn x position for each player
+
+global.player_number += 1
+number = global.player_number
+name = global.name
+depth = -number // current player overlaps other players
 
 // add this object to the array list
 global.player_array[global.player_number] = id
@@ -170,8 +178,6 @@ if record_me = true // if I am the current player
           <argument>
             <kind>1</kind>
             <string>
-scr_round_pos()
-
 if hp &lt;= 0 {state = PLAYER_STATE.is_dead}
 
 if state = PLAYER_STATE.is_dead
@@ -196,6 +202,31 @@ if record_me = true
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="parent_block">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+
+move_contact_solid(0,2)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -214,6 +245,26 @@ if record_me = true
           <argument>
             <kind>1</kind>
             <string>
+if global.final_playthrough = true
+{
+    draw_text(x,y,number)
+    sprite_index = spr_player_current
+}
+
+image_index = number-1
+
+if record_me = true 
+{draw_sprite_ext(spr_pointer,0,x+lengthdir_x(len-12,image_angle),y+lengthdir_y(len-12,image_angle),image_xscale,image_yscale,image_angle,image_blend,image_alpha)} 
+
+draw_self()
+
+x = round(x)
+y = round(y)
+
+if record_me = false{
+if state = PLAYER_STATE.is_alive{
+draw_sprite_ext(spr_arrow,0,x+lengthdir_x(len-12,image_angle),y+lengthdir_y(len-12,image_angle),image_xscale,image_yscale,image_angle,image_blend,image_alpha)}}
+
 if record_me = false // RECORDING OF THE PLAYER
 {
     if counter &lt; counter_max // if the recording has NOT ended
@@ -227,6 +278,7 @@ if record_me = false // RECORDING OF THE PLAYER
         
         // create bullet when the recorded player fired a shot
         if state = PLAYER_STATE.is_alive {if array_shoot[counter] = true {shoot()}}
+
     }
     else
     {state = PLAYER_STATE.is_dead} // if the recording has ended, kill the player
@@ -246,31 +298,20 @@ else // CURRENT PLAYER
     dir = point_direction(x,y,mouse_x,mouse_y) // point at mouse
     
     image_angle = (image_angle+(sin(degtorad(dir-image_angle))*7))
+    
+    
     //idd = instance_create(x+lengthdir_x(Len,Angle+image_angle),y+lengthdir_y(Len,Angle+image_angle),obj_bullet)
 
-    array_angle[counter] = image_angle
+    array_angle[counter] = round(image_angle)
     
     if counter = MAX_ARRAY_SIZE {state = PLAYER_STATE.is_dead}
 
 }
 
-image_index = number-1
-
-if record_me = true {draw_sprite(spr_current_player_over,0,x,y)}
-
-draw_self()
-
-if global.final_playthrough = true
-{
-    draw_text(x,y,number)
-    sprite_index = spr_player_current
-}
-
 
 
 /*
-
-debug - delete
+// debug - delete
 draw_text(x-60,y-40,counter)
 draw_text(x-60,y-20,number)
 
@@ -278,6 +319,8 @@ draw_text(x-60,y,"x"+string(x))
 draw_text(x-60,y+20,"y"+string(y))
 
 draw_text(x-60,y+40,state)
+
+
 
 
 
@@ -309,8 +352,6 @@ draw_text(x-60,y+40,state)
 
 if number = global.player_number // if THIS object is the current player
 {
-    global.player_number += 1
-
     record_me = false
     instance_create(global.player_spawn_x,global.player_spawn_y,obj_player_current)
     //instance_create(x,y,obj_get_name)

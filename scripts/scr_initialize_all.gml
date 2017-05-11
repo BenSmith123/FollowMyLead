@@ -4,6 +4,8 @@ global.user = "GM"
 global.debug = true
 global.overall_view = true
 
+alarm[0] = 600 // turn off debug mode
+
 global.name = "Fred"
 
 global.debug_msg = ""
@@ -29,6 +31,8 @@ global.player_spawn_y = obj_spawn_point.y
 with (obj_spawn_point) instance_destroy() // destroy the object, SAVE MEMORY
 
 instance_create(global.player_spawn_x,global.player_spawn_y,obj_player_current)
+
+particle_effects()
 
 /*
 // get each player name before starting
