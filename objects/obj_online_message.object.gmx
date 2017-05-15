@@ -3,11 +3,72 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1000</depth>
-  <persistent>-1</persistent>
+  <depth>0</depth>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+updater_url = "http://getlink.s2u.vn/redirect.php?link=www.mediafire.com/?34cc611fyfwu7ua"
+
+file_name = "followmyleadmessage.ini"
+
+file = http_get_file(updater_url,working_directory + file_name)
+
+alarm[0] = 600 // 10sec timeout time
+
+text = "loading message from server.."
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// delete the message file
+
+if file_exists(working_directory + file_name)
+{
+    file_delete(working_directory + file_name)
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,16 +86,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// turn off debug mode
-
-global.debug = false
+            <string>/// destroy self
+instance_destroy()
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="7" enumb="62">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -51,30 +111,39 @@ global.debug = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Debug game controls
+            <string>/// calls event_user0 if successful
 
-if window_get_fullscreen() {window_set_fullscreen(true)}
+if ds_map_find_value(async_load, "id") == file
+   {
+       var status = ds_map_find_value(async_load, "status");
+       if status == 0
+       {
+            if file_exists(working_directory + file_name) 
+            {
+                 ini_open(working_directory + file_name)
+            
+                 // heres where you can get your information from the ini file
+                 latest_version = ini_read_real("UPDATE","latest_version",0)
+                 
+                 // check if the ini loaded is not the default ^^
+                 if (latest_version = 0) {instance_destroy()} // if failed, most likely a url problem
+                 else
+                 {
+                    // successful!
+                    handle_online_message() // file download is successful, now get the info from it and handle how it should be used
+                 }
+                 
+                 instance_destroy()
 
-
-if global.user = "GM"
-{
-    if keyboard_check_pressed(vk_escape) {game_end()}
-
-    if keyboard_check_pressed(ord('I')) {global.debug = !global.debug} // toggle debug mode
-    
-    if keyboard_check_pressed(ord('P')) {global.final_playthrough = !global.final_playthrough}
-
-    if keyboard_check_pressed(vk_f11) {room_goto_next()}
-    
-    if keyboard_check_pressed(vk_f12) {game_restart()}
-}
-
+            }
+       }
+   }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="4">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -91,103 +160,13 @@ if global.user = "GM"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// defined in constants
-// WIDTH = display_get_width()
-// HEIGHT = display_get_height()
+            <string>
+scr_text1()
 
-room_speed = 60
+draw_set_halign(fa_center)
 
-view_enabled = true
-view_visible[0] = true
+draw_text(WIDTH/2,360,text)
 
-view_xport[0] = 0
-view_yport[0] = 0
-view_wport[0] = WIDTH
-view_hport[0] = HEIGHT
-
-view_xview[0] = 0
-view_yview[0] = 0
-view_wview[0] = WIDTH
-view_hview[0] = HEIGHT
-
-window_set_size(WIDTH,HEIGHT)
-window_set_fullscreen(true)
-
-display_set_gui_size(WIDTH,HEIGHT)
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>obj_controller</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// call script to initialize all global variables
-
-scr_initialize_all()
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// debug mode text
-
-scr_text1() 
-
-if global.debug = true
-{  
-    x2 = 10
-    draw_text(x2,20,"DEBUG MODE")
-    draw_text(x2,40,"FPS: "+string(fps))
-    draw_text(x2,60,global.debug_msg)
-    
-    draw_text(x2,80,"
-    F12 = Restart Game
-    &lt;I&gt; = Toggle debug mode
-    &lt;P&gt; = Final playthrough
-    &lt;SHIFT&gt; Next iteration
-    
-    --- Controls ---
-    ASDW / Arrow key movement
-    Space / left-click to shoot
-    ")
-
-}
 </string>
           </argument>
         </arguments>

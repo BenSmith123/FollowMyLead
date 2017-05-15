@@ -25,11 +25,22 @@
     <sprite>sprites\spr_explosion</sprite>
     <sprite>sprites\spr_flash</sprite>
     <sprite>sprites\spr_portal</sprite>
+    <sprite>sprites\spr_switch_button</sprite>
     <sprite>sprites\spr_pointer</sprite>
     <sprite>sprites\spr_arrow</sprite>
-    <sprite>sprites\spr_switch_button</sprite>
+    <sprite>sprites\spr_button_arrow</sprite>
+    <sprites name="online">
+      <sprite>sprites\spr_update_available_text</sprite>
+      <sprite>sprites\spr_download_here_button</sprite>
+    </sprites>
+    <sprites name="buttons">
+      <sprite>sprites\spr_play_button</sprite>
+    </sprites>
+    <sprite>sprites\sprite31</sprite>
     <sprite>sprites\spr_lazer_ver</sprite>
+    <sprite>sprites\sprite30</sprite>
     <sprite>sprites\spr_bullet_spark</sprite>
+    <sprite>sprites\sprite29</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -43,20 +54,23 @@
     <script>scripts\scr_camera.gml</script>
     <script>scripts\scr_debug_msg.gml</script>
     <script>scripts\scr_controls.gml</script>
-    <script>scripts\script11.gml</script>
     <script>scripts\scr_joystick_controls.gml</script>
-    <script>scripts\scr_text1.gml</script>
-    <script>scripts\scr_round_pos.gml</script>
     <script>scripts\create_placeholder.gml</script>
-    <script>scripts\shoot.gml</script>
     <script>scripts\particle_effects.gml</script>
+    <script>scripts\scr_text1.gml</script>
+    <script>scripts\shoot.gml</script>
+    <scripts name="online">
+      <script>scripts\handle_online_message.gml</script>
+      <script>scripts\write_text.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_arial_1</font>
-    <font>fonts\font_debug</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_controller</object>
+    <object>objects\obj_online_message</object>
+    <object>objects\obj_level_init</object>
     <object>objects\obj_player_current</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_wall_breakable</object>
@@ -77,16 +91,27 @@
       <object>objects\obj_spawn_point</object>
       <object>objects\obj_background</object>
       <object>objects\obj_player_joystick</object>
+      <object>objects\obj_explosion</object>
+      <object>objects\obj_bullet_spark</object>
+      <object>objects\obj_menu_text</object>
     </objects>
-    <object>objects\obj_explosion</object>
-    <object>objects\obj_bullet_spark</object>
+    <objects name="buttons">
+      <object>objects\parent_button</object>
+      <object>objects\obj_play_button</object>
+    </objects>
     <object>objects\obj_portal</object>
     <object>objects\obj_mark_death</object>
     <object>objects\obj_lazer_ver</object>
+    <objects name="online">
+      <object>objects\obj_update_available_text</object>
+      <object>objects\obj_download_here_button</object>
+      <object>objects\obj_text</object>
+    </objects>
     <object>objects\obj_switch</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_menu</room>
+    <room>rooms\room1</room>
   </rooms>
   <constants number="2">
     <constant name="HEIGHT">768</constant>

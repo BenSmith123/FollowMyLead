@@ -3,7 +3,7 @@
   <spriteName>spr_switch_button</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>280</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -31,7 +31,7 @@ image_speed = 0
 active = false
 image_index = active
 
-last_switched = 0
+switch_me = false
 
 </string>
           </argument>
@@ -56,6 +56,21 @@ last_switched = 0
           <argument>
             <kind>1</kind>
             <string>
+if place_meeting(x,y,obj_player_current)
+{
+    switch_me = true
+}
+else
+{
+    if switch_me = true
+    {
+        active = !active
+        image_index = active
+        switch_me = false
+    }
+}
+
+/*
 if not (other.id = last_switched)
 {
     active = !active

@@ -58,7 +58,6 @@ else
 global.player_number += 1
 number = global.player_number
 name = global.name
-depth = -number // current player overlaps other players
 
 // add this object to the array list
 global.player_array[global.player_number] = id
@@ -187,6 +186,7 @@ if state = PLAYER_STATE.is_dead
     stop_counter = true
     hspeed = 0
     vspeed = 0
+    depth = 220 // change the depth to behind AI etc
 }
 
 // allow movement and record the actions
@@ -367,6 +367,7 @@ counter = 0
 sprite_index = spr_player_recorded
 stop_counter = false
 hp = max_hp
+depth = -number // current player overlaps other players
 
 </string>
           </argument>

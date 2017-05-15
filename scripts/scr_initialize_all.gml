@@ -3,6 +3,7 @@
 global.user = "GM"
 global.debug = true
 global.overall_view = true
+global.version = 1.1
 
 alarm[0] = 600 // turn off debug mode
 
@@ -17,22 +18,19 @@ global.final_playthrough = false // show player number/name and their colour
 // global.player_array[0] = 0
 
 
-
 enum PLAYER_STATE {
 is_alive,
 is_dead
 }
 
-instance_create(x,y,obj_background)
-
-// set the spawn globals depending on where the player spawn object is
-global.player_spawn_x = obj_spawn_point.x
-global.player_spawn_y = obj_spawn_point.y
-with (obj_spawn_point) instance_destroy() // destroy the object, SAVE MEMORY
-
-instance_create(global.player_spawn_x,global.player_spawn_y,obj_player_current)
-
 particle_effects()
+
+if os_is_network_connected()
+{
+    instance_create(x,y,obj_online_message)
+}
+
+//surface_resize(application_surface,WIDTH,HEIGHT)
 
 /*
 // get each player name before starting
