@@ -245,14 +245,16 @@ move_contact_solid(0,2)
           <argument>
             <kind>1</kind>
             <string>
+// add colours to each player
 if global.final_playthrough = true
 {
     draw_text(x,y,number)
     sprite_index = spr_player_current
 }
 
-image_index = number-1
+image_index = number-1 // colour the current player
 
+// draw the write pointer if the player is currently playing
 if record_me = true 
 {draw_sprite_ext(spr_pointer,0,x+lengthdir_x(len-12,image_angle),y+lengthdir_y(len-12,image_angle),image_xscale,image_yscale,image_angle,image_blend,image_alpha)} 
 
@@ -261,11 +263,14 @@ draw_self()
 x = round(x)
 y = round(y)
 
+// draw the arrow of a recorded player
 if record_me = false{
 if state = PLAYER_STATE.is_alive{
 draw_sprite_ext(spr_arrow,0,x+lengthdir_x(len-12,image_angle),y+lengthdir_y(len-12,image_angle),image_xscale,image_yscale,image_angle,image_blend,image_alpha)}}
 
-if record_me = false // RECORDING OF THE PLAYER
+
+//////// RECORDING OF THE PLAYER ////////
+if record_me = false
 {
     if counter &lt; counter_max // if the recording has NOT ended
     {
@@ -283,8 +288,10 @@ if record_me = false // RECORDING OF THE PLAYER
     else
     {state = PLAYER_STATE.is_dead} // if the recording has ended, kill the player
 }
-else // CURRENT PLAYER
+else
 {    
+//////// CURRENT PLAYER PLAYING ////////
+
     stop_counter = false // never stop counter if player is playing
     counter += 1
     if counter_max &lt; counter {counter_max = counter}
@@ -296,10 +303,7 @@ else // CURRENT PLAYER
     
     //image_angle = point_direction(xprevious,yprevious,x,y) // point the way you're walking
     dir = point_direction(x,y,mouse_x,mouse_y) // point at mouse
-    
-    image_angle = (image_angle+(sin(degtorad(dir-image_angle))*7))
-    
-    
+    image_angle = (image_angle+(sin(degtorad(dir-image_angle))*7)) // 7 = reaction time
     //idd = instance_create(x+lengthdir_x(Len,Angle+image_angle),y+lengthdir_y(Len,Angle+image_angle),obj_bullet)
 
     array_angle[counter] = round(image_angle)

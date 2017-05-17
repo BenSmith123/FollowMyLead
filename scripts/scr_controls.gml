@@ -6,12 +6,12 @@ if (move_up = false) {vspeed = 0}
 if (move_down = false) {vspeed = 0}
 
 
+
 // WINDOWS AND VIRTUAL KEYS
 if keyboard_check(ord('A')) {move_left = true} // left
 if keyboard_check(ord('D')) {move_right = true} // right
 if keyboard_check(ord('W')) {move_up = true}
 if keyboard_check(ord('S')) {move_down = true}
-if keyboard_check_pressed(vk_space) {move_attack = true}
 if mouse_check_button_pressed(mb_left) {move_attack = true}
 
 
@@ -20,6 +20,7 @@ if keyboard_check(vk_left) {move_left = true}
 if keyboard_check(vk_right) {move_right = true}
 if keyboard_check(vk_up) {move_up = true}
 if keyboard_check(vk_down) {move_down = true}
+if keyboard_check_pressed(vk_space) {move_attack = true}
 
 // SHOOTING
 if move_attack = true
@@ -77,5 +78,6 @@ move_left = false
 move_right = false
 move_up = false
 move_down = false
+// move_attack = false
 
 

@@ -41,6 +41,8 @@ SHOOT_TIME = 30
 
 len = point_distance(0,0,26,26)
 
+closest_player = 0
+
 
 </string>
           </argument>
@@ -138,6 +140,7 @@ if instance_exists(obj_player_current)
     for(i = 1; i &lt;= instance_number(obj_player_current); i++)
     {
         if global.player_array[i].state = PLAYER_STATE.is_alive // if player is alive
+        //if global.player_array[i].hp &gt; 0
         {
             if distance_to_object(global.player_array[i]) &lt; distance_to_object(closest_player)
             {
@@ -146,6 +149,8 @@ if instance_exists(obj_player_current)
         }
     }
 }
+
+
 </string>
           </argument>
         </arguments>

@@ -31,8 +31,6 @@ event_inherited()
 hp = 10
 max_hp = hp
 
-closest_player = instance_nearest(x,y,obj_player_current)
-
 len = point_distance(0,0,40,40)
 
 SHOOT_TIME = 10

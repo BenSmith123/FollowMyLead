@@ -63,6 +63,8 @@
       <script>scripts\handle_online_message.gml</script>
       <script>scripts\write_text.gml</script>
     </scripts>
+    <script>scripts\ai_view.gml</script>
+    <script>scripts\cone_vision.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_arial_1</font>
@@ -112,6 +114,7 @@
   <rooms name="rooms">
     <room>rooms\room_menu</room>
     <room>rooms\room1</room>
+    <room>rooms\room2</room>
   </rooms>
   <constants number="2">
     <constant name="HEIGHT">768</constant>
