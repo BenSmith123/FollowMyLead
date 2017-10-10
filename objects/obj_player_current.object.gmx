@@ -40,6 +40,7 @@ player_speed = 4
 len = point_distance(0,0,26,26) // This is the distance between the tip and the origin
 // angle = point_distance(0,0,20,20)
 state = PLAYER_STATE.is_alive
+record_end = false // show different sprite if recording ended rather than player was killed
 
 counter = 0
 counter_max = 0 // highest size the array reached
@@ -145,8 +146,7 @@ if record_me = true // if I am the current player
         if (hspeed = 0 and vspeed = 0) // if the player has moved since last step but is stopped atm
         {obj.image_index = 1} // create a dot
         else
-        {obj.image_angle = direction} // footsteo face the way I was heading (NOT FACING)
-        
+        {obj.image_angle = direction} // footstep face the way I was heading (NOT FACING)
         
     }
     
@@ -181,7 +181,7 @@ if hp &lt;= 0 {state = PLAYER_STATE.is_dead}
 
 if state = PLAYER_STATE.is_dead
 {
-    sprite_index = spr_player_dead  
+    if record_end = true {sprite_index = spr_player_freeze} else {sprite_index = spr_player_dead}
     record_me = false
     stop_counter = true
     hspeed = 0
@@ -263,56 +263,68 @@ draw_self()
 x = round(x)
 y = round(y)
 
-// draw the arrow of a recorded player
-if record_me = false{
-if state = PLAYER_STATE.is_alive{
-draw_sprite_ext(spr_arrow,0,x+lengthdir_x(len-12,image_angle),y+lengthdir_y(len-12,image_angle),image_xscale,image_yscale,image_angle,image_blend,image_alpha)}}
 
-
-//////// RECORDING OF THE PLAYER ////////
-if record_me = false
+if state = PLAYER_STATE.is_alive
 {
-    if counter &lt; counter_max // if the recording has NOT ended
+
+//////////// RECORDING OF THE PLAYER ////////
+    if record_me = false
     {
-        if stop_counter = false {counter += 1} // stop counter if player walks into wall
+        // draw the arrow of a recorded player
+        draw_sprite_ext(spr_arrow,0,x+lengthdir_x(len-12,image_angle),y+lengthdir_y(len-12,image_angle),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
     
-        // set the x/y position to the values stored in the array (values recorded)
-        x = array_x[counter]
-        y = array_y[counter]
-        image_angle = array_angle[counter] // angle the recorded player
+        if counter &lt; counter_max // if the recording has NOT ended
+        {
+            if stop_counter = false {counter += 1} // stop counter if player walks into wall
         
-        // create bullet when the recorded player fired a shot
-        if state = PLAYER_STATE.is_alive {if array_shoot[counter] = true {shoot()}}
-
+            // set the x/y position to the values stored in the array (values recorded)
+            x = array_x[counter]
+            y = array_y[counter]
+            image_angle = array_angle[counter] // angle the recorded player
+            
+            // create bullet when the recorded player fired a shot
+            if array_shoot[counter] = true {shoot()}
+        }
+        else
+        {
+            // if the recording has ended, kill the player
+            record_end = true // change the death sprite 
+            state = PLAYER_STATE.is_dead
+        } 
+        
     }
-    else
-    {state = PLAYER_STATE.is_dead} // if the recording has ended, kill the player
+    else //////////// CURRENT PLAYER PLAYING ////////
+    {    
+    
+        stop_counter = false // never stop counter if player is playing
+        counter += 1
+        if counter_max &lt; counter {counter_max = counter}
+        
+        array_shoot[counter] = false // set each step to false unless player has shot
+        
+        array_x[counter] = x
+        array_y[counter] = y
+        
+        //image_angle = point_direction(xprevious,yprevious,x,y) // point the way you're walking
+        dir = point_direction(x,y,mouse_x,mouse_y) // point at mouse
+        image_angle = (image_angle+(sin(degtorad(dir-image_angle))*7)) // 7 = reaction time
+        //idd = instance_create(x+lengthdir_x(Len,Angle+image_angle),y+lengthdir_y(Len,Angle+image_angle),obj_bullet)
+    
+        array_angle[counter] = round(image_angle)
+        
+        // if the recording has come to an end
+        if counter = MAX_ARRAY_SIZE 
+        {
+            record_end = true // change the death sprite 
+            state = PLAYER_STATE.is_dead
+        }
+    
+    }
 }
-else
-{    
-//////// CURRENT PLAYER PLAYING ////////
 
-    stop_counter = false // never stop counter if player is playing
-    counter += 1
-    if counter_max &lt; counter {counter_max = counter}
-    
-    array_shoot[counter] = false // set each step to false unless player has shot
-    
-    array_x[counter] = x
-    array_y[counter] = y
-    
-    //image_angle = point_direction(xprevious,yprevious,x,y) // point the way you're walking
-    dir = point_direction(x,y,mouse_x,mouse_y) // point at mouse
-    image_angle = (image_angle+(sin(degtorad(dir-image_angle))*7)) // 7 = reaction time
-    //idd = instance_create(x+lengthdir_x(Len,Angle+image_angle),y+lengthdir_y(Len,Angle+image_angle),obj_bullet)
+draw_text(x-60,y-20,id)
 
-    array_angle[counter] = round(image_angle)
-    
-    if counter = MAX_ARRAY_SIZE {state = PLAYER_STATE.is_dead}
-
-}
-
-
+draw_text(x-60,y+40,state)
 
 /*
 // debug - delete

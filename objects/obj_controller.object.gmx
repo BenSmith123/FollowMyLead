@@ -57,6 +57,9 @@ if window_get_fullscreen() {window_set_fullscreen(true)} //  reset to fullscreen
 
 if global.user = "GM"
 {
+
+    scr_debug_keys()
+
     if keyboard_check_pressed(vk_escape) {game_end()}
 
     if keyboard_check_pressed(ord('I')) {global.debug = !global.debug} // toggle debug mode
@@ -112,7 +115,7 @@ view_wview[0] = WIDTH
 view_hview[0] = HEIGHT
 
 window_set_size(WIDTH,HEIGHT)
-window_set_fullscreen(true)
+//window_set_fullscreen(true) // debug
 
 display_set_gui_size(WIDTH,HEIGHT)
 
@@ -170,12 +173,16 @@ scr_initialize_all()
 
 scr_text1() 
 
+// temp - move down
+   x2 = 10
+draw_text(x2,40,"FPS: "+string(fps))
+draw_text(x2,60,global.debug_msg)
+
 if global.debug = true
 {  
-    x2 = 10
+ 
     draw_text(x2,20,"DEBUG MODE")
-    draw_text(x2,40,"FPS: "+string(fps))
-    draw_text(x2,60,global.debug_msg)
+
     
     draw_text(x2,80,"
     F12 = Restart Game

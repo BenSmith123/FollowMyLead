@@ -24,7 +24,7 @@ is_dead
 }
 
 particle_effects()
-
+/*
 if os_is_network_connected()
 {
     instance_create(x,y,obj_online_message)

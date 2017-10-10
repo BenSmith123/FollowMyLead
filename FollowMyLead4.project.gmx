@@ -9,6 +9,7 @@
     <sprite>sprites\spr_player_mask</sprite>
     <sprite>sprites\spr_player_current</sprite>
     <sprite>sprites\spr_player_recorded</sprite>
+    <sprite>sprites\spr_player_freeze</sprite>
     <sprite>sprites\spr_player_dead</sprite>
     <sprite>sprites\spr_ai_boss</sprite>
     <sprite>sprites\spr_ai_1</sprite>
@@ -17,6 +18,7 @@
     <sprite>sprites\spr_turret_barrel_large</sprite>
     <sprite>sprites\spr_turret_barrel</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_gate_verticle</sprite>
     <sprite>sprites\spr_wall_breakable</sprite>
     <sprite>sprites\spr_explosive</sprite>
     <sprite>sprites\spr_footstep</sprite>
@@ -63,8 +65,14 @@
       <script>scripts\handle_online_message.gml</script>
       <script>scripts\write_text.gml</script>
     </scripts>
-    <script>scripts\ai_view.gml</script>
-    <script>scripts\cone_vision.gml</script>
+    <scripts name="AI">
+      <script>scripts\ai_behaviour_move_towards_shoot.gml</script>
+      <script>scripts\ai_get_closest_player.gml</script>
+      <script>scripts\ai_vision.gml</script>
+      <script>scripts\ai_cone_vision.gml</script>
+      <script>scripts\ai_shoot.gml</script>
+    </scripts>
+    <script>scripts\scr_debug_keys.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_arial_1</font>
@@ -77,6 +85,7 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_wall_breakable</object>
     <object>objects\obj_block_explosive</object>
+    <object>objects\obj_explosion</object>
     <object>objects\parent_projectile</object>
     <object>objects\obj_bullet_player</object>
     <object>objects\parent_ai</object>
@@ -93,7 +102,6 @@
       <object>objects\obj_spawn_point</object>
       <object>objects\obj_background</object>
       <object>objects\obj_player_joystick</object>
-      <object>objects\obj_explosion</object>
       <object>objects\obj_bullet_spark</object>
       <object>objects\obj_menu_text</object>
     </objects>
@@ -109,6 +117,7 @@
       <object>objects\obj_download_here_button</object>
       <object>objects\obj_text</object>
     </objects>
+    <object>objects\obj_gate_verticle</object>
     <object>objects\obj_switch</object>
   </objects>
   <rooms name="rooms">
