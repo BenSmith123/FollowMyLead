@@ -32,16 +32,20 @@ death_sprite = sprite_index
 
 image_speed = 0
 
+// in-game variables
 can_be_hit = true
-
-is_alive = true
-
-can_shoot = true
-SHOOT_TIME = 30
-
 len = point_distance(0,0,26,26)
+target_player = 0
+is_alive = true
+can_shoot = true
 
-closest_player = 0
+// ai attributes
+SHOOT_TIME = 30
+aiming_speed = 10
+view_distance = 300
+seen = false
+bullet_speed = 16
+
 
 
 </string>

@@ -228,7 +228,7 @@
     <option_facebook_app_display_name></option_facebook_app_display_name>
     <option_facebook_appid></option_facebook_appid>
     <option_facebook_enable>0</option_facebook_enable>
-    <option_fast_collision_compatibility>false</option_fast_collision_compatibility>
+    <option_fast_collision_compatibility>False</option_fast_collision_compatibility>
     <option_freeze>false</option_freeze>
     <option_frequency>0</option_frequency>
     <option_frontimage>nil</option_frontimage>
@@ -281,9 +281,9 @@
     <option_ios_advertising_enable>0</option_ios_advertising_enable>
     <option_ios_advertising_key></option_ios_advertising_key>
     <option_ios_advertising_type>iAds</option_ios_advertising_type>
-    <option_ios_app_id></option_ios_app_id>
-    <option_ios_build_version>0</option_ios_build_version>
-    <option_ios_certificate>&lt; Press refresh to fetch certificate list from Mac&gt;</option_ios_certificate>
+    <option_ios_app_id>com.indiedev.followmylead</option_ios_app_id>
+    <option_ios_build_version>3</option_ios_build_version>
+    <option_ios_certificate>iPhone Developer: Ben Smith (CKZY5KV7GS)</option_ios_certificate>
     <option_ios_device_type>3</option_ios_device_type>
     <option_ios_display_name>FollowMyLead</option_ios_display_name>
     <option_ios_facebook_app_display_name></option_ios_facebook_app_display_name>
@@ -322,15 +322,15 @@
     <option_ios_minor_version>0</option_ios_minor_version>
     <option_ios_orient_landscape>-1</option_ios_orient_landscape>
     <option_ios_orient_landscape_right>-1</option_ios_orient_landscape_right>
-    <option_ios_orient_portrait>-1</option_ios_orient_portrait>
-    <option_ios_orient_portrait_upside_down>-1</option_ios_orient_portrait_upside_down>
+    <option_ios_orient_portrait>0</option_ios_orient_portrait>
+    <option_ios_orient_portrait_upside_down>0</option_ios_orient_portrait_upside_down>
     <option_ios_provisioning>BenSmith - com.domain.electroball</option_ios_provisioning>
     <option_ios_push_enable>0</option_ios_push_enable>
     <option_ios_scale>-1</option_ios_scale>
     <option_ios_set_device_id></option_ios_set_device_id>
     <option_ios_splash_png>Configs\Default\ios\splash.png</option_ios_splash_png>
     <option_ios_splash_time>0</option_ios_splash_time>
-    <option_ios_team_id></option_ios_team_id>
+    <option_ios_team_id>Ben Smith</option_ios_team_id>
     <option_ios_texture_page>1024</option_ios_texture_page>
     <option_ios_use_test_ads>0</option_ios_use_test_ads>
     <option_lastchanged></option_lastchanged>
@@ -485,14 +485,14 @@
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
     <option_version>100</option_version>
-    <option_version_build>3</option_version_build>
-    <option_version_company></option_version_company>
+    <option_version_build>5</option_version_build>
+    <option_version_company>IndieDev</option_version_company>
     <option_version_copyright></option_version_copyright>
-    <option_version_description></option_version_description>
-    <option_version_major>1</option_version_major>
+    <option_version_description>2D top-down strategy game</option_version_description>
+    <option_version_major>2</option_version_major>
     <option_version_minor>0</option_version_minor>
-    <option_version_product></option_version_product>
-    <option_version_release>0</option_version_release>
+    <option_version_product>Game</option_version_product>
+    <option_version_release>1</option_version_release>
     <option_win8_advertising_appid></option_win8_advertising_appid>
     <option_win8_advertising_enable>0</option_win8_advertising_enable>
     <option_win8_advertising_key></option_win8_advertising_key>
@@ -530,11 +530,11 @@
     <option_win8_store_logo>Configs\Default\Windows8\logos\logo50.png</option_win8_store_logo>
     <option_win8_texture_page>1024</option_win8_texture_page>
     <option_win8_wide_logo>Configs\Default\Windows8\logos\logo310.png</option_win8_wide_logo>
-    <option_winUAP_allowfullscreen>false</option_winUAP_allowfullscreen>
+    <option_winUAP_allowfullscreen>0</option_winUAP_allowfullscreen>
     <option_winUAP_build_version>0</option_winUAP_build_version>
     <option_winUAP_certificate_location>WinUWPRunner_TemporaryKey.pfx</option_winUAP_certificate_location>
     <option_winUAP_display_name>FollowMyLead2</option_winUAP_display_name>
-    <option_winUAP_fullscreen>false</option_winUAP_fullscreen>
+    <option_winUAP_fullscreen>0</option_winUAP_fullscreen>
     <option_winUAP_internet_capable>0</option_winUAP_internet_capable>
     <option_winUAP_interpolate>-1</option_winUAP_interpolate>
     <option_winUAP_landscape_allowed>-1</option_winUAP_landscape_allowed>
@@ -565,19 +565,19 @@
     <option_winUAP_wide_logo>Configs\Default\WindowsUAP\logos\WideLogo.scale-100.png</option_winUAP_wide_logo>
     <option_windowcolor>clBlack</option_windowcolor>
     <option_windows_alternate_sync_method>False</option_windows_alternate_sync_method>
-    <option_windows_build_version>2</option_windows_build_version>
-    <option_windows_company_info></option_windows_company_info>
+    <option_windows_build_version>5</option_windows_build_version>
+    <option_windows_company_info>IndieDev</option_windows_company_info>
     <option_windows_copyright_info></option_windows_copyright_info>
     <option_windows_create_textures_on_demand>False</option_windows_create_textures_on_demand>
-    <option_windows_description_info></option_windows_description_info>
+    <option_windows_description_info>2D top-down strategy game</option_windows_description_info>
     <option_windows_enable_steam>0</option_windows_enable_steam>
     <option_windows_game_icon>Configs\Default\windows\runner_icon.ico</option_windows_game_icon>
     <option_windows_license>Configs\Default\windows\License.txt</option_windows_license>
     <option_windows_mainor_version>0</option_windows_mainor_version>
-    <option_windows_major_version>1</option_windows_major_version>
+    <option_windows_major_version>2</option_windows_major_version>
     <option_windows_nsis_file>Configs\Default\windows\RunnerInstaller.nsi</option_windows_nsis_file>
-    <option_windows_product_info></option_windows_product_info>
-    <option_windows_release_version>0</option_windows_release_version>
+    <option_windows_product_info>Game</option_windows_product_info>
+    <option_windows_release_version>1</option_windows_release_version>
     <option_windows_runner_finished>Configs\Default\windows\Runner_finish.bmp</option_windows_runner_finished>
     <option_windows_runner_header>Configs\Default\windows\Runner_header.bmp</option_windows_runner_header>
     <option_windows_save_location>0</option_windows_save_location>
@@ -586,7 +586,7 @@
     <option_windows_splash_screen>Configs\Default\windows\splash.png</option_windows_splash_screen>
     <option_windows_steam_app_id>0</option_windows_steam_app_id>
     <option_windows_texture_page>2048</option_windows_texture_page>
-    <option_windows_use_splash>-1</option_windows_use_splash>
+    <option_windows_use_splash>0</option_windows_use_splash>
     <option_windows_vertex_buffer_method2>1</option_windows_vertex_buffer_method2>
     <option_winphone_480_splash_image>Configs\Default\WinPhone\SplashScreenImage480.jpg</option_winphone_480_splash_image>
     <option_winphone_720_splash_image>Configs\Default\WinPhone\SplashScreenImage720.jpg</option_winphone_720_splash_image>
@@ -673,5 +673,10 @@
     <option_xbone_texture_page>1024</option_xbone_texture_page>
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
-  <ConfigConstants/>
+  <ConfigConstants>
+    <constants number="2">
+      <constant name="IS_MOBILE">false</constant>
+      <constant name="IS_WINDOWS">true</constant>
+    </constants>
+  </ConfigConstants>
 </Config>

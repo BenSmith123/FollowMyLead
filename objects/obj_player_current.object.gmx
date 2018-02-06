@@ -27,18 +27,39 @@
             <kind>1</kind>
             <string>
 //controller = instance_create(x,y,obj_player_controls)
+temp = 0
+record_me = true // created at room_start or latest created must be recorded
 
-record_me = true
+if IS_MOBILE
+{
+    target_enemy = 0
+    
+    if !instance_exists(obj_virtual_joystick) 
+    {
+        vj = instance_create(x,y,obj_virtual_joystick)
+        vj.player = id
+    } 
+    else
+    {obj_virtual_joystick.player = id}
+
+    //shoot_button = instance_create(x,y,obj_virtual_joystick)
+    //shoot_button.player = id
+}
 
 stop_counter = false
 
 max_hp = 2
 hp = max_hp
 
-collision_distance = 3
 player_speed = 4
+SpeedX = 0
+SpeedY = 0
 len = point_distance(0,0,26,26) // This is the distance between the tip and the origin
 // angle = point_distance(0,0,20,20)
+image_angle2 = 0
+can_shoot = true
+reload_time = 15
+bullet_speed = 16
 state = PLAYER_STATE.is_alive
 record_end = false // show different sprite if recording ended rather than player was killed
 
@@ -74,8 +95,11 @@ if record_me = true
     move_up = false
     move_down = false
     move_attack = false
-
-    for(i = MAX_ARRAY_SIZE; i &lt;= 0; i++)
+    
+    instance_create(x,y,obj_life_bar)
+    
+    // initialise the recording array! 
+    for(i = MAX_ARRAY_SIZE; i &lt;= 0; i++) // initialised backwards for efficiency
     {
         array_x[i] = 0
         array_y[i] = 0
@@ -113,6 +137,30 @@ if record_me = true
 obj = instance_create(x,y,obj_player_stopped)
 obj.image_angle = image_angle
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///can_shoot = true
+can_shoot = true
 </string>
           </argument>
         </arguments>
@@ -179,6 +227,7 @@ if record_me = true // if I am the current player
             <string>
 if hp &lt;= 0 {state = PLAYER_STATE.is_dead}
 
+
 if state = PLAYER_STATE.is_dead
 {
     if record_end = true {sprite_index = spr_player_freeze} else {sprite_index = spr_player_dead}
@@ -189,12 +238,10 @@ if state = PLAYER_STATE.is_dead
     depth = 220 // change the depth to behind AI etc
 }
 
-// allow movement and record the actions
+// record the actions
 if record_me = true
 {
     scr_camera()
-
-    scr_controls()
 }
 
 </string>
@@ -202,7 +249,34 @@ if record_me = true
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="parent_block">
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// movement
+
+if record_me = true
+{scr_controls()}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_health_boost">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -220,8 +294,89 @@ if record_me = true
           <argument>
             <kind>1</kind>
             <string>
+hp = max_hp*2
+instance_destroy(other)
 
-move_contact_solid(0,2)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_speed_boost">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+accel = accel * 2
+max_speed = max_speed * 2
+player_speed = player_speed * 2
+instance_destroy(other)
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_reload_boost">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+reload_time = reload_time / 2
+bullet_speed = bullet_speed * 1.5
+instance_destroy(other)
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_portal">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+room_goto_next()
+
 </string>
           </argument>
         </arguments>
@@ -256,22 +411,23 @@ image_index = number-1 // colour the current player
 
 // draw the write pointer if the player is currently playing
 if record_me = true 
-{draw_sprite_ext(spr_pointer,0,x+lengthdir_x(len-12,image_angle),y+lengthdir_y(len-12,image_angle),image_xscale,image_yscale,image_angle,image_blend,image_alpha)} 
+{draw_sprite_ext(spr_pointer,0,x+lengthdir_x(len-12,image_angle2),y+lengthdir_y(len-12,image_angle2),image_xscale,image_yscale,image_angle2,image_blend,image_alpha)} 
 
 draw_self()
 
+/*
 x = round(x)
-y = round(y)
+y = round(y) */
 
 
 if state = PLAYER_STATE.is_alive
 {
 
-//////////// RECORDING OF THE PLAYER ////////
+//////////// RECORDING OF THE PLAYER ////////////
     if record_me = false
     {
         // draw the arrow of a recorded player
-        draw_sprite_ext(spr_arrow,0,x+lengthdir_x(len-12,image_angle),y+lengthdir_y(len-12,image_angle),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+        draw_sprite_ext(spr_arrow,0,x+lengthdir_x(len-12,image_angle2),y+lengthdir_y(len-12,image_angle2),image_xscale,image_yscale,image_angle2,image_blend,image_alpha)
     
         if counter &lt; counter_max // if the recording has NOT ended
         {
@@ -280,7 +436,7 @@ if state = PLAYER_STATE.is_alive
             // set the x/y position to the values stored in the array (values recorded)
             x = array_x[counter]
             y = array_y[counter]
-            image_angle = array_angle[counter] // angle the recorded player
+            image_angle2 = array_angle[counter] // angle the recorded player
             
             // create bullet when the recorded player fired a shot
             if array_shoot[counter] = true {shoot()}
@@ -293,7 +449,7 @@ if state = PLAYER_STATE.is_alive
         } 
         
     }
-    else //////////// CURRENT PLAYER PLAYING ////////
+    else //////////// CURRENT PLAYER PLAYING ////////////
     {    
     
         stop_counter = false // never stop counter if player is playing
@@ -302,15 +458,27 @@ if state = PLAYER_STATE.is_alive
         
         array_shoot[counter] = false // set each step to false unless player has shot
         
-        array_x[counter] = x
-        array_y[counter] = y
+        array_x[counter] = round(x)
+        array_y[counter] = round(y)
         
-        //image_angle = point_direction(xprevious,yprevious,x,y) // point the way you're walking
-        dir = point_direction(x,y,mouse_x,mouse_y) // point at mouse
-        image_angle = (image_angle+(sin(degtorad(dir-image_angle))*7)) // 7 = reaction time
+        //image_angle2 = point_direction(xprevious,yprevious,x,y) // point the way you're walking
+        
+        // point at mouse
+        if IS_MOBILE 
+        {
+            dir = vstick_get_direction(1)
+            if global.auto_target == true {scr_player_get_closest_enemy()}
+        }
+        else
+        {dir = point_direction(x,y,mouse_x,mouse_y)}
+        
+        if image_angle2 &gt;= 360 {image_angle2 = 0}
+        if image_angle2 &lt; 0 {image_angle2 = 360}
+        
+        image_angle2 = (image_angle2+(sin(degtorad(dir-image_angle2))*7)) // 7 = reaction time
         //idd = instance_create(x+lengthdir_x(Len,Angle+image_angle),y+lengthdir_y(Len,Angle+image_angle),obj_bullet)
     
-        array_angle[counter] = round(image_angle)
+        array_angle[counter] = round(image_angle2)
         
         // if the recording has come to an end
         if counter = MAX_ARRAY_SIZE 
@@ -322,9 +490,14 @@ if state = PLAYER_STATE.is_alive
     }
 }
 
-draw_text(x-60,y-20,id)
+/*
+draw_text(x-60,y+40,temp)
+draw_text(x-60,y+60,image_angle2)
 
-draw_text(x-60,y+40,state)
+
+/*
+if target_enemy != 0
+{draw_text(target_enemy.x,target_enemy.y,"LOCKED HERE")}
 
 /*
 // debug - delete
@@ -364,7 +537,7 @@ draw_text(x-60,y+40,state)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// debug
+            <string>
 
 if number = global.player_number // if THIS object is the current player
 {

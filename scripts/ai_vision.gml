@@ -18,6 +18,12 @@ if instance_exists(argument0)
    // {ai_behaviour_move_towards_shoot()}
 }
 
+
+
+
+
+
+
 /*
 
 if instance_exists(argument0)

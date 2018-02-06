@@ -2,47 +2,83 @@
 <assets>
   <Configs name="configs">
     <Config>Configs\Default</Config>
+    <Config>Configs\Mobile</Config>
   </Configs>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\Virtual Joysticks</extension>
+    <extension index="1">extensions\Platformer Movement System</extension>
+  </NewExtensions>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_player_mask</sprite>
-    <sprite>sprites\spr_player_current</sprite>
-    <sprite>sprites\spr_player_recorded</sprite>
-    <sprite>sprites\spr_player_freeze</sprite>
-    <sprite>sprites\spr_player_dead</sprite>
+    <sprites name="player">
+      <sprite>sprites\spr_player_mask</sprite>
+      <sprite>sprites\spr_player_current</sprite>
+      <sprite>sprites\spr_player_recorded</sprite>
+      <sprite>sprites\spr_player_freeze</sprite>
+      <sprite>sprites\spr_player_dead</sprite>
+      <sprite>sprites\spr_pointer</sprite>
+      <sprite>sprites\spr_arrow</sprite>
+      <sprite>sprites\spr_button_arrow</sprite>
+    </sprites>
     <sprite>sprites\spr_ai_boss</sprite>
     <sprite>sprites\spr_ai_1</sprite>
     <sprite>sprites\spr_turret</sprite>
+    <sprite>sprites\sprite36</sprite>
     <sprite>sprites\spr_turret_large</sprite>
-    <sprite>sprites\spr_turret_barrel_large</sprite>
     <sprite>sprites\spr_turret_barrel</sprite>
+    <sprite>sprites\spr_turret_barrel_large</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_wall_shadow</sprite>
     <sprite>sprites\spr_gate_verticle</sprite>
     <sprite>sprites\spr_wall_breakable</sprite>
     <sprite>sprites\spr_explosive</sprite>
     <sprite>sprites\spr_footstep</sprite>
     <sprite>sprites\spr_marker</sprite>
+    <sprites name="effects">
+      <sprite>sprites\spr_portal</sprite>
+      <sprite>sprites\spr_flash</sprite>
+      <sprite>sprites\spr_explosion</sprite>
+    </sprites>
     <sprite>sprites\spr_projectile_1</sprite>
-    <sprite>sprites\spr_explosion</sprite>
-    <sprite>sprites\spr_flash</sprite>
-    <sprite>sprites\spr_portal</sprite>
     <sprite>sprites\spr_switch_button</sprite>
-    <sprite>sprites\spr_pointer</sprite>
-    <sprite>sprites\spr_arrow</sprite>
-    <sprite>sprites\spr_button_arrow</sprite>
     <sprites name="online">
       <sprite>sprites\spr_update_available_text</sprite>
       <sprite>sprites\spr_download_here_button</sprite>
     </sprites>
     <sprites name="buttons">
+      <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_play_button</sprite>
+      <sprite>sprites\icon</sprite>
     </sprites>
-    <sprite>sprites\sprite31</sprite>
+    <sprites name="temp">
+      <sprite>sprites\sprite40</sprite>
+      <sprite>sprites\sprite30</sprite>
+      <sprite>sprites\sprite39</sprite>
+      <sprite>sprites\sprite31</sprite>
+      <sprite>sprites\sprite41</sprite>
+    </sprites>
     <sprite>sprites\spr_lazer_ver</sprite>
-    <sprite>sprites\sprite30</sprite>
     <sprite>sprites\spr_bullet_spark</sprite>
-    <sprite>sprites\sprite29</sprite>
+    <sprite>sprites\spr_virtual_joystick_back</sprite>
+    <sprite>sprites\spr_virtual_joystick_back_2</sprite>
+    <sprite>sprites\spr_virtual_joystick_front</sprite>
+    <sprites name="markers">
+      <sprite>sprites\spr_marker_up</sprite>
+      <sprite>sprites\spr_marker_left</sprite>
+      <sprite>sprites\spr_marker_right</sprite>
+      <sprite>sprites\spr_marker_down</sprite>
+    </sprites>
+    <sprite>sprites\spr_button_shoot</sprite>
+    <sprites name="Mobile">
+      <sprite>sprites\spr_pause_button</sprite>
+      <sprite>sprites\spr_button_next</sprite>
+      <sprite>sprites\spr_button_auto_target</sprite>
+    </sprites>
+    <sprite>sprites\spr_life_bar</sprite>
+    <sprite>sprites\sprite49</sprite>
+    <sprite>sprites\spr_reload_boost</sprite>
+    <sprite>sprites\spr_speed_boost</sprite>
+    <sprite>sprites\spr_health_boost</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -52,10 +88,11 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_initialize_all.gml</script>
+    <script>scripts\scr_initialise_all.gml</script>
     <script>scripts\scr_camera.gml</script>
     <script>scripts\scr_debug_msg.gml</script>
     <script>scripts\scr_controls.gml</script>
+    <script>scripts\controls_origional.gml</script>
     <script>scripts\scr_joystick_controls.gml</script>
     <script>scripts\create_placeholder.gml</script>
     <script>scripts\particle_effects.gml</script>
@@ -67,12 +104,38 @@
     </scripts>
     <scripts name="AI">
       <script>scripts\ai_behaviour_move_towards_shoot.gml</script>
+      <script>scripts\ai_behaviour_stand_shoot.gml</script>
       <script>scripts\ai_get_closest_player.gml</script>
-      <script>scripts\ai_vision.gml</script>
-      <script>scripts\ai_cone_vision.gml</script>
       <script>scripts\ai_shoot.gml</script>
     </scripts>
     <script>scripts\scr_debug_keys.gml</script>
+    <scripts name="Virtual Joystick">
+      <script>scripts\vstick_set_frontsprite.gml</script>
+      <script>scripts\vstick_get_frontsprite.gml</script>
+      <script>scripts\vstick_set_backsprite.gml</script>
+      <script>scripts\vstick_get_backsprite.gml</script>
+      <script>scripts\vstick_get_active.gml</script>
+      <script>scripts\vstick_set_active.gml</script>
+      <script>scripts\vstick_set_radius.gml</script>
+      <script>scripts\vstick_get_radius.gml</script>
+      <script>scripts\vstick_set_y.gml</script>
+      <script>scripts\vstick_get_y.gml</script>
+      <script>scripts\vstick_set_x.gml</script>
+      <script>scripts\vstick_get_x.gml</script>
+      <script>scripts\vstick_get_yaxis.gml</script>
+      <script>scripts\vstick_get_xaxis.gml</script>
+      <script>scripts\vstick_get_direction.gml</script>
+      <script>scripts\vstick_get_deviation.gml</script>
+      <script>scripts\vstick_check.gml</script>
+      <script>scripts\vstick_check_pressed.gml</script>
+      <script>scripts\vstick_check_released.gml</script>
+      <script>scripts\vstick_draw.gml</script>
+      <script>scripts\vstick_step.gml</script>
+      <script>scripts\vstick_init.gml</script>
+    </scripts>
+    <script>scripts\scr_room_init.gml</script>
+    <script>scripts\scr_player_get_closest_enemy.gml</script>
+    <script>scripts\scr_room_enable_camera.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_arial_1</font>
@@ -80,8 +143,9 @@
   <objects name="objects">
     <object>objects\obj_controller</object>
     <object>objects\obj_online_message</object>
-    <object>objects\obj_level_init</object>
+    <object>objects\obj_controller_playable</object>
     <object>objects\obj_player_current</object>
+    <object>objects\parent_block</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_wall_breakable</object>
     <object>objects\obj_block_explosive</object>
@@ -96,7 +160,6 @@
     <object>objects\obj_ai_5</object>
     <objects name="other">
       <object>objects\obj_placeholder</object>
-      <object>objects\parent_block</object>
       <object>objects\obj_footstep</object>
       <object>objects\obj_get_name</object>
       <object>objects\obj_spawn_point</object>
@@ -108,6 +171,7 @@
     <objects name="buttons">
       <object>objects\parent_button</object>
       <object>objects\obj_play_button</object>
+      <object>objects\obj_title</object>
     </objects>
     <object>objects\obj_portal</object>
     <object>objects\obj_mark_death</object>
@@ -119,11 +183,26 @@
     </objects>
     <object>objects\obj_gate_verticle</object>
     <object>objects\obj_switch</object>
+    <objects name="Mobile">
+      <object>objects\obj_virtual_joystick</object>
+      <object>objects\obj_pause_button</object>
+      <object>objects\obj_next_step</object>
+      <object>objects\obj_button_auto_target</object>
+      <object>objects\obj_button_shoot</object>
+    </objects>
+    <object>objects\obj_turret_angle_left</object>
+    <object>objects\obj_turret_angle_up</object>
+    <object>objects\obj_turret_angle_down</object>
+    <object>objects\obj_life_bar</object>
+    <object>objects\obj_reload_boost</object>
+    <object>objects\obj_speed_boost</object>
+    <object>objects\obj_health_boost</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_menu</room>
-    <room>rooms\room1</room>
+    <room>rooms\room_level_1</room>
     <room>rooms\room2</room>
+    <room>rooms\rm_example</room>
   </rooms>
   <constants number="2">
     <constant name="HEIGHT">768</constant>

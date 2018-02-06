@@ -32,8 +32,6 @@ hp = 2
 max_hp = hp
 
 len = point_distance(0,0,26,26)
-
-temp2= 0 // temp!
 </string>
           </argument>
         </arguments>
@@ -85,16 +83,18 @@ ai_behaviour_move_towards_shoot()
 if is_alive = true
 {draw_sprite_ext(spr_arrow,0,x+lengthdir_x(len-12,image_angle),y+lengthdir_y(len-12,image_angle),image_xscale,image_yscale,image_angle,image_blend,image_alpha)}
 
-draw_text(closest_player.x,closest_player.y,"here")
-
-if not(temp2 = 0){
-draw_text(temp2.x,temp2.y,"TEMP")}
-
 draw_self()
 
 
-// debug 
-//draw_text(x,y,yo)
+/*** debug
+
+
+//draw_text(closest_player.x,closest_player.y,"here")
+
+if not(target_player == 0){
+draw_text(target_player.x,target_player.y,"Target")}
+
+draw_text(x,y,target_player)
 
 </string>
           </argument>

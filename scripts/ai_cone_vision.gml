@@ -15,4 +15,4 @@ dist1=point_distance(_x1,_y1,_x2,_y2)
 dist2=point_distance(_x1,_y1,_x3,_y3)
 distObj=point_distance(x,y,argument3.x,argument3.y)
 temp2 = argument3.id // test
-return (dist1>=dist2)*(distObj<=argument2 or argument2==0)
+return (dist1 >= dist2) * (distObj<=argument2 or argument2==0)

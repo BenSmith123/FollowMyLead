@@ -2,40 +2,30 @@
 
 if is_alive = true
 {
-    //ai_get_closest_player()
+    ai_get_closest_player()
 
-    //if not closest_player = 0
+    if target_player != 0
     {
-        // go through array of players
-        for(i = 1; i <= instance_number(obj_player_current); i++)
-        {
-            //if global.player_array[i].state = PLAYER_STATE.is_alive // if player is alive
-            {
-                //if ai_vision(global.player_array[i],300,image_angle,350) // if the player is seen
-                if ai_vision(obj_player_current,300,image_angle,350) // if the player is seen
-                {seen = true}
-                else
-                {
-                    seen = false
-                    hspeed = 0
-                    vspeed = 0
-                }
-            }
-        }
-
-        if seen = true
-        {
-            dir = point_direction(x,y,temp2.x,temp2.y)
+        if seen == true
+        {           
+            dir = point_direction(x,y,target_player.x,target_player.y)
             
-            image_angle = (image_angle+(sin(degtorad(dir-image_angle))*10))
+            image_angle = (image_angle+(sin(degtorad(dir-image_angle)) * aiming_speed))
         
-            if distance_to_object(temp2) < 300
+            if distance_to_object(target_player) < view_distance
             {
-                move_towards_point(temp2.x,temp2.y,3)
+                move_towards_point(target_player.x,target_player.y,3)
+                gun_image_angle = image_angle // ai_shoot uses gun_image_angle (for turrets etc) so have to make this compatible
                 ai_shoot()
             }
         }
     }
+    else
+    {
+        hspeed = 0
+        vspeed = 0
+    }
+    
 }
 
 
