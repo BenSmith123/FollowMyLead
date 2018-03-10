@@ -52,11 +52,14 @@ image_alpha = 0
           <argument>
             <kind>1</kind>
             <string>
-player = obj_player_current
+if instance_exists(obj_player_current)
+{
+    //player = obj_player_current
+    draw_sprite_stretched_ext(sprite_index,image_index,0,-1,WIDTH - (global.counter/3600) * WIDTH,5,image_blend,image_alpha + (global.counter/3600))
+} 
+else
+{instance_destroy()}
 
-if player.state != PLAYER_STATE.is_alive {instance_destroy()}
-
-draw_sprite_stretched_ext(sprite_index,image_index,0,-1,WIDTH - (player.counter/player.MAX_ARRAY_SIZE) * WIDTH,5,image_blend,image_alpha + (player.counter/player.MAX_ARRAY_SIZE))
 
 </string>
           </argument>

@@ -29,36 +29,3 @@ if is_alive = true
 }
 
 
-
-
-/***
-
-
-// get the closest player, if the player is seen, face the player, move towards the player and shoot
-
-ai_get_closest_player()
-
-if is_alive = true
-{
-    if instance_exists(obj_player_current)
-    {
-        if ai_vision(closest_player,300,100,300)
-        {
-            dir = point_direction(x,y,closest_player.x,closest_player.y)
-            
-            image_angle = (image_angle+(sin(degtorad(dir-image_angle))*10))
-        
-            if distance_to_object(closest_player) < 300
-            {
-                move_towards_point(closest_player.x,closest_player.y,3)
-        
-                ai_shoot()
-            }
-        }
-        else
-        {
-            hspeed = 0
-            vspeed = 0
-        }
-    }
-}

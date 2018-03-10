@@ -144,7 +144,7 @@ if show_flash = true
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_player_current">
+    <event eventtype="4" ename="parent_player">
       <action>
         <libid>1</libid>
         <id>603</id>

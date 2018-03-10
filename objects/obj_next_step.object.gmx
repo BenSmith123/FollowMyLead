@@ -33,7 +33,7 @@ or position_meeting(device_mouse_x(1),device_mouse_y(1),self)
     or device_mouse_check_button_pressed(1,mb_left)
     {
         with (parent_ai) {event_perform_object(parent_ai,ev_keypress,vk_shift)}
-        with (obj_player_current) {event_perform_object(obj_player_current,ev_keypress,vk_shift)}
+        with (parent_player) {event_perform_object(parent_player,ev_keypress,vk_shift)}
         with (obj_placeholder) {event_perform_object(obj_placeholder,ev_keypress,vk_shift)}
     }
 }

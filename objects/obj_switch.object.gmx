@@ -57,7 +57,7 @@ image_index = active
             <string>
 active = false
 
-if position_meeting(x,y,obj_player_current) {active = true}
+if position_meeting(x,y,parent_player) {active = true}
 
 if position_meeting(x,y,parent_ai) {active = true}
 
@@ -66,9 +66,9 @@ image_index = active
 
 
 /*
-if position_meeting(x,y,obj_player_current)
+if position_meeting(x,y,obj_player)
 {
-    player = position_meeting(x,y,obj_player_current)
+    player = position_meeting(x,y,obj_player)
     if other.state = PLAYER_STATE.is_alive
     {active = true}
     else
@@ -78,7 +78,7 @@ image_index = active
 
 
 /*
-if place_meeting(x,y,obj_player_current)
+if place_meeting(x,y,obj_player)
 {
     switch_me = true
 }

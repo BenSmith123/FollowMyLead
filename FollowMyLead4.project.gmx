@@ -79,12 +79,17 @@
     <sprite>sprites\spr_reload_boost</sprite>
     <sprite>sprites\spr_speed_boost</sprite>
     <sprite>sprites\spr_health_boost</sprite>
+    <sprite>sprites\sprite55</sprite>
+    <sprite>sprites\sprite56</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\bg_tile_2x2</background>
     <background>background\bg_tile_3x3</background>
     <background>background\bg_tile_6x6</background>
+    <background>background\background4</background>
+    <background>background\background5</background>
+    <background>background\background6</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -134,8 +139,9 @@
       <script>scripts\vstick_init.gml</script>
     </scripts>
     <script>scripts\scr_room_init.gml</script>
-    <script>scripts\scr_player_get_closest_enemy.gml</script>
+    <script>scripts\scr_auto_shoot_enemy.gml</script>
     <script>scripts\scr_room_enable_camera.gml</script>
+    <script>scripts\GUIDE_new_recording.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_arial_1</font>
@@ -145,12 +151,16 @@
     <object>objects\obj_online_message</object>
     <object>objects\obj_controller_playable</object>
     <object>objects\obj_player_current</object>
-    <object>objects\parent_block</object>
+    <object>objects\obj_player_clone</object>
+    <object>objects\parent_player</object>
+    <object>objects\original_backup</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_wall_breakable</object>
     <object>objects\obj_block_explosive</object>
     <object>objects\obj_explosion</object>
+    <object>objects\parent_block</object>
     <object>objects\parent_projectile</object>
+    <object>objects\obj_background</object>
     <object>objects\obj_bullet_player</object>
     <object>objects\parent_ai</object>
     <object>objects\obj_ai_1</object>
@@ -161,9 +171,7 @@
     <objects name="other">
       <object>objects\obj_placeholder</object>
       <object>objects\obj_footstep</object>
-      <object>objects\obj_get_name</object>
       <object>objects\obj_spawn_point</object>
-      <object>objects\obj_background</object>
       <object>objects\obj_player_joystick</object>
       <object>objects\obj_bullet_spark</object>
       <object>objects\obj_menu_text</object>
@@ -197,10 +205,12 @@
     <object>objects\obj_reload_boost</object>
     <object>objects\obj_speed_boost</object>
     <object>objects\obj_health_boost</object>
+    <object>objects\obj_player_dead</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_menu</room>
     <room>rooms\room_level_1</room>
+    <room>rooms\room4</room>
     <room>rooms\room2</room>
     <room>rooms\rm_example</room>
   </rooms>

@@ -3,14 +3,14 @@
 target_player = 0 // refreshes when a player has died for the AI to target another player
 
 // get the closest player object
-if instance_exists(obj_player_current)
+if instance_exists(parent_player)
 {
     // go through array of players
-    for(i = 1; i <= instance_number(obj_player_current); i++)
+    for(i = 1; i <= instance_number(parent_player)-1; i++) // number of players alive minus the recording one
     {
-        if instance_exists(global.player_array[i])
+        if instance_exists(global.player_array[i]) //global.player_array[i] != 0
         {
-            if global.player_array[i].state = PLAYER_STATE.is_alive // if player is alive
+            if global.player_array[i].is_alive == true // if player is alive
             {
                 if distance_to_object(global.player_array[i]) < distance_to_object(target_player) // if player is closer than the current closest player
                 {

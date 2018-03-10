@@ -47,15 +47,15 @@ rpos (-1,1) = right joystick
 ************************/
 
 
-if joystick_xpos(1) &lt; -0.2 {obj_player.move_left = true}
-if joystick_xpos(1) &gt; 0.2 {obj_player.move_right = true}
+if joystick_xpos(1) &lt; -0.2 {parent_player.move_left = true}
+if joystick_xpos(1) &gt; 0.2 {parent_player.move_right = true}
 
 
 
-if joystick_check_button(1,1) {obj_player.move_jump = true}
-if joystick_check_button(1,2) {obj_player.move_attack = true; waiting_release = true}
+if joystick_check_button(1,1) {parent_player.move_jump = true}
+if joystick_check_button(1,2) {parent_player.move_attack = true; waiting_release = true}
 
-if joystick_check_button(1,4) {obj_player.move_temp = true}
+if joystick_check_button(1,4) {parent_player.move_temp = true}
 
 //if joystick_check_button(1,8) {scr_pause_game()}
 

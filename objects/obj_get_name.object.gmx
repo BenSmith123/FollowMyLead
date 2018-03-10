@@ -64,7 +64,7 @@ if i_d == msg
         {
             global.name = ds_map_find_value(async_load, "result");
             // create new player regardless of name being set
-            instance_create(irandom_range(100,300),irandom_range(100,300),obj_player_current)
+            instance_create(irandom_range(100,300),irandom_range(100,300),parent_player)
             instance_destroy()
         }
     }

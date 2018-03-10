@@ -27,10 +27,11 @@ if IS_WINDOWS
 // Movement for MOBILE is handled by obj_virtual_joystick
 
 // SHOOTING
+
 if move_attack = true
 {
     shoot()
-    array_shoot[counter] = true
+    //array_shoot[counter] = true
     move_attack = false
 }
 

@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_player_mask</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -25,32 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// initialise everything, create a player
+            <string>/// variables shared by both current and clone players
 
-//if IS_MOBILE
-instance_create(0,0,obj_pause_button)
-instance_create(0,0,obj_next_step)
-instance_create(0,0,obj_button_auto_target)
+max_hp = 2
+hp = max_hp
+bullet_speed = 16
 
-global.counter = 1 // counter for recorded players to use
-MAX_ARRAY_SIZE = 3600
+is_alive = true
 
-/* clear the player array
-for (i = 20; i &lt;= 20; i++)
-{
-    global.player_array[i] = 0
-} **************/
+len = point_distance(0,0,26,26) // This is the distance between the tip and the origin
 
-global.player_number = 0
-
-//instance_create(x,y,obj_background)
-
-// set the spawn globals depending on where the player spawn object is
-global.player_spawn_x = obj_spawn_point.x
-global.player_spawn_y = obj_spawn_point.y
-with (obj_spawn_point) instance_destroy() // destroy the object, SAVE MEMORY
-
-instance_create(global.player_spawn_x,global.player_spawn_y,obj_player_current) // create first player object
+image_speed = 0
 
 
 </string>
@@ -58,7 +43,7 @@ instance_create(global.player_spawn_x,global.player_spawn_y,obj_player_current) 
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="4" ename="obj_health_boost">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -75,19 +60,16 @@ instance_create(global.player_spawn_x,global.player_spawn_y,obj_player_current) 
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// counting!
-
-if global.counter != MAX_ARRAY_SIZE
-{global.counter++}
-else
-{event_user(0)}
+            <string>
+hp = max_hp*2
+instance_destroy(other)
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="10">
+    <event eventtype="4" ename="obj_speed_boost">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -104,35 +86,18 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Reset for next iteration
-
-with (obj_footstep) instance_destroy() // delete all footsteps
-with (obj_player_current) instance_destroy() // delete the current player
-with (obj_player_dead) instance_destroy() // delete all dead bodies
-
-global.counter = 1
-
-if global.player_spawn_x &gt; 1420
-{
-    global.player_spawn_x = 896
-    global.player_spawn_y += 100
-} 
-else 
-{global.player_spawn_x += 100} // increase the spawn x position for each player
-
-
-// CREATE NEW PLAYER OBJECT
-instance_create(global.player_spawn_x,global.player_spawn_y,obj_player_current) 
-
-
-
+            <string>
+accel = accel * 2
+max_speed = max_speed * 2
+player_speed = player_speed * 2
+instance_destroy(other)
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="4" ename="obj_reload_boost">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -149,19 +114,17 @@ instance_create(global.player_spawn_x,global.player_spawn_y,obj_player_current)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// debug 
-
-scr_text1()
-draw_set_halign(fa_right)
-
-draw_text(WIDTH-14,14,global.counter)
+            <string>
+reload_time = reload_time / 2
+bullet_speed = bullet_speed * 1.5
+instance_destroy(other)
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="16">
+    <event eventtype="4" ename="obj_portal">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -178,9 +141,8 @@ draw_text(WIDTH-14,14,global.counter)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///event_user(0)
-event_user(0)
-
+            <string>
+room_goto_next()
 
 </string>
           </argument>
@@ -199,5 +161,8 @@ event_user(0)
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>24,24</point>
+    <point>24,24</point>
+  </PhysicsShapePoints>
 </object>

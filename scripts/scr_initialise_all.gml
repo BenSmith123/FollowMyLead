@@ -9,8 +9,6 @@ global.error_msg = ""
 
 alarm[0] = 600 // turn off debug mode
 
-global.name = "Fred"
-
 global.player_number = 0 // start off as the first player
 
 global.final_playthrough = false // show player number/name and their colour
@@ -19,11 +17,6 @@ global.auto_target = true
 
 // global.player_array[0] = 0
 
-
-enum PLAYER_STATE {
-is_alive,
-is_dead
-}
 
 particle_effects()
 /*

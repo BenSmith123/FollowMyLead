@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>
-player = 0 // set by obj_player_current (player object ID)
+player = 0 // set by obj_player (player object ID)
 
 is_active = true
 
@@ -154,7 +154,7 @@ and place_meeting(device_mouse_y(1),device_mouse_y(1),self)
             <kind>1</kind>
             <string>/// draw the virtual keys
 
-if player.state = PLAYER_STATE.is_alive
+if player.is_alive
 {
     if player.move_left = true {draw_sprite(sprite49,1,stick_x,stick_y)}
     if player.move_right = true {draw_sprite(sprite49,2,stick_x,stick_y)}
