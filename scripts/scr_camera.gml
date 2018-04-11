@@ -21,7 +21,7 @@ obj = id
 
 //scr_round_pos()
 
-if (not obj = 0)
+if (not obj == 0)
 {
     // ROOM END X
     if not(view_xview[0] <= 0 and obj.x<WIDTH/1.5) and not(view_xview[0]+WIDTH >= room_width and obj.x > room_width-(WIDTH/2)) 

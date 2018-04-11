@@ -30,29 +30,160 @@
 
 event_inherited() // inherit the variables that both the current and the clone object share
 
-is_recording = true
-is_alive = false
+is_alive = true
 
 life_span = 0 // set by obj_player_current
 
-image_angle2 = 0 // fix?
+image_angle2 = 0 // use instead of normal image_angle due to the collision box
 
-// initialise the array counts
-array_shoot_count = 0
+//x_inactive_size = 0 // size of the x inactive movement array
+move_x = false // on and off depending on the array_x_inactive
+x_inactive_count = 1 // counter for the x movement inactive array
 array_x_count = 0
+array_x[0] = 0 // start array at 0
+
+move_y = false
+y_inactive_count = 1
 array_y_count = 0
+array_y[0] = 0 // start array at 0
+
+move_angle = false
+angle_inactive_count = 0
 array_angle_count = 0
+
+
+array_shoot_count = 1 // count of how many bullets have been CURRENTLY fired
+
+
+// DECLARE ACTUAL ARRAYS
 
 array_shoot[0] = 0 // start the array at 0
 // ^^ 0 is reserved for the first shot (0 difference between the first shot and the shot before that as their is no shot before that)
+array_x_inactive[0] = 0
+array_y_inactive[0] = 0
+array_angle_inactive[0] = 0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// start/stop moving angle
 
-//array_x[0] = 0
+move_angle = !move_angle
+angle_inactive_count++
 
+////// DEBUG //////
+if move_angle == false
+{print_debug("(C) Angle stopped at "+string(global.counter))}
+else
+{print_debug("(C) Angle started at "+string(global.counter))}
+///////////////////
 
-//alarm[0] = 1 // this starts all the recorded arrays off! Has to be called here!
+if angle_inactive_count &lt; array_length_1d(array_angle_inactive) // if the end of the array is not reached
+{
+    alarm[4] = array_angle_inactive[angle_inactive_count] // reset the alarm to stop/start moving again
+}
+else
+{move_angle = false} // if array has ended, stop the movement
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// start/stop moving Y
 
+move_y = !move_y
+y_inactive_count++
 
+/*//// DEBUG //////
+if move_y == false
+{print_debug("(C) Stopped at "+string(global.counter))}
+else
+{print_debug("(C) Moved at "+string(global.counter))}
+****************/
+
+if y_inactive_count &lt; array_length_1d(array_y_inactive) // if the end of the array is not reached
+{
+    alarm[3] = array_y_inactive[y_inactive_count] // reset the alarm to stop/start moving again
+}
+else
+{move_y = false} // if array has ended, stop the movement
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// start/stop moving X
+
+move_x = !move_x
+x_inactive_count++
+
+/*//// DEBUG //////
+if move_x == false
+{print_debug("Stopped at "+string(global.counter))}
+else
+{print_debug("Moved at "+string(global.counter))}
+/////////////////*/
+
+if x_inactive_count &lt; array_length_1d(array_x_inactive) // if the end of the array is not reached
+{
+    alarm[2] = array_x_inactive[x_inactive_count] // reset the alarm to stop/start moving again
+}
+else
+{move_x = false} // if array has ended, stop the movement
 
 </string>
           </argument>
@@ -76,7 +207,7 @@ array_shoot[0] = 0 // start the array at 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// RECORDING: SHOOTING
+            <string>/// shoot!
 if is_alive == false {exit}
 
 // has to be different from calling the shoot script because the reload/canshoot etc.
@@ -85,7 +216,8 @@ idd.direction = image_angle2
 idd.image_angle = image_angle2
 idd.speed = bullet_speed
 
-global.error_msg = global.counter
+print_debug("clone shot at: "+string(global.counter))
+//print_debug("clone next shot at: " +string(array_shoot[array_shoot_count+1]))
 
 if array_shoot_count &lt; array_length_1d(array_shoot)-1 // if the array has not reached the end (minus 1 because of array index 0)
 {
@@ -118,6 +250,8 @@ if array_shoot_count &lt; array_length_1d(array_shoot)-1 // if the array has not
             <string>/// lifespan over, is_alive = false
 
 is_alive = false
+
+print_debug("------ Clone ("+string(id)+") died at "+string(global.counter)+" ------")
 </string>
           </argument>
         </arguments>
@@ -142,72 +276,52 @@ is_alive = false
             <kind>1</kind>
             <string>/// HP, death and recording
 
-if is_recording == true
+
+if hp &lt;= 0 
 {
-    //is_alive = false
-    
-    if instance_exists(player)
+    is_alive = false
+    move_x = false
+    move_y = false    
+}
+
+// now handled by event_user0: if global.counter == life_span {is_alive = false} // die if the recording has ended
+
+if is_alive == true
+{
+    if move_x == true // this is turned on/off via alarm2
     {
-        if player.has_fired == true
-        {
-            array_shoot_count++ // increment before shooting, first shot = 1, second = 2 etc.
-            array_shoot[array_shoot_count] = global.counter - array_shoot[array_shoot_count-1] // stores the time the bullet was fired minus the last time a bullet was shot
-            global.error_msg = global.counter
-            player.has_fired = false
-        }
-        
-        if player.xprevious != player.x // if the player has moved x position, increment the array and get the x_position
-        {
-            array_x_count++
-            array_x[global.counter] = player.x// global.counter - array_x[array_x_count-1]
-            
-            // if the player wasn't moving but now is, save the time that the player wasn't moving til now 
-            if stored_x == true
-            {
-                array_x_inactive[x_num] = global.counter - stored_x
-                stored_x = false
-            }
-        }
-        else
-        {
-            if stored_x == false // stops timer from constantly getting the global.timer
-            {
-                last_move_x = global.counter // get the time the player stopped moving
-                stored_x = true
-            }
-        }
-        
-        // set the x/y position to the values stored in the array (values recorded)
-        //player.x = array_x[global.counter]
-        //player.y = array_y[global.counter]
-        //player.image_angle2 = array_angle[global.counter] // angle the recorded player
-        
-        // create bullet when the recorded player fired a shot
-        //if array_shoot[global.counter] == true {shoot()}
+        x = array_x[array_x_count] // set x to the number stored in the x_array
+        array_x_count++ // increment through the array
     }
+    
+    if move_y == true
+    {
+        y = array_y[array_y_count]
+        array_y_count++
+    }
+    
+    if move_angle == true
+    {
+        image_angle2 = array_angle[array_angle_count]
+        array_angle_count++
+    }
+    
+/*
+    if array_x_count &lt;= array_length_1d(array_x)+1
+    {
+        if array_x[global.counter] != 0
+        {x = array_x[global.counter]}
+    }
+    */
 }
 else
 {
-    if hp &lt;= 0 {is_alive = false}
-    
-    // now handled by event_user0: if global.counter == life_span {is_alive = false} // die if the recording has ended
-    
-    if is_alive == true
-    {
-        if array_x_count &lt;= array_length_1d(array_x)+1
-        {
-            if array_x[global.counter] != 0
-            {x = array_x[global.counter]}
-        }
-    }
-    else
-    {
-        sprite_index = spr_player_dead
-        hspeed = 0
-        vspeed = 0
-        depth = 220 // change the depth to behind AI etc
-    }
+    sprite_index = spr_player_dead
+    hspeed = 0
+    vspeed = 0
+    depth = 220 // change the depth to behind AI etc
 }
+
 
 </string>
           </argument>
@@ -238,9 +352,6 @@ y = ystart
 
 hp = max_hp
 
-array_shoot_count = 0 // this can be reset because it counts the amount of times a bullet is fired for both recording and re-using
-
-is_recording = false
 is_alive = true
 
 alarm[0] = life_span // start the countdown til dead
@@ -248,7 +359,18 @@ alarm[0] = life_span // start the countdown til dead
 sprite_index = spr_player_recorded
 
 
-// begin the recording system alarms!
+// RESET THE RECORDING SYSTEM VARIABLES
+
+array_shoot_count = 0 // this can be reset because it counts the amount of times a bullet is fired for both recording and re-using
+
+x_inactive_count = 1
+array_x_count = 0
+
+y_inactive_count = 1
+array_y_count = 0
+
+
+// BEGIN THE RECORDING SYSTEM VARIABLES
 
 if array_shoot_count != array_length_1d(array_shoot)-1 // if the array has not reached the end
 {
@@ -257,8 +379,12 @@ if array_shoot_count != array_length_1d(array_shoot)-1 // if the array has not r
     // the -1 will remove the delay from calling this alarm 1/60th of a second late
 }
 
+// start the countdown until movement
+if array_length_1d(array_x_inactive) &gt; 1 // not 0 because any declared array has a size of 1
+{alarm[2] = array_x_inactive[1]-1} // X
 
-
+if array_length_1d(array_y_inactive) &gt; 1
+{alarm[3] = array_y_inactive[1]-1}
 
 
 </string>
@@ -283,65 +409,22 @@ if array_shoot_count != array_length_1d(array_shoot)-1 // if the array has not r
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-// if this object is the one currently recording the obj_player_current object, don't draw anything
-if is_recording == false
+            <string>    
+if is_alive == true
 {
-    
-    if is_alive == true
-    {
-        // draw the arrow of a recorded player
-        draw_sprite_ext(spr_arrow,0,x+lengthdir_x(len-12,image_angle2),y+lengthdir_y(len-12,image_angle2),image_xscale,image_yscale,image_angle2,image_blend,image_alpha)
-    }
-    
-    draw_self()
-
-        /**** old recording stuff
-        if stop_counter = false {counter += 1} // stop counter if player walks into wall
-    
-        // set the x/y position to the values stored in the array (values recorded)
-        x = array_x[counter]
-        y = array_y[counter]
-        image_angle2 = array_angle[counter] // angle the recorded player
-        
-        // create bullet when the recorded player fired a shot
-        if array_shoot[counter] == true {shoot()}
-        ************/
-
+    // draw the arrow of a recorded player
+    draw_sprite_ext(spr_arrow,0,x+lengthdir_x(len-12,image_angle2),y+lengthdir_y(len-12,image_angle2),image_xscale,image_yscale,image_angle2,image_blend,image_alpha)
 }
 
+draw_self()
+
+
 // debug shit
-
-draw_sprite(spr_turret_barrel,0,x,y)
-
-draw_text(x,y,"record: " +string(is_recording))
-draw_text(x,y+16,"alive: " +string(is_alive))
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="16">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///event_user0
-event_user(0) // reset variables!
+if global.debug_player
+{
+    draw_text(x,y,"id: " +string(id))
+//draw_text(x,y+16,"alive: " +string(is_alive))
+}
 
 </string>
           </argument>

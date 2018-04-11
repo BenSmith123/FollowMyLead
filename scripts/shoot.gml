@@ -7,7 +7,7 @@ if can_shoot = true
     last_shot = global.counter // the count of the last shot fired
     has_fired = true
     
-    global.error_msg = global.counter
+    print_debug("current shot at: "+string(global.counter))
     
     idd = instance_create(x+lengthdir_x(len,image_angle2),y+lengthdir_y(len,image_angle2),obj_bullet_player)
     idd.direction = image_angle2

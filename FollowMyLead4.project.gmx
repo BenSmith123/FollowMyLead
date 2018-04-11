@@ -2,7 +2,7 @@
 <assets>
   <Configs name="configs">
     <Config>Configs\Default</Config>
-    <Config>Configs\Mobile</Config>
+    <Config>Configs\Windows</Config>
   </Configs>
   <NewExtensions>
     <extension index="0">extensions\Virtual Joysticks</extension>
@@ -81,6 +81,11 @@
     <sprite>sprites\spr_health_boost</sprite>
     <sprite>sprites\sprite55</sprite>
     <sprite>sprites\sprite56</sprite>
+    <sprite>sprites\spr_debug_button</sprite>
+    <sprite>sprites\spr_button_debug</sprite>
+    <sprite>sprites\spr_button_back</sprite>
+    <sprite>sprites\spr_feedback_email</sprite>
+    <sprite>sprites\spr_debug_next_level</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -97,8 +102,6 @@
     <script>scripts\scr_camera.gml</script>
     <script>scripts\scr_debug_msg.gml</script>
     <script>scripts\scr_controls.gml</script>
-    <script>scripts\controls_origional.gml</script>
-    <script>scripts\scr_joystick_controls.gml</script>
     <script>scripts\create_placeholder.gml</script>
     <script>scripts\particle_effects.gml</script>
     <script>scripts\scr_text1.gml</script>
@@ -142,6 +145,8 @@
     <script>scripts\scr_auto_shoot_enemy.gml</script>
     <script>scripts\scr_room_enable_camera.gml</script>
     <script>scripts\GUIDE_new_recording.gml</script>
+    <script>scripts\print_debug.gml</script>
+    <script>scripts\scr_next_iteration.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_arial_1</font>
@@ -150,9 +155,10 @@
     <object>objects\obj_controller</object>
     <object>objects\obj_online_message</object>
     <object>objects\obj_controller_playable</object>
+    <object>objects\parent_player</object>
     <object>objects\obj_player_current</object>
     <object>objects\obj_player_clone</object>
-    <object>objects\parent_player</object>
+    <object>objects\obj_player_recorder</object>
     <object>objects\original_backup</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_wall_breakable</object>
@@ -206,11 +212,26 @@
     <object>objects\obj_speed_boost</object>
     <object>objects\obj_health_boost</object>
     <object>objects\obj_player_dead</object>
+    <objects name="debug">
+      <object>objects\obj_debug_info</object>
+      <object>objects\parent_debug_button</object>
+      <object>objects\obj_debug_time</object>
+      <object>objects\obj_debug_toggle_debug</object>
+      <object>objects\obj_debug_instant_aim</object>
+      <object>objects\obj_debug_performance</object>
+      <object>objects\obj_debug_player_info</object>
+      <object>objects\obj_button_back</object>
+    </objects>
+    <object>objects\obj_feedback_email</object>
+    <object>objects\obj_get_server_msg</object>
+    <object>objects\obj_get_server_log</object>
+    <object>objects\obj_debug_next_level</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_menu</room>
+    <room>rooms\room_about</room>
+    <room>rooms\room_test_1</room>
     <room>rooms\room_level_1</room>
-    <room>rooms\room4</room>
     <room>rooms\room2</room>
     <room>rooms\rm_example</room>
   </rooms>

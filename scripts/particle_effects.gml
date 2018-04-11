@@ -3,7 +3,6 @@
 // CREATE FX: part_particles_create(global.p_general,x,y,global.meteor_fx,1)
 
 
-
 global.fx = part_system_create()
 part_system_depth(global.fx,-5800)
 

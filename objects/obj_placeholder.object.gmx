@@ -33,7 +33,7 @@ placeholder_object = 0 // set by create_placeholder script
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="16">
+    <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -50,7 +50,7 @@ placeholder_object = 0 // set by create_placeholder script
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>/// new iteration! create placed object
 instance_create(x,y,placeholder_object)
 instance_destroy()
 

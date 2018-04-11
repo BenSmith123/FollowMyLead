@@ -15,7 +15,7 @@ view_hview[0] = HEIGHT
 
 if IS_WINDOWS 
 {
-    window_set_fullscreen(true) // debug
+    //window_set_fullscreen(true)
     window_set_size(WIDTH,HEIGHT)
 }
 

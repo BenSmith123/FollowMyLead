@@ -40,6 +40,8 @@ alarm[0] = FOOTSTEP_TIME // create a "footstep"
 
 instance_create(x,y,obj_life_bar) // NEEDS CONFIGURING TO OBJ_PLAYER_CURRENT
 
+vstick[1,8] = 0 // reset the angle of the vstick
+
 /// initialise movement keys
 move_left = false
 move_right = false
@@ -49,7 +51,7 @@ move_attack = false
 
 has_fired = false
 
-image_angle2 = 90 // RECORDED (didn't use image_angle because it also changes the collision box, causing wall sticking etc)
+image_angle2 = 0 // RECORDED (didn't use image_angle because it also changes the collision box, causing wall sticking etc)
 
 // increment player count
 global.player_number += 1
@@ -59,9 +61,12 @@ number = global.player_number
 global.player_array[global.player_number] = id
 
 // create a clone object to record this play through
-clone = instance_create(x,y,obj_player_clone)
-clone.is_recording = true
-clone.player = id
+instance_create(x,y,obj_player_recorder)
+obj_player_recorder.player = id
+
+//clone = instance_create(x,y,obj_player_clone)
+//clone.is_recording = true
+//clone.player = id
 
 
 if IS_MOBILE
@@ -106,10 +111,9 @@ if IS_MOBILE
             <kind>1</kind>
             <string>/// create dead object
 
-clone.life_span = global.counter // set the clones lifespan
+obj_player_recorder.life_span = global.counter // set the recorders lifespan
 
-// replaces the current ID of this object in the array with the object that has recorded it
-global.player_array[global.player_number] = clone.id
+print_debug("------ Current player died at "+string(global.counter)+" ------")
 
 // dead body
 obj = instance_create(x,y,obj_player_dead)
@@ -243,12 +247,6 @@ scr_controls()
 
 if hp &lt;= 0 {instance_destroy()}
 
-// RECORDING: NEEDS FIXING
-/*
-array_shoot[counter] = false // set each step to false unless player has shot
-array_x[counter] = round(x)
-array_y[counter] = round(y)
-array_angle[counter] = round(image_angle2)
 
 </string>
           </argument>
@@ -288,7 +286,10 @@ if IS_MOBILE // mobile
 else
 {dir = point_direction(x,y,mouse_x,mouse_y)} // windows version
 
-image_angle2 = (image_angle2+(sin(degtorad(dir-image_angle2)) * 7)) // 7 = reaction time
+if global.instant_aim {image_angle2 = dir} // no aim delay from the virtual stick
+else
+{image_angle2 = (image_angle2+(sin(degtorad(dir-image_angle2)) * 7))} // 7 = reaction time
+
 //image_angle2 = point_direction(xprevious,yprevious,x,y) // point the way you're walking
 
 x = round(x)
@@ -301,9 +302,10 @@ draw_self()
 
 
 
-/*
-draw_text(x-60,y+40,temp)
-draw_text(x-60,y+60,image_angle2)
+// DEBUG STUFF 
+
+//draw_text(x-60,y+40,vstick_get_direction(1))
+//draw_text(x-60,y+60,image_angle2)
 
 
 /*
@@ -319,143 +321,6 @@ draw_text(x-60,y,"x"+string(x))
 draw_text(x-60,y+20,"y"+string(y))
 
 draw_text(x-60,y+40,state)
-
-
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// origonal code
-/*
-// add colours to each player
-if global.final_playthrough = true
-{
-    draw_text(x,y,number)
-    sprite_index = spr_player_current
-}
-
-image_index = number-1 // colour the current player
-
-// draw the write pointer if the player is currently playing
-if record_me = true 
-{draw_sprite_ext(spr_pointer,0,x+lengthdir_x(len-12,image_angle2),y+lengthdir_y(len-12,image_angle2),image_xscale,image_yscale,image_angle2,image_blend,image_alpha)} 
-
-draw_self()
-
-
-x = round(x)
-y = round(y) 
-
-
-if state = PLAYER_STATE.is_alive
-{
-
-//////////// RECORDING OF THE PLAYER ////////////
-    if record_me = false
-    {
-        // draw the arrow of a recorded player
-        draw_sprite_ext(spr_arrow,0,x+lengthdir_x(len-12,image_angle2),y+lengthdir_y(len-12,image_angle2),image_xscale,image_yscale,image_angle2,image_blend,image_alpha)
-    
-        if counter &lt; counter_max // if the recording has NOT ended
-        {
-            if stop_counter = false {counter += 1} // stop counter if player walks into wall
-        
-            // set the x/y position to the values stored in the array (values recorded)
-            x = array_x[counter]
-            y = array_y[counter]
-            image_angle2 = array_angle[counter] // angle the recorded player
-            
-            // create bullet when the recorded player fired a shot
-            if array_shoot[counter] = true {shoot()}
-        }
-        else
-        {
-            // if the recording has ended, kill the player
-            record_end = true // change the death sprite 
-            state = PLAYER_STATE.is_dead
-        } 
-        
-    }
-    else //////////// CURRENT PLAYER PLAYING ////////////
-    {    
-    
-        stop_counter = false // never stop counter if player is playing
-        counter += 1
-        counter_max = counter
-        
-        array_shoot[counter] = false // set each step to false unless player has shot
-        
-        array_x[counter] = round(x)
-        array_y[counter] = round(y)
-        
-        //image_angle2 = point_direction(xprevious,yprevious,x,y) // point the way you're walking
-        
-        // point at mouse
-        if IS_MOBILE 
-        {
-            dir = vstick_get_direction(1)
-            if global.auto_target == true {scr_player_get_closest_enemy()}
-        }
-        else
-        {dir = point_direction(x,y,mouse_x,mouse_y)}
-        
-        if image_angle2 &gt;= 360 {image_angle2 = 0}
-        if image_angle2 &lt; 0 {image_angle2 = 360}
-        
-        image_angle2 = (image_angle2+(sin(degtorad(dir-image_angle2))*7)) // 7 = reaction time
-        //idd = instance_create(x+lengthdir_x(Len,Angle+image_angle),y+lengthdir_y(Len,Angle+image_angle),obj_bullet)
-    
-        array_angle[counter] = round(image_angle2)
-        
-        // if the recording has come to an end
-        if counter = MAX_ARRAY_SIZE 
-        {
-            record_end = true // change the death sprite 
-            state = PLAYER_STATE.is_dead
-        }
-    
-    }
-}
-
-/*
-draw_text(x-60,y+40,temp)
-draw_text(x-60,y+60,image_angle2)
-
-
-/*
-if target_enemy != 0
-{draw_text(target_enemy.x,target_enemy.y,"LOCKED HERE")}
-
-/*
-// debug - delete
-draw_text(x-60,y-40,counter)
-draw_text(x-60,y-20,number)
-
-draw_text(x-60,y,"x"+string(x))
-draw_text(x-60,y+20,"y"+string(y))
-
-draw_text(x-60,y+40,state)
-
-
 
 
 

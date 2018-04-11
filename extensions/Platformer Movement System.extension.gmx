@@ -27,7 +27,7 @@
     <Config name="Default">
       <CopyToMask>105553895391470</CopyToMask>
     </Config>
-    <Config name="Mobile">
+    <Config name="Windows">
       <CopyToMask>9223372036854775807</CopyToMask>
     </Config>
   </ConfigOptions>

@@ -165,19 +165,23 @@ room_speed = 60
             <kind>1</kind>
             <string>/// debug mode text
 
-scr_text1() 
+/*
 
-// temp - move down
-   x2 = 10
-//draw_text(x2,40,"FPS: "+string(fps))
-draw_text(x2,60,global.error_msg)
 
 if global.debug = true
 {  
- 
-    draw_text(x2,20,"DEBUG MODE")
-
+    scr_text1() 
     
+    draw_text(20,15,"FPS: "+string(fps))
+    draw_text(20,30,"Counter: "+string(global.counter))
+    
+    // loop through the error message array and display all strings
+    for(i = 0; i &lt; global.error_log_size; i++)
+    {
+        draw_text(20,45+(i*20),"["+string(i)+"] "+ string(global.error_msg[i]))
+    }
+
+    /*
     draw_text(x2,80,"
     F12 = Restart Game
     &lt;I&gt; = Toggle debug mode
@@ -188,6 +192,7 @@ if global.debug = true
     ASDW / Arrow key movement
     Space / left-click to shoot
     ")
+    
 
 }
 </string>

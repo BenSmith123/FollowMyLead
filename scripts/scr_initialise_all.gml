@@ -2,12 +2,20 @@
 
 global.user = "GM"
 global.debug = true
+global.debug_performance = false
+global.debug_player = true
 global.overall_view = true
-global.version = 1.1
+global.version = 1.0
 
-global.error_msg = ""
+if IS_MOBILE {global.system = "Mobile"}
+else {global.system = "Windows"}
 
-alarm[0] = 600 // turn off debug mode
+global.error_msg[0] = ""
+global.error_log_size = 0
+
+global.instant_aim = false
+
+//alarm[0] = 600 // turn off debug mode
 
 global.player_number = 0 // start off as the first player
 

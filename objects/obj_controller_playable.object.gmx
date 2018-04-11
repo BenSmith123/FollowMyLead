@@ -32,6 +32,8 @@ instance_create(0,0,obj_pause_button)
 instance_create(0,0,obj_next_step)
 instance_create(0,0,obj_button_auto_target)
 
+if global.debug_performance {show_debug_overlay(true)}
+
 global.counter = 1 // counter for recorded players to use
 MAX_ARRAY_SIZE = 3600
 
@@ -87,7 +89,7 @@ else
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="10">
+    <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -104,29 +106,9 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Reset for next iteration
-
-with (obj_footstep) instance_destroy() // delete all footsteps
-with (obj_player_current) instance_destroy() // delete the current player
-with (obj_player_dead) instance_destroy() // delete all dead bodies
-
-global.counter = 1
-
-if global.player_spawn_x &gt; 1420
-{
-    global.player_spawn_x = 896
-    global.player_spawn_y += 100
-} 
-else 
-{global.player_spawn_x += 100} // increase the spawn x position for each player
-
-
-// CREATE NEW PLAYER OBJECT
-instance_create(global.player_spawn_x,global.player_spawn_y,obj_player_current) 
-
-
-
-
+            <string>/// center camera on first player
+view_xview[0] = obj_player_current.x - (WIDTH / 2)
+view_yview[0] = obj_player_current.y - (HEIGHT / 2)
 </string>
           </argument>
         </arguments>
@@ -151,11 +133,45 @@ instance_create(global.player_spawn_x,global.player_spawn_y,obj_player_current)
             <kind>1</kind>
             <string>/// debug 
 
-scr_text1()
-draw_set_halign(fa_right)
+if global.debug_performance
+{
+    scr_text1()
+    draw_set_halign(fa_right)
+    
+    draw_text(WIDTH-20,80,"Cycle time: "+string(fps))
+    
+    draw_text(WIDTH-20,100,"FPS: "+string(fps_real))
+    
+}
 
-draw_text(WIDTH-14,14,global.counter)
 
+if global.debug = true
+{  
+    scr_text1() 
+    
+    
+    draw_text(20,15,"Counter: "+string(global.counter))
+    
+    // loop through the error message array and display all strings
+    for(i = 0; i &lt; global.error_log_size; i++)
+    {
+        draw_text(20,45+(i*20),"["+string(i)+"] "+ string(global.error_msg[i]))
+    }
+
+    /*
+    draw_text(x2,80,"
+    F12 = Restart Game
+    &lt;I&gt; = Toggle debug mode
+    &lt;P&gt; = Final playthrough
+    &lt;SHIFT&gt; Next iteration
+    
+    --- Controls ---
+    ASDW / Arrow key movement
+    Space / left-click to shoot
+    ")
+    */
+
+}
 </string>
           </argument>
         </arguments>
@@ -164,25 +180,41 @@ draw_text(WIDTH-14,14,global.counter)
     <event eventtype="9" enumb="16">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>///event_user(0)
-event_user(0)
-
-
-</string>
+            <kind>9</kind>
+            <script>scr_next_iteration</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>

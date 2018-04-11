@@ -108,7 +108,7 @@ can_shoot = true
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="16">
+    <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -125,7 +125,7 @@ can_shoot = true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>/// new iteration! destroy self
 is_alive = false
 instance_destroy()
 
