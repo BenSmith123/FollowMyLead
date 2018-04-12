@@ -28,10 +28,14 @@
             <string>
 text = "System: " + global.system+"
 User: "+global.user +"
+
 Debugging: "+string(global.debug)+"
 Performance Test: "+string(global.debug_performance)+"
 Player debugging: " +string(global.debug_player)+"
-Instant Aim: "+string(global.instant_aim)
+Player data output: " +string(global.debug_array_output)+"
+
+Instant Aim: "+string(global.instant_aim)+"
+Invincibility: "+string(global.debug_invincible)
 
 
 //Resolution: "+string(WIDTH) + "x" +string(HEIGHT)

@@ -820,7 +820,6 @@
     <instance objName="obj_ai_3" x="1600" y="1888" name="inst_A5B0118F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ai_2" x="160" y="1696" name="inst_1BB0EAF6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ai_2" x="224" y="1792" name="inst_D408EB6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_block_explosive" x="864" y="1024" name="inst_CEF77AA5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_explosive" x="512" y="1088" name="inst_748E0735" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_turret_angle_left" x="448" y="1248" name="inst_46E6C2DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_turret_angle_up" x="224" y="1344" name="inst_6FDFBB02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

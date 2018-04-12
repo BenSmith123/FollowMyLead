@@ -28,6 +28,7 @@
             <string>/// variables shared by both current and clone players
 
 max_hp = 2
+if global.debug_invincible {max_hp = 1000}
 hp = max_hp
 bullet_speed = 16
 

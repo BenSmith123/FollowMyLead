@@ -6,7 +6,7 @@ target_player = 0 // refreshes when a player has died for the AI to target anoth
 if instance_exists(parent_player)
 {
     // go through array of players
-    for(i = 1; i <= instance_number(parent_player)-1; i++) // number of players alive minus the recording one
+    for(i = 1; i <= instance_number(parent_player); i++) // number of players alive minus the recording one
     {
         if instance_exists(global.player_array[i]) //global.player_array[i] != 0
         {

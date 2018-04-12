@@ -90,7 +90,8 @@ if i_d == msg
         {
             input_text = ds_map_find_value(async_load, "result");
             
-            show_message(input_text)
+            //show_message(input_text)
+            keyboard_close()
             
             post = http_post_string("https://api.sendgrid.com/api/mail.send.json",
             "api_user=benjiiman123&amp;api_key=SendGrid34&amp;to=benjiiman12@gmail.com&amp;toname=Destination&amp;subject=FollowMyLead&amp;text="+ input_text +"&amp;from=friendlyfruit@hotmail.com")

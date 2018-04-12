@@ -27,7 +27,9 @@
             <kind>1</kind>
             <string>
 event_inherited()
-global.debug_performance = !global.debug_performance
+global.debug_array_output = !global.debug_array_output
+
+
 </string>
           </argument>
         </arguments>
@@ -53,9 +55,9 @@ global.debug_performance = !global.debug_performance
             <string>
 event_inherited()
 
-image_index = global.debug_performance
+image_index = global.debug_array_output
 
-text = "Toggle performance testing"
+text = "Player data output"
 </string>
           </argument>
         </arguments>

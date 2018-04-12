@@ -290,15 +290,28 @@ if is_alive == true
 {
     if move_x == true // this is turned on/off via alarm2
     {
-        x = array_x[array_x_count] // set x to the number stored in the x_array
-        array_x_count++ // increment through the array
+        if array_x_count &lt; array_length_1d(array_x)// DEBUG TO AVOID CRASH - try figure out the crash and remove this
+        {
+            x = array_x[array_x_count] // set x to the number stored in the x_array
+            array_x_count++ // increment through the array
+        }
+        else // DEBUG
+        {show_message(string(id) + " x array has gone out of bounds!")} // DEBUG TO AVOID CRASH
     }
     
+    //if show_question("Continue to next room?") {room_goto(rm_Level2)}else {game_end()}
     if move_y == true
     {
-        y = array_y[array_y_count]
-        array_y_count++
+        if array_y_count &lt; array_length_1d(array_y)// DEBUG TO AVOID CRASH - try figure out the crash and remove this
+        {
+            y = array_y[array_y_count]
+            array_y_count++
+        }
+        else // DEBUG
+        {show_message(string(id) + " y array has gone out of bounds!")} // DEBUG TO AVOID CRASH
     }
+
+    
     
     if move_angle == true
     {
@@ -363,9 +376,11 @@ sprite_index = spr_player_recorded
 
 array_shoot_count = 0 // this can be reset because it counts the amount of times a bullet is fired for both recording and re-using
 
+move_x = false
 x_inactive_count = 1
 array_x_count = 0
 
+move_y = false
 y_inactive_count = 1
 array_y_count = 0
 

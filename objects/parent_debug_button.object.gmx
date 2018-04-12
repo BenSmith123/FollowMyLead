@@ -8,7 +8,30 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="6" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_index = !image_index
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -26,6 +49,8 @@
           <argument>
             <kind>1</kind>
             <string>
+invert_index = false
+
 image_speed = 0
 
 text = ""
@@ -52,13 +77,32 @@ text = ""
           <argument>
             <kind>1</kind>
             <string>
-draw_self()
+if invert_index == false
+{
+    draw_sprite(sprite_index,image_index,x,y)
+    
+    if image_index == 0
+    {draw_set_colour(c_white)}
+    else
+    {draw_set_colour(c_black)}
+}
+else
+{
+    draw_sprite(sprite_index,!image_index,x,y)
 
-draw_set_colour(c_black)
+    if image_index == 0
+    {draw_set_colour(c_black)}
+    else
+    {draw_set_colour(c_white)}
+}
+
+
+
 draw_set_halign(fa_center)
 draw_set_valign(fa_center)
 
 draw_text(x,y,text)
+
 </string>
           </argument>
         </arguments>

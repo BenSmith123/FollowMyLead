@@ -41,12 +41,12 @@
     <option_android_google_tracking_id></option_android_google_tracking_id>
     <option_android_iap_suppress_toast>false</option_android_iap_suppress_toast>
     <option_android_icade_support>-1</option_android_icade_support>
-    <option_android_icon_hdpi>Configs\Mobile\android\icons\icon_hdpi.png</option_android_icon_hdpi>
-    <option_android_icon_ldpi>Configs\Mobile\android\icons\icon_ldpi.png</option_android_icon_ldpi>
-    <option_android_icon_mdpi>Configs\Mobile\android\icons\icon_mdpi.png</option_android_icon_mdpi>
-    <option_android_icon_xhdpi>Configs\Mobile\android\icons\icon_xhdpi.png</option_android_icon_xhdpi>
-    <option_android_icon_xxhdpi>Configs\Mobile\android\icons\icon_xxhdpi.png</option_android_icon_xxhdpi>
-    <option_android_icon_xxxhdpi>Configs\Mobile\android\icons\icon_xxxhdpi.png</option_android_icon_xxxhdpi>
+    <option_android_icon_hdpi>Configs\Windows\android\icons\icon_hdpi.png</option_android_icon_hdpi>
+    <option_android_icon_ldpi>Configs\Windows\android\icons\icon_ldpi.png</option_android_icon_ldpi>
+    <option_android_icon_mdpi>Configs\Windows\android\icons\icon_mdpi.png</option_android_icon_mdpi>
+    <option_android_icon_xhdpi>Configs\Windows\android\icons\icon_xhdpi.png</option_android_icon_xhdpi>
+    <option_android_icon_xxhdpi>Configs\Windows\android\icons\icon_xxhdpi.png</option_android_icon_xxhdpi>
+    <option_android_icon_xxxhdpi>Configs\Windows\android\icons\icon_xxxhdpi.png</option_android_icon_xxxhdpi>
     <option_android_install_location>auto</option_android_install_location>
     <option_android_interpolate>-1</option_android_interpolate>
     <option_android_licensing_enable>0</option_android_licensing_enable>
@@ -63,7 +63,7 @@
     <option_android_orient_portrait>True</option_android_orient_portrait>
     <option_android_orient_portrait_flipped>True</option_android_orient_portrait_flipped>
     <option_android_orientation>2</option_android_orientation>
-    <option_android_ouya_icon>Configs\Mobile\android\icons\ouyaIcon.png</option_android_ouya_icon>
+    <option_android_ouya_icon>Configs\Windows\android\icons\ouyaIcon.png</option_android_ouya_icon>
     <option_android_package_company>companyname</option_android_package_company>
     <option_android_package_domain>com</option_android_package_domain>
     <option_android_package_product>FollowMyLead</option_android_package_product>
@@ -71,13 +71,13 @@
     <option_android_pocketchange_enable>0</option_android_pocketchange_enable>
     <option_android_pocketchange_id></option_android_pocketchange_id>
     <option_android_pocketchange_test_enable>0</option_android_pocketchange_test_enable>
-    <option_android_portrait_splash_png>Configs\Mobile\android\portrait_splash.png</option_android_portrait_splash_png>
+    <option_android_portrait_splash_png>Configs\Windows\android\portrait_splash.png</option_android_portrait_splash_png>
     <option_android_push_enable>0</option_android_push_enable>
     <option_android_push_id></option_android_push_id>
     <option_android_scale>-1</option_android_scale>
     <option_android_set_device_id></option_android_set_device_id>
     <option_android_sleep_margin>4</option_android_sleep_margin>
-    <option_android_splash_png>Configs\Mobile\android\splash.png</option_android_splash_png>
+    <option_android_splash_png>Configs\Windows\android\splash.png</option_android_splash_png>
     <option_android_splash_time>0</option_android_splash_time>
     <option_android_support_lib_version>23.1.1</option_android_support_lib_version>
     <option_android_target_sdk_version>23</option_android_target_sdk_version>
@@ -100,8 +100,8 @@
     <option_androidfire_arch_mipsr2>false</option_androidfire_arch_mipsr2>
     <option_androidfire_arch_mipsr2sf>false</option_androidfire_arch_mipsr2sf>
     <option_androidfire_arch_x86>True</option_androidfire_arch_x86>
-    <option_androidfire_background_png>Configs\Mobile\amazonfire\icons\background.png</option_androidfire_background_png>
-    <option_androidfire_banner_png>Configs\Mobile\amazonfire\icons\banner.png</option_androidfire_banner_png>
+    <option_androidfire_background_png>Configs\Windows\amazonfire\icons\background.png</option_androidfire_background_png>
+    <option_androidfire_banner_png>Configs\Windows\amazonfire\icons\banner.png</option_androidfire_banner_png>
     <option_androidfire_build_tools_version>23.0.1</option_androidfire_build_tools_version>
     <option_androidfire_build_version>0</option_androidfire_build_version>
     <option_androidfire_color_depth>0</option_androidfire_color_depth>
@@ -115,16 +115,16 @@
     <option_androidfire_google_play_cloud_save_enable>0</option_androidfire_google_play_cloud_save_enable>
     <option_androidfire_google_play_id></option_androidfire_google_play_id>
     <option_androidfire_iap_suppress_toast>false</option_androidfire_iap_suppress_toast>
-    <option_androidfire_icon_hdpi>Configs\Mobile\amazonfire\icons\icon_hdpi.png</option_androidfire_icon_hdpi>
-    <option_androidfire_icon_ldpi>Configs\Mobile\amazonfire\icons\icon_ldpi.png</option_androidfire_icon_ldpi>
-    <option_androidfire_icon_mdpi>Configs\Mobile\amazonfire\icons\icon_mdpi.png</option_androidfire_icon_mdpi>
-    <option_androidfire_icon_xhdpi>Configs\Mobile\amazonfire\icons\icon_xhdpi.png</option_androidfire_icon_xhdpi>
-    <option_androidfire_icon_xxhdpi>Configs\Mobile\amazonfire\icons\icon_xxhdpi.png</option_androidfire_icon_xxhdpi>
-    <option_androidfire_icon_xxxhdpi>Configs\Mobile\amazonfire\icons\icon_xxxhdpi.png</option_androidfire_icon_xxxhdpi>
+    <option_androidfire_icon_hdpi>Configs\Windows\amazonfire\icons\icon_hdpi.png</option_androidfire_icon_hdpi>
+    <option_androidfire_icon_ldpi>Configs\Windows\amazonfire\icons\icon_ldpi.png</option_androidfire_icon_ldpi>
+    <option_androidfire_icon_mdpi>Configs\Windows\amazonfire\icons\icon_mdpi.png</option_androidfire_icon_mdpi>
+    <option_androidfire_icon_xhdpi>Configs\Windows\amazonfire\icons\icon_xhdpi.png</option_androidfire_icon_xhdpi>
+    <option_androidfire_icon_xxhdpi>Configs\Windows\amazonfire\icons\icon_xxhdpi.png</option_androidfire_icon_xxhdpi>
+    <option_androidfire_icon_xxxhdpi>Configs\Windows\amazonfire\icons\icon_xxxhdpi.png</option_androidfire_icon_xxxhdpi>
     <option_androidfire_install_location>auto</option_androidfire_install_location>
     <option_androidfire_interpolate>true</option_androidfire_interpolate>
     <option_androidfire_isgame>true</option_androidfire_isgame>
-    <option_androidfire_large_icon_png>Configs\Mobile\amazonfire\icons\large_icon.png</option_androidfire_large_icon_png>
+    <option_androidfire_large_icon_png>Configs\Windows\amazonfire\icons\large_icon.png</option_androidfire_large_icon_png>
     <option_androidfire_licensing_enable>false</option_androidfire_licensing_enable>
     <option_androidfire_licensing_key></option_androidfire_licensing_key>
     <option_androidfire_lint>0</option_androidfire_lint>
@@ -140,13 +140,13 @@
     <option_androidfire_package_domain>com</option_androidfire_package_domain>
     <option_androidfire_package_product>FollowMyLead2</option_androidfire_package_product>
     <option_androidfire_permission_flags>8</option_androidfire_permission_flags>
-    <option_androidfire_portrait_splash_png>Configs\Mobile\amazonfire\portrait_splash.png</option_androidfire_portrait_splash_png>
+    <option_androidfire_portrait_splash_png>Configs\Windows\amazonfire\portrait_splash.png</option_androidfire_portrait_splash_png>
     <option_androidfire_push_enable>0</option_androidfire_push_enable>
     <option_androidfire_push_id></option_androidfire_push_id>
     <option_androidfire_scale>-1</option_androidfire_scale>
     <option_androidfire_set_device_id></option_androidfire_set_device_id>
-    <option_androidfire_small_icon_png>Configs\Mobile\amazonfire\icons\small_icon.png</option_androidfire_small_icon_png>
-    <option_androidfire_splash_png>Configs\Mobile\amazonfire\splash.png</option_androidfire_splash_png>
+    <option_androidfire_small_icon_png>Configs\Windows\amazonfire\icons\small_icon.png</option_androidfire_small_icon_png>
+    <option_androidfire_splash_png>Configs\Windows\amazonfire\splash.png</option_androidfire_splash_png>
     <option_androidfire_splash_time>0</option_androidfire_splash_time>
     <option_androidfire_support_lib_version>23.1.1</option_androidfire_support_lib_version>
     <option_androidfire_target_sdk_version>23</option_androidfire_target_sdk_version>
@@ -169,8 +169,8 @@
     <option_androidtv_arch_mipsr2>false</option_androidtv_arch_mipsr2>
     <option_androidtv_arch_mipsr2sf>false</option_androidtv_arch_mipsr2sf>
     <option_androidtv_arch_x86>True</option_androidtv_arch_x86>
-    <option_androidtv_background_png>Configs\Mobile\androidtv\icons\background.png</option_androidtv_background_png>
-    <option_androidtv_banner_png>Configs\Mobile\androidtv\icons\banner.png</option_androidtv_banner_png>
+    <option_androidtv_background_png>Configs\Windows\androidtv\icons\background.png</option_androidtv_background_png>
+    <option_androidtv_banner_png>Configs\Windows\androidtv\icons\banner.png</option_androidtv_banner_png>
     <option_androidtv_build_tools_version>23.0.1</option_androidtv_build_tools_version>
     <option_androidtv_build_version>0</option_androidtv_build_version>
     <option_androidtv_color_depth>0</option_androidtv_color_depth>
@@ -184,16 +184,16 @@
     <option_androidtv_google_play_cloud_save_enable>0</option_androidtv_google_play_cloud_save_enable>
     <option_androidtv_google_play_id></option_androidtv_google_play_id>
     <option_androidtv_iap_suppress_toast>false</option_androidtv_iap_suppress_toast>
-    <option_androidtv_icon_hdpi>Configs\Mobile\androidtv\icons\icon_hdpi.png</option_androidtv_icon_hdpi>
-    <option_androidtv_icon_ldpi>Configs\Mobile\androidtv\icons\icon_ldpi.png</option_androidtv_icon_ldpi>
-    <option_androidtv_icon_mdpi>Configs\Mobile\androidtv\icons\icon_mdpi.png</option_androidtv_icon_mdpi>
-    <option_androidtv_icon_xhdpi>Configs\Mobile\androidtv\icons\icon_xhdpi.png</option_androidtv_icon_xhdpi>
-    <option_androidtv_icon_xxhdpi>Configs\Mobile\androidtv\icons\icon_xxhdpi.png</option_androidtv_icon_xxhdpi>
-    <option_androidtv_icon_xxxhdpi>Configs\Mobile\androidtv\icons\icon_xxxhdpi.png</option_androidtv_icon_xxxhdpi>
+    <option_androidtv_icon_hdpi>Configs\Windows\androidtv\icons\icon_hdpi.png</option_androidtv_icon_hdpi>
+    <option_androidtv_icon_ldpi>Configs\Windows\androidtv\icons\icon_ldpi.png</option_androidtv_icon_ldpi>
+    <option_androidtv_icon_mdpi>Configs\Windows\androidtv\icons\icon_mdpi.png</option_androidtv_icon_mdpi>
+    <option_androidtv_icon_xhdpi>Configs\Windows\androidtv\icons\icon_xhdpi.png</option_androidtv_icon_xhdpi>
+    <option_androidtv_icon_xxhdpi>Configs\Windows\androidtv\icons\icon_xxhdpi.png</option_androidtv_icon_xxhdpi>
+    <option_androidtv_icon_xxxhdpi>Configs\Windows\androidtv\icons\icon_xxxhdpi.png</option_androidtv_icon_xxxhdpi>
     <option_androidtv_install_location>auto</option_androidtv_install_location>
     <option_androidtv_interpolate>true</option_androidtv_interpolate>
     <option_androidtv_isgame>-1</option_androidtv_isgame>
-    <option_androidtv_large_icon_png>Configs\Mobile\androidtv\icons\large_icon.png</option_androidtv_large_icon_png>
+    <option_androidtv_large_icon_png>Configs\Windows\androidtv\icons\large_icon.png</option_androidtv_large_icon_png>
     <option_androidtv_licensing_enable>0</option_androidtv_licensing_enable>
     <option_androidtv_licensing_key></option_androidtv_licensing_key>
     <option_androidtv_lint>-1</option_androidtv_lint>
@@ -208,8 +208,8 @@
     <option_androidtv_push_id></option_androidtv_push_id>
     <option_androidtv_scale>-1</option_androidtv_scale>
     <option_androidtv_set_device_id></option_androidtv_set_device_id>
-    <option_androidtv_small_icon_png>Configs\Mobile\androidtv\icons\small_icon.png</option_androidtv_small_icon_png>
-    <option_androidtv_splash_png>Configs\Mobile\androidtv\splash.png</option_androidtv_splash_png>
+    <option_androidtv_small_icon_png>Configs\Windows\androidtv\icons\small_icon.png</option_androidtv_small_icon_png>
+    <option_androidtv_splash_png>Configs\Windows\androidtv\splash.png</option_androidtv_splash_png>
     <option_androidtv_support_lib_version>23.1.1</option_androidtv_support_lib_version>
     <option_androidtv_texture_page>1024</option_androidtv_texture_page>
     <option_androidtv_use_test_ads>false</option_androidtv_use_test_ads>
@@ -256,7 +256,7 @@
     <option_html5_generate_spotify_app>0</option_html5_generate_spotify_app>
     <option_html5_google_analytics_enable>0</option_html5_google_analytics_enable>
     <option_html5_google_tracking_id></option_html5_google_tracking_id>
-    <option_html5_icon>Configs\Mobile\html5\fav.ico</option_html5_icon>
+    <option_html5_icon>Configs\Windows\html5\fav.ico</option_html5_icon>
     <option_html5_index>-1</option_html5_index>
     <option_html5_interpolate>-1</option_html5_interpolate>
     <option_html5_jsprepend></option_html5_jsprepend>
@@ -266,7 +266,7 @@
     <option_html5_outputname>index.html</option_html5_outputname>
     <option_html5_scale>-1</option_html5_scale>
     <option_html5_showcursor>True</option_html5_showcursor>
-    <option_html5_splash_png>Configs\Mobile\html5\splash.png</option_html5_splash_png>
+    <option_html5_splash_png>Configs\Windows\html5\splash.png</option_html5_splash_png>
     <option_html5_texture_page>2048</option_html5_texture_page>
     <option_html5_use_test_ads>0</option_html5_use_test_ads>
     <option_html5_usebuiltinparticles>True</option_html5_usebuiltinparticles>
@@ -295,29 +295,29 @@
     <option_ios_google_play_id></option_ios_google_play_id>
     <option_ios_google_tracking_id></option_ios_google_tracking_id>
     <option_ios_half_ipad1_textures>0</option_ios_half_ipad1_textures>
-    <option_ios_icon_114>Configs\Mobile\ios\icons\icon114.png</option_ios_icon_114>
-    <option_ios_icon_120>Configs\Mobile\ios\icons\icon120.png</option_ios_icon_120>
-    <option_ios_icon_144>Configs\Mobile\ios\icons\icon144.png</option_ios_icon_144>
-    <option_ios_icon_152>Configs\Mobile\ios\icons\icon152.png</option_ios_icon_152>
-    <option_ios_icon_167>Configs\Mobile\ios\icons\icon167.png</option_ios_icon_167>
-    <option_ios_icon_57>Configs\Mobile\ios\icons\icon57.png</option_ios_icon_57>
-    <option_ios_icon_72>Configs\Mobile\ios\icons\icon72.png</option_ios_icon_72>
-    <option_ios_icon_76>Configs\Mobile\ios\icons\icon76.png</option_ios_icon_76>
+    <option_ios_icon_114>Configs\Windows\ios\icons\icon114.png</option_ios_icon_114>
+    <option_ios_icon_120>Configs\Windows\ios\icons\icon120.png</option_ios_icon_120>
+    <option_ios_icon_144>Configs\Windows\ios\icons\icon144.png</option_ios_icon_144>
+    <option_ios_icon_152>Configs\Windows\ios\icons\icon152.png</option_ios_icon_152>
+    <option_ios_icon_167>Configs\Windows\ios\icons\icon167.png</option_ios_icon_167>
+    <option_ios_icon_57>Configs\Windows\ios\icons\icon57.png</option_ios_icon_57>
+    <option_ios_icon_72>Configs\Windows\ios\icons\icon72.png</option_ios_icon_72>
+    <option_ios_icon_76>Configs\Windows\ios\icons\icon76.png</option_ios_icon_76>
     <option_ios_interpolate>-1</option_ios_interpolate>
-    <option_ios_ipad_retina_splash_png>Configs\Mobile\ios\iPadRetinasplash.png</option_ios_ipad_retina_splash_png>
-    <option_ios_ipad_retina_splash_portrait_png>Configs\Mobile\ios\iPadRetinasplashPortrait.png</option_ios_ipad_retina_splash_portrait_png>
-    <option_ios_ipad_splash_png>Configs\Mobile\ios\iPadsplash.png</option_ios_ipad_splash_png>
-    <option_ios_ipad_splash_portrait_png>Configs\Mobile\ios\iPadsplashPortrait.png</option_ios_ipad_splash_portrait_png>
-    <option_ios_iphone5_splash_png>Configs\Mobile\ios\iPhone5splash.png</option_ios_iphone5_splash_png>
-    <option_ios_iphone5_splash_portrait_png>Configs\Mobile\ios\iPhone5splashPortrait.png</option_ios_iphone5_splash_portrait_png>
-    <option_ios_iphone6_splash_png>Configs\Mobile\ios\iPhone6splash.png</option_ios_iphone6_splash_png>
-    <option_ios_iphone6_splash_portrait_png>Configs\Mobile\ios\iPhone6splashPortrait.png</option_ios_iphone6_splash_portrait_png>
-    <option_ios_iphone6plus_splash_png>Configs\Mobile\ios\iPhone6Plussplash.png</option_ios_iphone6plus_splash_png>
-    <option_ios_iphone6plus_splash_portrait_png>Configs\Mobile\ios\iPhone6PlussplashPortrait.png</option_ios_iphone6plus_splash_portrait_png>
-    <option_ios_iphone_retina_splash_png>Configs\Mobile\ios\IphoneRetinasplash.png</option_ios_iphone_retina_splash_png>
-    <option_ios_iphone_retina_splash_portrait_png>Configs\Mobile\ios\IphoneRetinasplashPortrait.png</option_ios_iphone_retina_splash_portrait_png>
-    <option_ios_iphone_splash_png>Configs\Mobile\ios\iPhonesplash.png</option_ios_iphone_splash_png>
-    <option_ios_iphone_splash_portrait_png>Configs\Mobile\ios\iPhonesplashPortrait.png</option_ios_iphone_splash_portrait_png>
+    <option_ios_ipad_retina_splash_png>Configs\Windows\ios\iPadRetinasplash.png</option_ios_ipad_retina_splash_png>
+    <option_ios_ipad_retina_splash_portrait_png>Configs\Windows\ios\iPadRetinasplashPortrait.png</option_ios_ipad_retina_splash_portrait_png>
+    <option_ios_ipad_splash_png>Configs\Windows\ios\iPadsplash.png</option_ios_ipad_splash_png>
+    <option_ios_ipad_splash_portrait_png>Configs\Windows\ios\iPadsplashPortrait.png</option_ios_ipad_splash_portrait_png>
+    <option_ios_iphone5_splash_png>Configs\Windows\ios\iPhone5splash.png</option_ios_iphone5_splash_png>
+    <option_ios_iphone5_splash_portrait_png>Configs\Windows\ios\iPhone5splashPortrait.png</option_ios_iphone5_splash_portrait_png>
+    <option_ios_iphone6_splash_png>Configs\Windows\ios\iPhone6splash.png</option_ios_iphone6_splash_png>
+    <option_ios_iphone6_splash_portrait_png>Configs\Windows\ios\iPhone6splashPortrait.png</option_ios_iphone6_splash_portrait_png>
+    <option_ios_iphone6plus_splash_png>Configs\Windows\ios\iPhone6Plussplash.png</option_ios_iphone6plus_splash_png>
+    <option_ios_iphone6plus_splash_portrait_png>Configs\Windows\ios\iPhone6PlussplashPortrait.png</option_ios_iphone6plus_splash_portrait_png>
+    <option_ios_iphone_retina_splash_png>Configs\Windows\ios\IphoneRetinasplash.png</option_ios_iphone_retina_splash_png>
+    <option_ios_iphone_retina_splash_portrait_png>Configs\Windows\ios\IphoneRetinasplashPortrait.png</option_ios_iphone_retina_splash_portrait_png>
+    <option_ios_iphone_splash_png>Configs\Windows\ios\iPhonesplash.png</option_ios_iphone_splash_png>
+    <option_ios_iphone_splash_portrait_png>Configs\Windows\ios\iPhonesplashPortrait.png</option_ios_iphone_splash_portrait_png>
     <option_ios_major_version>7</option_ios_major_version>
     <option_ios_minor_version>5</option_ios_minor_version>
     <option_ios_orient_landscape>-1</option_ios_orient_landscape>
@@ -328,7 +328,7 @@
     <option_ios_push_enable>0</option_ios_push_enable>
     <option_ios_scale>-1</option_ios_scale>
     <option_ios_set_device_id></option_ios_set_device_id>
-    <option_ios_splash_png>Configs\Mobile\ios\splash.png</option_ios_splash_png>
+    <option_ios_splash_png>Configs\Windows\ios\splash.png</option_ios_splash_png>
     <option_ios_splash_time>0</option_ios_splash_time>
     <option_ios_team_id>Ben Smith</option_ios_team_id>
     <option_ios_texture_page>1024</option_ios_texture_page>
@@ -338,7 +338,7 @@
     <option_linux_enable_steam>0</option_linux_enable_steam>
     <option_linux_fullscreen>0</option_linux_fullscreen>
     <option_linux_homepage>http://www.FollowMyLead2.com</option_linux_homepage>
-    <option_linux_icon>Configs\Mobile\linux\icon64.png</option_linux_icon>
+    <option_linux_icon>Configs\Windows\linux\icon64.png</option_linux_icon>
     <option_linux_interpolate>-1</option_linux_interpolate>
     <option_linux_long_desc>FollowMyLead2</option_linux_long_desc>
     <option_linux_maintainer_email></option_linux_maintainer_email>
@@ -346,7 +346,7 @@
     <option_linux_screenkey>-1</option_linux_screenkey>
     <option_linux_short_desc>FollowMyLead2</option_linux_short_desc>
     <option_linux_sizeable>0</option_linux_sizeable>
-    <option_linux_splash_png>Configs\Mobile\linux\splash.png</option_linux_splash_png>
+    <option_linux_splash_png>Configs\Windows\linux\splash.png</option_linux_splash_png>
     <option_linux_steam_app_id>0</option_linux_steam_app_id>
     <option_linux_sync>0</option_linux_sync>
     <option_linux_texture_page>2048</option_linux_texture_page>
@@ -367,7 +367,7 @@
     <option_mac_enable_retina>0</option_mac_enable_retina>
     <option_mac_enable_steam>0</option_mac_enable_steam>
     <option_mac_fullscreen>0</option_mac_fullscreen>
-    <option_mac_icon_png>Configs\Mobile\mac\icon512.png</option_mac_icon_png>
+    <option_mac_icon_png>Configs\Windows\mac\icon512.png</option_mac_icon_png>
     <option_mac_interpolate>-1</option_mac_interpolate>
     <option_mac_major_version>1</option_mac_major_version>
     <option_mac_menu_dock>0</option_mac_menu_dock>
@@ -378,7 +378,7 @@
     <option_mac_showcursor>-1</option_mac_showcursor>
     <option_mac_signing_identity>Developer ID Application:</option_mac_signing_identity>
     <option_mac_sizeable>0</option_mac_sizeable>
-    <option_mac_splash_png>Configs\Mobile\mac\splash.png</option_mac_splash_png>
+    <option_mac_splash_png>Configs\Windows\mac\splash.png</option_mac_splash_png>
     <option_mac_steam_app_id>0</option_mac_steam_app_id>
     <option_mac_sync>0</option_mac_sync>
     <option_mac_team_id></option_mac_team_id>
@@ -457,7 +457,7 @@
     <option_tizen_google_analytics_enable>0</option_tizen_google_analytics_enable>
     <option_tizen_google_tracking_id></option_tizen_google_tracking_id>
     <option_tizen_iap_groupID></option_tizen_iap_groupID>
-    <option_tizen_icon>Configs\Mobile\tizen\icon117.png</option_tizen_icon>
+    <option_tizen_icon>Configs\Windows\tizen\icon117.png</option_tizen_icon>
     <option_tizen_interpolate>-1</option_tizen_interpolate>
     <option_tizen_major_version>1</option_tizen_major_version>
     <option_tizen_minor_version>0</option_tizen_minor_version>
@@ -465,20 +465,20 @@
     <option_tizen_orientation>0</option_tizen_orientation>
     <option_tizen_push_enable>0</option_tizen_push_enable>
     <option_tizen_scaling>0</option_tizen_scaling>
-    <option_tizen_splash_png>Configs\Mobile\tizen\splash.png</option_tizen_splash_png>
+    <option_tizen_splash_png>Configs\Windows\tizen\splash.png</option_tizen_splash_png>
     <option_tizen_texture_page>1024</option_tizen_texture_page>
     <option_tizen_usesplash>False</option_tizen_usesplash>
     <option_tvos_app_id></option_tvos_app_id>
     <option_tvos_build_version>0</option_tvos_build_version>
     <option_tvos_certificate>&lt; Press refresh to fetch certificate list from Mac&gt;</option_tvos_certificate>
     <option_tvos_display_name>FollowMyLead2</option_tvos_display_name>
-    <option_tvos_icon_1280>Configs\Mobile\tvos\icons\icon1280.png</option_tvos_icon_1280>
-    <option_tvos_icon_400>Configs\Mobile\tvos\icons\icon400.png</option_tvos_icon_400>
+    <option_tvos_icon_1280>Configs\Windows\tvos\icons\icon1280.png</option_tvos_icon_1280>
+    <option_tvos_icon_400>Configs\Windows\tvos\icons\icon400.png</option_tvos_icon_400>
     <option_tvos_interpolate>-1</option_tvos_interpolate>
     <option_tvos_major_version>1</option_tvos_major_version>
     <option_tvos_minor_version>0</option_tvos_minor_version>
     <option_tvos_scale>-1</option_tvos_scale>
-    <option_tvos_splash_png>Configs\Mobile\tvos\splash.png</option_tvos_splash_png>
+    <option_tvos_splash_png>Configs\Windows\tvos\splash.png</option_tvos_splash_png>
     <option_tvos_splash_time>0</option_tvos_splash_time>
     <option_tvos_texture_page>2048</option_tvos_texture_page>
     <option_use_fast_collision>False</option_use_fast_collision>
@@ -507,7 +507,7 @@
     <option_win8_interpolate>-1</option_win8_interpolate>
     <option_win8_landscape_allowed>-1</option_win8_landscape_allowed>
     <option_win8_landscape_flipped_allowed>-1</option_win8_landscape_flipped_allowed>
-    <option_win8_logo>Configs\Mobile\Windows8\logos\logo150.png</option_win8_logo>
+    <option_win8_logo>Configs\Windows\Windows8\logos\logo150.png</option_win8_logo>
     <option_win8_logo_background_colour>#000000</option_win8_logo_background_colour>
     <option_win8_logo_foreground_text>light</option_win8_logo_foreground_text>
     <option_win8_major_version>1</option_win8_major_version>
@@ -524,12 +524,12 @@
     <option_win8_revision_version>0</option_win8_revision_version>
     <option_win8_scaling_stretch>false</option_win8_scaling_stretch>
     <option_win8_search_capable>0</option_win8_search_capable>
-    <option_win8_small_logo>Configs\Mobile\Windows8\logos\logo30.png</option_win8_small_logo>
+    <option_win8_small_logo>Configs\Windows\Windows8\logos\logo30.png</option_win8_small_logo>
     <option_win8_splash_background_colour>#000000</option_win8_splash_background_colour>
-    <option_win8_splash_png>Configs\Mobile\Windows8\splashscreen.png</option_win8_splash_png>
-    <option_win8_store_logo>Configs\Mobile\Windows8\logos\logo50.png</option_win8_store_logo>
+    <option_win8_splash_png>Configs\Windows\Windows8\splashscreen.png</option_win8_splash_png>
+    <option_win8_store_logo>Configs\Windows\Windows8\logos\logo50.png</option_win8_store_logo>
     <option_win8_texture_page>1024</option_win8_texture_page>
-    <option_win8_wide_logo>Configs\Mobile\Windows8\logos\logo310.png</option_win8_wide_logo>
+    <option_win8_wide_logo>Configs\Windows\Windows8\logos\logo310.png</option_win8_wide_logo>
     <option_winUAP_allowfullscreen>0</option_winUAP_allowfullscreen>
     <option_winUAP_build_version>0</option_winUAP_build_version>
     <option_winUAP_certificate_location>WinUWPRunner_TemporaryKey.pfx</option_winUAP_certificate_location>
@@ -539,8 +539,8 @@
     <option_winUAP_interpolate>-1</option_winUAP_interpolate>
     <option_winUAP_landscape_allowed>-1</option_winUAP_landscape_allowed>
     <option_winUAP_landscape_flipped_allowed>-1</option_winUAP_landscape_flipped_allowed>
-    <option_winUAP_large_logo>Configs\Mobile\WindowsUAP\logos\LargeLogo.scale-100.png</option_winUAP_large_logo>
-    <option_winUAP_logo>Configs\Mobile\WindowsUAP\logos\Logo.scale-100.png</option_winUAP_logo>
+    <option_winUAP_large_logo>Configs\Windows\WindowsUAP\logos\LargeLogo.scale-100.png</option_winUAP_large_logo>
+    <option_winUAP_logo>Configs\Windows\WindowsUAP\logos\Logo.scale-100.png</option_winUAP_logo>
     <option_winUAP_logo_background_colour>#000000</option_winUAP_logo_background_colour>
     <option_winUAP_logo_foreground_text>light</option_winUAP_logo_foreground_text>
     <option_winUAP_major_version>1</option_winUAP_major_version>
@@ -556,13 +556,13 @@
     <option_winUAP_revision_version>0</option_winUAP_revision_version>
     <option_winUAP_scaling_stretch>false</option_winUAP_scaling_stretch>
     <option_winUAP_search_capable>0</option_winUAP_search_capable>
-    <option_winUAP_small_logo>Configs\Mobile\WindowsUAP\logos\SmallLogo.scale-100.png</option_winUAP_small_logo>
-    <option_winUAP_smallish_logo>Configs\Mobile\WindowsUAP\logos\SmallishLogo.scale-100.png</option_winUAP_smallish_logo>
+    <option_winUAP_small_logo>Configs\Windows\WindowsUAP\logos\SmallLogo.scale-100.png</option_winUAP_small_logo>
+    <option_winUAP_smallish_logo>Configs\Windows\WindowsUAP\logos\SmallishLogo.scale-100.png</option_winUAP_smallish_logo>
     <option_winUAP_splash_background_colour>#000000</option_winUAP_splash_background_colour>
-    <option_winUAP_splash_png>Configs\Mobile\WindowsUAP\SplashScreen.scale-100.png</option_winUAP_splash_png>
-    <option_winUAP_store_logo>Configs\Mobile\WindowsUAP\logos\StoreLogo.scale-100.png</option_winUAP_store_logo>
+    <option_winUAP_splash_png>Configs\Windows\WindowsUAP\SplashScreen.scale-100.png</option_winUAP_splash_png>
+    <option_winUAP_store_logo>Configs\Windows\WindowsUAP\logos\StoreLogo.scale-100.png</option_winUAP_store_logo>
     <option_winUAP_texture_page>1024</option_winUAP_texture_page>
-    <option_winUAP_wide_logo>Configs\Mobile\WindowsUAP\logos\WideLogo.scale-100.png</option_winUAP_wide_logo>
+    <option_winUAP_wide_logo>Configs\Windows\WindowsUAP\logos\WideLogo.scale-100.png</option_winUAP_wide_logo>
     <option_windowcolor>clBlack</option_windowcolor>
     <option_windows_alternate_sync_method>False</option_windows_alternate_sync_method>
     <option_windows_build_version>3</option_windows_build_version>
@@ -571,26 +571,26 @@
     <option_windows_create_textures_on_demand>False</option_windows_create_textures_on_demand>
     <option_windows_description_info></option_windows_description_info>
     <option_windows_enable_steam>0</option_windows_enable_steam>
-    <option_windows_game_icon>Configs\Mobile\windows\runner_icon.ico</option_windows_game_icon>
-    <option_windows_license>Configs\Mobile\windows\License.txt</option_windows_license>
+    <option_windows_game_icon>Configs\Windows\windows\runner_icon.ico</option_windows_game_icon>
+    <option_windows_license>Configs\Windows\windows\License.txt</option_windows_license>
     <option_windows_mainor_version>0</option_windows_mainor_version>
     <option_windows_major_version>1</option_windows_major_version>
-    <option_windows_nsis_file>Configs\Mobile\windows\RunnerInstaller.nsi</option_windows_nsis_file>
+    <option_windows_nsis_file>Configs\Windows\windows\RunnerInstaller.nsi</option_windows_nsis_file>
     <option_windows_product_info></option_windows_product_info>
     <option_windows_release_version>0</option_windows_release_version>
-    <option_windows_runner_finished>Configs\Mobile\windows\Runner_finish.bmp</option_windows_runner_finished>
-    <option_windows_runner_header>Configs\Mobile\windows\Runner_header.bmp</option_windows_runner_header>
+    <option_windows_runner_finished>Configs\Windows\windows\Runner_finish.bmp</option_windows_runner_finished>
+    <option_windows_runner_header>Configs\Windows\windows\Runner_header.bmp</option_windows_runner_header>
     <option_windows_save_location>0</option_windows_save_location>
     <option_windows_sleep_margin>1</option_windows_sleep_margin>
     <option_windows_splash_background_colour>#000000</option_windows_splash_background_colour>
-    <option_windows_splash_screen>Configs\Mobile\windows\splash.png</option_windows_splash_screen>
+    <option_windows_splash_screen>Configs\Windows\windows\splash.png</option_windows_splash_screen>
     <option_windows_steam_app_id>0</option_windows_steam_app_id>
     <option_windows_texture_page>2048</option_windows_texture_page>
     <option_windows_use_splash>0</option_windows_use_splash>
     <option_windows_vertex_buffer_method2>1</option_windows_vertex_buffer_method2>
-    <option_winphone_480_splash_image>Configs\Mobile\WinPhone\SplashScreenImage480.jpg</option_winphone_480_splash_image>
-    <option_winphone_720_splash_image>Configs\Mobile\WinPhone\SplashScreenImage720.jpg</option_winphone_720_splash_image>
-    <option_winphone_768_splash_image>Configs\Mobile\WinPhone\SplashScreenImage.jpg</option_winphone_768_splash_image>
+    <option_winphone_480_splash_image>Configs\Windows\WinPhone\SplashScreenImage480.jpg</option_winphone_480_splash_image>
+    <option_winphone_720_splash_image>Configs\Windows\WinPhone\SplashScreenImage720.jpg</option_winphone_720_splash_image>
+    <option_winphone_768_splash_image>Configs\Windows\WinPhone\SplashScreenImage.jpg</option_winphone_768_splash_image>
     <option_winphone_advertising_appid></option_winphone_advertising_appid>
     <option_winphone_advertising_enable>0</option_winphone_advertising_enable>
     <option_winphone_advertising_key></option_winphone_advertising_key>
@@ -598,39 +598,39 @@
     <option_winphone_advertising_type></option_winphone_advertising_type>
     <option_winphone_author>You</option_winphone_author>
     <option_winphone_build_version>0</option_winphone_build_version>
-    <option_winphone_cycle_small_image>Configs\Mobile\WinPhone\CycleSmall.png</option_winphone_cycle_small_image>
-    <option_winphone_cycle_wide_image_1>Configs\Mobile\WinPhone\CycleWide1.png</option_winphone_cycle_wide_image_1>
-    <option_winphone_cycle_wide_image_2>Configs\Mobile\WinPhone\CycleWide2.png</option_winphone_cycle_wide_image_2>
-    <option_winphone_cycle_wide_image_3>Configs\Mobile\WinPhone\CycleWide3.png</option_winphone_cycle_wide_image_3>
-    <option_winphone_cycle_wide_image_4>Configs\Mobile\WinPhone\CycleWide4.png</option_winphone_cycle_wide_image_4>
-    <option_winphone_cycle_wide_image_5>Configs\Mobile\WinPhone\CycleWide5.png</option_winphone_cycle_wide_image_5>
-    <option_winphone_cycle_wide_image_6>Configs\Mobile\WinPhone\CycleWide6.png</option_winphone_cycle_wide_image_6>
-    <option_winphone_cycle_wide_image_7>Configs\Mobile\WinPhone\CycleWide7.png</option_winphone_cycle_wide_image_7>
-    <option_winphone_cycle_wide_image_8>Configs\Mobile\WinPhone\CycleWide8.png</option_winphone_cycle_wide_image_8>
-    <option_winphone_cycle_wide_image_9>Configs\Mobile\WinPhone\CycleWide9.png</option_winphone_cycle_wide_image_9>
+    <option_winphone_cycle_small_image>Configs\Windows\WinPhone\CycleSmall.png</option_winphone_cycle_small_image>
+    <option_winphone_cycle_wide_image_1>Configs\Windows\WinPhone\CycleWide1.png</option_winphone_cycle_wide_image_1>
+    <option_winphone_cycle_wide_image_2>Configs\Windows\WinPhone\CycleWide2.png</option_winphone_cycle_wide_image_2>
+    <option_winphone_cycle_wide_image_3>Configs\Windows\WinPhone\CycleWide3.png</option_winphone_cycle_wide_image_3>
+    <option_winphone_cycle_wide_image_4>Configs\Windows\WinPhone\CycleWide4.png</option_winphone_cycle_wide_image_4>
+    <option_winphone_cycle_wide_image_5>Configs\Windows\WinPhone\CycleWide5.png</option_winphone_cycle_wide_image_5>
+    <option_winphone_cycle_wide_image_6>Configs\Windows\WinPhone\CycleWide6.png</option_winphone_cycle_wide_image_6>
+    <option_winphone_cycle_wide_image_7>Configs\Windows\WinPhone\CycleWide7.png</option_winphone_cycle_wide_image_7>
+    <option_winphone_cycle_wide_image_8>Configs\Windows\WinPhone\CycleWide8.png</option_winphone_cycle_wide_image_8>
+    <option_winphone_cycle_wide_image_9>Configs\Windows\WinPhone\CycleWide9.png</option_winphone_cycle_wide_image_9>
     <option_winphone_description>YourDescription</option_winphone_description>
     <option_winphone_display_name>FollowMyLead</option_winphone_display_name>
     <option_winphone_flip_content_back></option_winphone_flip_content_back>
     <option_winphone_flip_content_front></option_winphone_flip_content_front>
-    <option_winphone_flip_medium_back_image>Configs\Mobile\WinPhone\FlipMedBack.png</option_winphone_flip_medium_back_image>
-    <option_winphone_flip_medium_front_image>Configs\Mobile\WinPhone\FlipMedFront.png</option_winphone_flip_medium_front_image>
+    <option_winphone_flip_medium_back_image>Configs\Windows\WinPhone\FlipMedBack.png</option_winphone_flip_medium_back_image>
+    <option_winphone_flip_medium_front_image>Configs\Windows\WinPhone\FlipMedFront.png</option_winphone_flip_medium_front_image>
     <option_winphone_flip_small_back_image>FlipSmallBack.png</option_winphone_flip_small_back_image>
-    <option_winphone_flip_small_front_image>Configs\Mobile\WinPhone\FlipSmallFront.png</option_winphone_flip_small_front_image>
-    <option_winphone_flip_wide_back_image>Configs\Mobile\WinPhone\FlipWideBack.png</option_winphone_flip_wide_back_image>
-    <option_winphone_flip_wide_front_image>Configs\Mobile\WinPhone\FlipWideFront.png</option_winphone_flip_wide_front_image>
+    <option_winphone_flip_small_front_image>Configs\Windows\WinPhone\FlipSmallFront.png</option_winphone_flip_small_front_image>
+    <option_winphone_flip_wide_back_image>Configs\Windows\WinPhone\FlipWideBack.png</option_winphone_flip_wide_back_image>
+    <option_winphone_flip_wide_front_image>Configs\Windows\WinPhone\FlipWideFront.png</option_winphone_flip_wide_front_image>
     <option_winphone_flurry_enable>0</option_winphone_flurry_enable>
     <option_winphone_flurry_id></option_winphone_flurry_id>
     <option_winphone_genre>1</option_winphone_genre>
     <option_winphone_google_analytics_enable>0</option_winphone_google_analytics_enable>
     <option_winphone_google_tracking_id></option_winphone_google_tracking_id>
-    <option_winphone_icon_image>Configs\Mobile\WinPhone\ApplicationIcon.png</option_winphone_icon_image>
+    <option_winphone_icon_image>Configs\Windows\WinPhone\ApplicationIcon.png</option_winphone_icon_image>
     <option_winphone_iconic_background_colour>#000000</option_winphone_iconic_background_colour>
     <option_winphone_iconic_message></option_winphone_iconic_message>
-    <option_winphone_iconic_small_image>Configs\Mobile\WinPhone\IconicSmall.png</option_winphone_iconic_small_image>
+    <option_winphone_iconic_small_image>Configs\Windows\WinPhone\IconicSmall.png</option_winphone_iconic_small_image>
     <option_winphone_iconic_wide_content_1></option_winphone_iconic_wide_content_1>
     <option_winphone_iconic_wide_content_2></option_winphone_iconic_wide_content_2>
     <option_winphone_iconic_wide_content_3></option_winphone_iconic_wide_content_3>
-    <option_winphone_iconic_wide_image>Configs\Mobile\WinPhone\IconicWide.png</option_winphone_iconic_wide_image>
+    <option_winphone_iconic_wide_image>Configs\Windows\WinPhone\IconicWide.png</option_winphone_iconic_wide_image>
     <option_winphone_interpolate>-1</option_winphone_interpolate>
     <option_winphone_landscape_allowed>-1</option_winphone_landscape_allowed>
     <option_winphone_landscape_flipped_allowed>-1</option_winphone_landscape_flipped_allowed>

@@ -1,9 +1,13 @@
 /// initialize all global functions
 
 global.user = "GM"
+
 global.debug = true
 global.debug_performance = false
 global.debug_player = true
+global.debug_array_output = false
+global.debug_invincible = false
+
 global.overall_view = true
 global.version = 1.0
 

@@ -66,65 +66,68 @@ stick_y = vstick_get_y(2)
           <argument>
             <kind>1</kind>
             <string>
-if instance_exists(player) = false {instance_destroy()}//{is_active = false}
-
-if is_active
+if instance_exists(player) == false
+{instance_destroy()}
+else
 {
-    vstick_step(1)
-    vstick_step(2)
-}
-
-
-if IS_MOBILE // mobile virtual joystick!
-{
-
-    vs_dir = vstick_get_direction(2)
-
-    if vstick_check(2) // checks if the vstick is being used
+    if is_active
     {
-
-        crossover = 23 // crossover size between the angles of the movement (e.g. moving left and up)
-        
-        // movement with crossover (8-point movement rather than 4-point)     
-        if (vs_dir &gt; 315-crossover || vs_dir &lt;= 45+crossover) {player.move_right = true}
-        if (vs_dir &gt; 225-crossover &amp;&amp; vs_dir &lt;= 315+crossover) {player.move_down = true}
-        if (vs_dir &gt; 135-crossover &amp;&amp; vs_dir &lt;= 225+crossover) {player.move_left = true}
-        if (vs_dir &gt; 45-crossover &amp;&amp; vs_dir &lt;= 135+crossover) {player.move_up = true}
-        
-        /****** OLD MOVEMENT SYSTEMS ******
-        // WITHOUT ANY CROSSOVER: Left, right, up down controls when moving (rather than full 360)
-        if (vs_dir &gt; 315 || vs_dir &lt;= 45) {move_right = true}
-        if (vs_dir &gt; 225 &amp;&amp; vs_dir &lt;= 315) {move_down = true}
-        if (vs_dir &gt; 135 &amp;&amp; vs_dir &lt;= 225) {move_left = true}
-        if (vs_dir &gt; 45 &amp;&amp; vs_dir &lt;= 135) {move_up = true}
-        
-        // this moves in any angle etc but doesn't use the collisions etc below (making it able to walk through walls or sticking to solid objects)
-        if place_free(x+lengthdir_x(5,vstick_get_direction(2)),y+lengthdir_y(5,vstick_get_direction(2)))
-        {
-            x+=lengthdir_x(10,vstick_get_direction(2))/3
-            y+=lengthdir_y(10,vstick_get_direction(2))/3
-        }
-        **********************************/
+        vstick_step(1)
+        vstick_step(2)
     }
-}
-
-
-/// SHOOTING!!
-if !(vstick_check(1)) // if the right stick is not being used
-{
-    if device_mouse_check_button_pressed(0,mb_left) 
-    or device_mouse_check_button_pressed(1,mb_left)
-    or device_mouse_check_button_pressed(2,mb_left)
+    
+    
+    if IS_MOBILE // mobile virtual joystick!
     {
-        if device_mouse_x_to_gui(0) &gt; WIDTH/2 // right side of screen
-        or device_mouse_x_to_gui(1) &gt; WIDTH/2
-        or device_mouse_x_to_gui(2) &gt; WIDTH/2
+    
+        vs_dir = vstick_get_direction(2)
+    
+        if vstick_check(2) // checks if the vstick is being used
         {
-            player.move_attack = true // shoot! 
+    
+            crossover = 23 // crossover size between the angles of the movement (e.g. moving left and up)
+            
+            // movement with crossover (8-point movement rather than 4-point)     
+            if (vs_dir &gt; 315-crossover || vs_dir &lt;= 45+crossover) {player.move_right = true}
+            if (vs_dir &gt; 225-crossover &amp;&amp; vs_dir &lt;= 315+crossover) {player.move_down = true}
+            if (vs_dir &gt; 135-crossover &amp;&amp; vs_dir &lt;= 225+crossover) {player.move_left = true}
+            if (vs_dir &gt; 45-crossover &amp;&amp; vs_dir &lt;= 135+crossover) {player.move_up = true}
+            
+            /****** OLD MOVEMENT SYSTEMS ******
+            // WITHOUT ANY CROSSOVER: Left, right, up down controls when moving (rather than full 360)
+            if (vs_dir &gt; 315 || vs_dir &lt;= 45) {move_right = true}
+            if (vs_dir &gt; 225 &amp;&amp; vs_dir &lt;= 315) {move_down = true}
+            if (vs_dir &gt; 135 &amp;&amp; vs_dir &lt;= 225) {move_left = true}
+            if (vs_dir &gt; 45 &amp;&amp; vs_dir &lt;= 135) {move_up = true}
+            
+            // this moves in any angle etc but doesn't use the collisions etc below (making it able to walk through walls or sticking to solid objects)
+            if place_free(x+lengthdir_x(5,vstick_get_direction(2)),y+lengthdir_y(5,vstick_get_direction(2)))
+            {
+                x+=lengthdir_x(10,vstick_get_direction(2))/3
+                y+=lengthdir_y(10,vstick_get_direction(2))/3
+            }
+            **********************************/
         }
     }
-}
+    
+    
+    /// SHOOTING!!
+    if !(vstick_check(1)) // if the right stick is not being used
+    {
+        if device_mouse_check_button_pressed(0,mb_left) 
+        or device_mouse_check_button_pressed(1,mb_left)
+        or device_mouse_check_button_pressed(2,mb_left)
+        {
+            if device_mouse_x_to_gui(0) &gt; WIDTH/2 // right side of screen
+            or device_mouse_x_to_gui(1) &gt; WIDTH/2
+            or device_mouse_x_to_gui(2) &gt; WIDTH/2
+            {
+                player.move_attack = true // shoot! 
+            }
+        }
+    }
 
+}
 
 /*
 if place_meeting(device_mouse_x(0),device_mouse_y(0),self) 
@@ -156,10 +159,10 @@ and place_meeting(device_mouse_y(1),device_mouse_y(1),self)
 
 if player.is_alive
 {
-    if player.move_left = true {draw_sprite(sprite49,1,stick_x,stick_y)}
-    if player.move_right = true {draw_sprite(sprite49,2,stick_x,stick_y)}
-    if player.move_up = true {draw_sprite(sprite49,3,stick_x,stick_y)}
-    if player.move_down = true {draw_sprite(sprite49,4,stick_x,stick_y)}
+    if player.move_left {draw_sprite(spr_virtual_joystick_front_2,1,stick_x,stick_y)}
+    if player.move_right {draw_sprite(spr_virtual_joystick_front_2,2,stick_x,stick_y)}
+    if player.move_up {draw_sprite(spr_virtual_joystick_front_2,3,stick_x,stick_y)}
+    if player.move_down {draw_sprite(spr_virtual_joystick_front_2,4,stick_x,stick_y)}
 }
 
 vstick_draw(1)

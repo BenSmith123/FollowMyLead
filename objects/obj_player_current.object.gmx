@@ -58,9 +58,11 @@ global.player_number += 1
 number = global.player_number
 
 // add this object to the array list
-global.player_array[global.player_number] = id
+global.player_array[global.player_number] = self
 
-// create a clone object to record this play through
+print_debug(id)
+
+// create a recorder object to record this play through
 instance_create(x,y,obj_player_recorder)
 obj_player_recorder.player = id
 
@@ -288,7 +290,7 @@ else
 
 if global.instant_aim {image_angle2 = dir} // no aim delay from the virtual stick
 else
-{image_angle2 = (image_angle2+(sin(degtorad(dir-image_angle2)) * 7))} // 7 = reaction time
+{image_angle2 = (image_angle2+(sin(degtorad(dir-image_angle2)) * 12))} // 7 = reaction time
 
 //image_angle2 = point_direction(xprevious,yprevious,x,y) // point the way you're walking
 

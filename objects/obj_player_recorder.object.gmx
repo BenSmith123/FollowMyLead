@@ -98,32 +98,35 @@ array_angle_pause = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// DEBUG: windows console output
+            <string>/// DEBUG: console output
 
-/*
-debug_output = "------ "+string(id)+" ------ 
-x_size: "+string(x_num)+"\n
-x_inactive_size: "+string(array_x_count)+"\n
+if global.debug_array_output
+{
+    show_debug_message("------ "+string(id)+" ------") 
+    show_debug_message("x_size: "+string(x_num))
+    show_debug_message("x_inactive_size: "+string(array_x_count))
+    show_debug_message("y_size: "+string(y_num))
+    show_debug_message("y_inactive_size: "+string(array_y_count))
+    show_debug_message("angle_count: "+string(angle_count))
+    show_debug_message("angle_inactive_size: "+string(angle_inactive_count))
+    show_debug_message("shoot_size: "+string(array_shoot_count))
+    
+    debug_output = "------ "+string(id)+" ------ 
+    x_size: "+string(x_num)+"\n
+    x_inactive_size: "+string(array_x_count)+"\n
+    
+    y_size: "+string(y_num)+"##
+    y_inactive_size: "+string(array_y_count)+"
+    
+    angle_size: "+string(angle_count)+"
+    angle_inactive_size: "+string(angle_inactive_count)+"
+    
+    shoot_size: "+string(array_shoot_count)
+    
+    show_message_async(debug_output)
+    
+}
 
-y_size: "+string(y_num)+"##
-y_inactive_size: "+string(array_y_count)+"
-
-angle_size: "+string(angle_count)+"
-angle_inactive_size: "+string(angle_inactive_count)+"
-
-shoot_size: "+string(array_shoot_count)
-
-show_debug_message(debug_output)
-*/
-
-show_debug_message("------ "+string(id)+" ------") 
-show_debug_message("x_size: "+string(x_num))
-show_debug_message("x_inactive_size: "+string(array_x_count))
-show_debug_message("y_size: "+string(y_num))
-show_debug_message("y_inactive_size: "+string(array_y_count))
-show_debug_message("angle_count: "+string(angle_count))
-show_debug_message("angle_inactive_size: "+string(angle_inactive_count))
-show_debug_message("shoot_size: "+string(array_shoot_count))
 
 </string>
           </argument>
@@ -297,6 +300,8 @@ if instance_exists(obj_player_current) // if the player is still alive when next
 // create the clone where the current_player started
 clone = instance_create(xstart,ystart,obj_player_clone)
 
+global.player_array[global.player_number] = clone // override the current player (that just died) with the new clone object
+
 clone.life_span = life_span-1
 clone.alarm[0] = life_span-1
 
@@ -362,33 +367,6 @@ if array_y_count != 0
 
 instance_destroy()
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// DEBUG
-
-draw_text(x,y,"last angle: "+string(last_player_angle))
-
-draw_text(x,y+40,"player angle: "+string(round(player.image_angle2)))
 </string>
           </argument>
         </arguments>
