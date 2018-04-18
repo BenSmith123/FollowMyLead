@@ -23,8 +23,6 @@ global.instant_aim = false
 
 global.player_number = 0 // start off as the first player
 
-global.final_playthrough = false // show player number/name and their colour
-
 global.auto_target = true
 
 // global.player_array[0] = 0

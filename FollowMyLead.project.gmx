@@ -10,6 +10,15 @@
   </NewExtensions>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprites name="Blocks">
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_wall_breakable</sprite>
+      <sprite>sprites\spr_wall_breakable_hor</sprite>
+      <sprite>sprites\spr_wall_breakable_vert</sprite>
+      <sprite>sprites\spr_gate_verticle</sprite>
+      <sprite>sprites\spr_explosive</sprite>
+      <sprite>sprites\spr_switch_button</sprite>
+    </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_player_mask</sprite>
       <sprite>sprites\sprite70</sprite>
@@ -30,64 +39,59 @@
     <sprite>sprites\spr_turret_large</sprite>
     <sprite>sprites\spr_turret_barrel</sprite>
     <sprite>sprites\spr_turret_barrel_large</sprite>
-    <sprites name="Blocks">
-      <sprite>sprites\spr_wall</sprite>
-      <sprite>sprites\spr_wall_breakable</sprite>
-      <sprite>sprites\spr_wall_breakable_hor</sprite>
-      <sprite>sprites\spr_wall_breakable_vert</sprite>
-      <sprite>sprites\spr_gate_verticle</sprite>
-      <sprite>sprites\spr_explosive</sprite>
-      <sprite>sprites\spr_switch_button</sprite>
+    <sprite>sprites\spr_projectile_1</sprite>
+    <sprite>sprites\spr_projectile_2</sprite>
+    <sprites name="HUD">
+      <sprite>sprites\spr_pause_button</sprite>
+      <sprite>sprites\spr_button_next</sprite>
+      <sprite>sprites\spr_button_auto_target</sprite>
+      <sprite>sprites\spr_button_shoot</sprite>
+      <sprite>sprites\spr_life_bar</sprite>
+      <sprite>sprites\spr_virtual_joystick_back</sprite>
+      <sprite>sprites\spr_virtual_joystick_back_2</sprite>
+      <sprite>sprites\spr_virtual_joystick_front</sprite>
+      <sprite>sprites\spr_virtual_joystick_front_2</sprite>
     </sprites>
-    <sprite>sprites\spr_footstep</sprite>
-    <sprite>sprites\spr_marker</sprite>
+    <sprites name="Pickups">
+      <sprite>sprites\spr_pickup_mask</sprite>
+      <sprite>sprites\spr_pickup_boost_shoot</sprite>
+      <sprite>sprites\spr_pickup_boost_speed</sprite>
+      <sprite>sprites\spr_pickup_boost_shield</sprite>
+      <sprite>sprites\spr_pickup_boost_health</sprite>
+      <sprite>sprites\spr_pickup_coin</sprite>
+    </sprites>
     <sprites name="Effects">
+      <sprite>sprites\spr_footstep</sprite>
       <sprite>sprites\spr_portal</sprite>
       <sprite>sprites\spr_flash</sprite>
       <sprite>sprites\spr_explosion</sprite>
       <sprite>sprites\spr_bullet_spark</sprite>
     </sprites>
-    <sprite>sprites\spr_projectile_1</sprite>
-    <sprite>sprites\spr_projectile_2</sprite>
     <sprites name="Buttons">
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_play_button</sprite>
       <sprite>sprites\spr_button_about</sprite>
       <sprite>sprites\spr_button_level_editor</sprite>
-      <sprite>sprites\spr_button_back</sprite>
-      <sprite>sprites\spr_button_debug</sprite>
-      <sprite>sprites\spr_debug_button</sprite>
-      <sprite>sprites\spr_feedback_email</sprite>
     </sprites>
-    <sprite>sprites\spr_lazer_ver</sprite>
-    <sprite>sprites\icon</sprite>
-    <sprite>sprites\spr_virtual_joystick_back</sprite>
-    <sprite>sprites\spr_virtual_joystick_back_2</sprite>
-    <sprite>sprites\spr_virtual_joystick_front</sprite>
-    <sprite>sprites\spr_virtual_joystick_front_2</sprite>
     <sprites name="Markers">
+      <sprite>sprites\spr_marker</sprite>
       <sprite>sprites\spr_marker_up</sprite>
       <sprite>sprites\spr_marker_left</sprite>
       <sprite>sprites\spr_marker_right</sprite>
       <sprite>sprites\spr_marker_down</sprite>
     </sprites>
-    <sprite>sprites\spr_loading_circle</sprite>
-    <sprite>sprites\spr_button_shoot</sprite>
-    <sprites name="HUD">
-      <sprite>sprites\spr_pause_button</sprite>
-      <sprite>sprites\spr_button_next</sprite>
-      <sprite>sprites\spr_button_auto_target</sprite>
+    <sprites name="Debug">
+      <sprite>sprites\spr_button_back</sprite>
+      <sprite>sprites\spr_button_debug</sprite>
+      <sprite>sprites\spr_feedback_email</sprite>
+      <sprite>sprites\spr_debug_button</sprite>
+      <sprite>sprites\spr_loading_circle</sprite>
+      <sprite>sprites\spr_debug_next_level</sprite>
     </sprites>
-    <sprite>sprites\spr_life_bar</sprite>
-    <sprite>sprites\spr_pickup_boost_shoot</sprite>
-    <sprite>sprites\spr_pickup_boost_shield</sprite>
-    <sprite>sprites\spr_pickup_boost_speed</sprite>
-    <sprite>sprites\spr_pickup_boost_health</sprite>
-    <sprite>sprites\spr_pickup_coin</sprite>
-    <sprite>sprites\spr_pickup_mask</sprite>
-    <sprite>sprites\spr_debug_next_level</sprite>
+    <sprite>sprites\spr_fx_shield_hit</sprite>
+    <sprite>sprites\icon</sprite>
+    <sprite>sprites\spr_lazer_ver</sprite>
     <sprite>sprites\spr_shield_player</sprite>
-    <sprite>sprites\sprite41</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -105,9 +109,9 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_initialise_all.gml</script>
+    <script>scripts\GUIDE.gml</script>
+    <script>scripts\scr_initialise.gml</script>
     <script>scripts\scr_camera.gml</script>
-    <script>scripts\scr_debug_msg.gml</script>
     <script>scripts\scr_controls.gml</script>
     <script>scripts\create_placeholder.gml</script>
     <script>scripts\particle_effects.gml</script>
@@ -119,7 +123,6 @@
       <script>scripts\ai_get_closest_player.gml</script>
       <script>scripts\ai_shoot.gml</script>
     </scripts>
-    <script>scripts\scr_debug_keys.gml</script>
     <scripts name="Virtual Joystick">
       <script>scripts\vstick_set_frontsprite.gml</script>
       <script>scripts\vstick_get_frontsprite.gml</script>
@@ -147,9 +150,9 @@
     <script>scripts\scr_room_init.gml</script>
     <script>scripts\scr_room_enable_camera.gml</script>
     <script>scripts\scr_auto_shoot_enemy.gml</script>
-    <script>scripts\GUIDE_new_recording.gml</script>
     <script>scripts\print_debug.gml</script>
     <script>scripts\scr_next_iteration.gml</script>
+    <script>scripts\scr_debug_keys.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_arial_1</font>
@@ -157,7 +160,6 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_controller</object>
-    <object>objects\obj_online_message</object>
     <object>objects\obj_controller_playable</object>
     <object>objects\parent_player</object>
     <object>objects\obj_player_current</object>
@@ -173,6 +175,7 @@
       <object>objects\obj_block_explosive</object>
       <object>objects\obj_explosion</object>
       <object>objects\obj_switch</object>
+      <object>objects\obj_gate_verticle</object>
     </objects>
     <object>objects\parent_projectile</object>
     <object>objects\obj_bullet_player</object>
@@ -185,37 +188,16 @@
       <object>objects\obj_ai_4</object>
       <object>objects\obj_ai_5</object>
     </objects>
-    <objects name="other">
-      <object>objects\obj_placeholder</object>
-      <object>objects\obj_footstep</object>
-      <object>objects\obj_spawn_point</object>
-      <object>objects\obj_player_joystick</object>
-      <object>objects\obj_bullet_spark</object>
-      <object>objects\obj_menu_text</object>
-    </objects>
-    <objects name="buttons">
-      <object>objects\parent_button</object>
-      <object>objects\obj_button_play</object>
-      <object>objects\obj_button_about</object>
-      <object>objects\obj_button_level_editor</object>
-      <object>objects\obj_title</object>
-    </objects>
     <object>objects\obj_portal</object>
     <object>objects\obj_mark_death</object>
     <object>objects\obj_lazer_ver</object>
-    <object>objects\obj_life_bar</object>
-    <objects name="Markers">
-      <object>objects\obj_turret_angle_up</object>
-      <object>objects\obj_turret_angle_left</object>
-      <object>objects\obj_turret_angle_down</object>
-    </objects>
     <objects name="HUD">
-      <object>objects\obj_gate_verticle</object>
       <object>objects\obj_virtual_joystick</object>
       <object>objects\obj_pause_button</object>
       <object>objects\obj_next_step</object>
       <object>objects\obj_button_auto_target</object>
       <object>objects\obj_button_shoot</object>
+      <object>objects\obj_life_bar</object>
     </objects>
     <objects name="Pickups">
       <object>objects\parent_pickup</object>
@@ -225,9 +207,23 @@
       <object>objects\obj_pickup_boost_shield</object>
       <object>objects\obj_pickup_coin</object>
     </objects>
-    <object>objects\obj_shield_player</object>
-    <object>objects\obj_player_dead</object>
-    <objects name="debug">
+    <objects name="Effects">
+      <object>objects\obj_fx_player_hit</object>
+      <object>objects\obj_fx_shield_hit</object>
+    </objects>
+    <objects name="Buttons">
+      <object>objects\parent_button</object>
+      <object>objects\obj_button_play</object>
+      <object>objects\obj_button_about</object>
+      <object>objects\obj_button_level_editor</object>
+      <object>objects\obj_title</object>
+    </objects>
+    <objects name="Markers">
+      <object>objects\obj_turret_angle_up</object>
+      <object>objects\obj_turret_angle_left</object>
+      <object>objects\obj_turret_angle_down</object>
+    </objects>
+    <objects name="Debug">
       <object>objects\obj_debug_info</object>
       <object>objects\parent_debug_button</object>
       <object>objects\obj_debug_time</object>
@@ -241,13 +237,19 @@
       <object>objects\obj_feedback_email</object>
       <object>objects\obj_debug_next_level</object>
     </objects>
-    <objects name="Effects">
-      <object>objects\obj_fx_player_hit</object>
-      <object>objects\obj_fx_shield_hit</object>
+    <objects name="Misc">
+      <object>objects\obj_placeholder</object>
+      <object>objects\obj_footstep</object>
+      <object>objects\obj_spawn_point</object>
+      <object>objects\obj_player_joystick</object>
+      <object>objects\obj_bullet_spark</object>
+      <object>objects\obj_menu_text</object>
     </objects>
-    <object>objects\obj_get_server_msg</object>
-    <object>objects\obj_background</object>
     <object>objects\obj_get_server_log</object>
+    <object>objects\obj_get_server_msg</object>
+    <object>objects\obj_player_dead</object>
+    <object>objects\obj_shield_player</object>
+    <object>objects\obj_background</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_menu</room>
