@@ -30,7 +30,7 @@ response_successful = false
 
 http_response = ""
 
-//post = http_get("http://benjaminrsmith.com/app_messages/fml-server-msg1.0.txt")
+post = http_get("http://benjaminrsmith.com/app_messages/fml-server-msg1.0.txt")
 
 </string>
           </argument>

@@ -39,12 +39,12 @@ image_angle2 = 0 // use instead of normal image_angle due to the collision box
 //x_inactive_size = 0 // size of the x inactive movement array
 move_x = false // on and off depending on the array_x_inactive
 x_inactive_count = 1 // counter for the x movement inactive array
-array_x_count = 0
+array_x_count = 1
 array_x[0] = 0 // start array at 0
 
 move_y = false
 y_inactive_count = 1
-array_y_count = 0
+array_y_count = 1
 array_y[0] = 0 // start array at 0
 
 move_angle = false
@@ -89,12 +89,12 @@ array_angle_inactive[0] = 0
 move_angle = !move_angle
 angle_inactive_count++
 
-////// DEBUG //////
+/*//// DEBUG //////
 if move_angle == false
 {print_debug("(C) Angle stopped at "+string(global.counter))}
 else
 {print_debug("(C) Angle started at "+string(global.counter))}
-///////////////////
+/////////////////*/
 
 if angle_inactive_count &lt; array_length_1d(array_angle_inactive) // if the end of the array is not reached
 {
@@ -171,7 +171,7 @@ else
 move_x = !move_x
 x_inactive_count++
 
-/*//// DEBUG //////
+////// DEBUG //////
 if move_x == false
 {print_debug("Stopped at "+string(global.counter))}
 else
@@ -294,6 +294,8 @@ if is_alive == true
         {
             x = array_x[array_x_count] // set x to the number stored in the x_array
             array_x_count++ // increment through the array
+            
+            if x == 0 {show_message(string(id)+" x is 0")} // DEBUG: REMOVE
         }
         else // DEBUG
         {show_message(string(id) + " x array has gone out of bounds!")} // DEBUG TO AVOID CRASH
@@ -378,11 +380,11 @@ array_shoot_count = 0 // this can be reset because it counts the amount of times
 
 move_x = false
 x_inactive_count = 1
-array_x_count = 0
+array_x_count = 1
 
 move_y = false
 y_inactive_count = 1
-array_y_count = 0
+array_y_count = 1
 
 
 // BEGIN THE RECORDING SYSTEM VARIABLES

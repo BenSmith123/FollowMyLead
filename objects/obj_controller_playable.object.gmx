@@ -82,7 +82,7 @@ instance_create(global.player_spawn_x,global.player_spawn_y,obj_player_current) 
 if global.counter != MAX_ARRAY_SIZE
 {global.counter++}
 else
-{event_user(0)}
+{scr_next_iteration()}
 
 </string>
           </argument>

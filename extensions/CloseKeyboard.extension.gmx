@@ -28,7 +28,7 @@
       <CopyToMask>33554436</CopyToMask>
     </Config>
     <Config name="Windows">
-      <CopyToMask>9223372036854775807</CopyToMask>
+      <CopyToMask>33554436</CopyToMask>
     </Config>
   </ConfigOptions>
   <androidPermissions/>

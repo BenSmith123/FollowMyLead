@@ -34,7 +34,7 @@ image_speed = 0
 
 // in-game variables
 can_be_hit = true
-len = point_distance(0,0,26,26)
+len = point_distance(0,0,30,30)
 target_player = 0
 is_alive = true
 can_shoot = true

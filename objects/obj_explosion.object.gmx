@@ -115,7 +115,7 @@ if show_flash = true
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_wall_breakable">
+    <event eventtype="4" ename="parent_wall_breakable">
       <action>
         <libid>1</libid>
         <id>603</id>

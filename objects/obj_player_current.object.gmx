@@ -32,6 +32,9 @@ player_speed = 4
 SpeedX = 0
 SpeedY = 0
 
+max_speed = 4
+accel = 0.4
+
 can_shoot = true
 reload_time = 15
 
@@ -169,30 +172,15 @@ can_shoot = true
             <kind>1</kind>
             <string>/// footsteps!
 
-instance_create(x,y,obj_footstep) // create a footstep
+//if x != xprevious
+
+    //if y != yprevious
+    
+        //instance_create(x,y,obj_footstep) // create a footstep
+    
+
+
 alarm[0] = FOOTSTEP_TIME // repeat
-
-
-
-/* origonal code
-
-if record_me = true // if I am the current player
-{
-    //if not (place_meeting(x,y,obj_footstep)) // if theres not already a footstep here
-    //if not (xprevious = x) // if the player has moved
-    {
-        obj = instance_create(x,y,obj_footstep) // create a footstep
-        
-        if (hspeed = 0 and vspeed = 0) // if the player has moved since last step but is stopped atm
-        {obj.image_index = 1} // create a dot
-        else
-        {obj.image_angle = direction} // footstep face the way I was heading (NOT FACING)
-        
-    }
-    
-    alarm[0] = FOOTSTEP_TIME // repeat
-    
-}
 
 </string>
           </argument>

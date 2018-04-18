@@ -1,8 +1,5 @@
 /// movement controls
 
-max_speed = 4
-accel = 0.4
-
 //stick_multiplier = 1 // on mobile, this effects the player speed based on how far the stick was pulled
 
 

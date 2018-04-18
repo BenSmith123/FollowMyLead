@@ -14,7 +14,14 @@ if is_alive = true
         
             if distance_to_object(target_player) < view_distance
             {
-                move_towards_point(target_player.x,target_player.y,3)
+                if distance_to_object(target_player) > 50 
+                {move_towards_point(target_player.x,target_player.y,3)}
+                else
+                {
+                    hspeed = 0
+                    vspeed = 0
+                }
+                
                 gun_image_angle = image_angle // ai_shoot uses gun_image_angle (for turrets etc) so have to make this compatible
                 ai_shoot()
             }

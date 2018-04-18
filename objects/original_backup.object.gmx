@@ -273,7 +273,7 @@ if record_me = true
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_health_boost">
+    <event eventtype="4" ename="obj_pickup_boost_health">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -299,7 +299,7 @@ instance_destroy(other)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_speed_boost">
+    <event eventtype="4" ename="obj_pickup_boost_speed">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -327,7 +327,7 @@ instance_destroy(other)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_reload_boost">
+    <event eventtype="4" ename="obj_pickup_boost_shoot">
       <action>
         <libid>1</libid>
         <id>603</id>
