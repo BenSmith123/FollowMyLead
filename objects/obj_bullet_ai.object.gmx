@@ -90,6 +90,7 @@ if other.is_alive
 {
     fx = instance_create(other.x,other.y,obj_fx_player_hit)
     fx.obj = other
+    other.image_index += 1
     other.hp -= 1
     instance_destroy()
 }

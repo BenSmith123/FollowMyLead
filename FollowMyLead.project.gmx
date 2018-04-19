@@ -92,6 +92,10 @@
     <sprite>sprites\icon</sprite>
     <sprite>sprites\spr_lazer_ver</sprite>
     <sprite>sprites\spr_shield_player</sprite>
+    <sprite>sprites\spr_gate_vert_top</sprite>
+    <sprite>sprites\spr_gate_vert_bottom</sprite>
+    <sprite>sprites\sprite64</sprite>
+    <sprite>sprites\sprite67</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -250,6 +254,7 @@
     <object>objects\obj_player_dead</object>
     <object>objects\obj_shield_player</object>
     <object>objects\obj_background</object>
+    <object>objects\object73</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_menu</room>

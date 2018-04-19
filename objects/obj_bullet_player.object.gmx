@@ -88,7 +88,41 @@ if other.is_alive = true
             <string>
 if other.is_alive
 {
-    instance_create(other.x,other.y,obj_fx_player_hit)
+    fx = instance_create(other.x,other.y,obj_fx_player_hit)
+    fx.obj = other
+    other.hp -= 1
+    instance_destroy()
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_player_current">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if other.is_alive
+{
+    fx = instance_create(other.x,other.y,obj_fx_player_hit)
+    fx.obj = other
+    other.image_index += 1
     other.hp -= 1
     instance_destroy()
 }

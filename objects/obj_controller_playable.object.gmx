@@ -82,7 +82,12 @@ instance_create(global.player_spawn_x,global.player_spawn_y,obj_player_current) 
 if global.counter != MAX_ARRAY_SIZE
 {global.counter++}
 else
-{scr_next_iteration()}
+{
+    if instance_exists(obj_player_current)
+    {instance_destroy(obj_player_current)}
+    
+    //scr_next_iteration() // automatically go to next iteration
+}
 
 </string>
           </argument>
@@ -107,8 +112,23 @@ else
           <argument>
             <kind>1</kind>
             <string>/// center camera on first player
-view_xview[0] = obj_player_current.x - (WIDTH / 2)
-view_yview[0] = obj_player_current.y - (HEIGHT / 2)
+
+if instance_exists(obj_player_current)
+{
+    obj = obj_player_current
+
+    // if player is not too close to room edge (stops camera from going outside room)
+    if not(view_xview[0] &lt;= 0 and obj.x&lt;WIDTH/1.5) and not(view_xview[0]+WIDTH &gt;= room_width and obj.x &gt; room_width-(WIDTH/2)) // x
+    {
+        if not(view_yview[0] &lt;= 0 and obj.y&lt;HEIGHT/1.5) and not(view_yview[0]+HEIGHT &gt;= room_height and obj.y &gt; room_height-(HEIGHT/2)) // y
+        {
+            // center the camera on the player
+            view_xview[0] = obj.x - (WIDTH / 2)
+            view_yview[0] = obj.y - (HEIGHT / 2)
+        }
+    }
+}
+
 </string>
           </argument>
         </arguments>

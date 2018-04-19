@@ -14,6 +14,8 @@ global.version = 1.0
 if IS_MOBILE {global.system = "Mobile"}
 else {global.system = "Windows"}
 
+global.server_message = ""
+
 global.error_msg[0] = ""
 global.error_log_size = 0
 
