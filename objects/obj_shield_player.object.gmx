@@ -53,8 +53,13 @@ obj = 0
             <string>
 if instance_exists(obj)
 {
-    x = obj.x
-    y = obj.y
+    if obj.is_alive
+    {
+        x = obj.x
+        y = obj.y
+    }
+    else
+    {instance_destroy()}
 }
 else
 {instance_destroy()}

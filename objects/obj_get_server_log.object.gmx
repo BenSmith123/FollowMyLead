@@ -100,7 +100,7 @@ scr_text1()
 draw_set_font(font_arial_2)
 
 if response_successful
-{draw_text(x,y,http_response)}
+{draw_text(x,y-40,http_response)}
 
 else if os_is_network_connected() {draw_text(x,y+40,"Loading.."); draw_self()}
 

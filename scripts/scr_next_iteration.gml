@@ -2,9 +2,11 @@
 // calls each objects iteration code to reset everything
 
 // DELETE OBJECTS
+with (obj_shield_player) instance_destroy()
 with (obj_footstep) instance_destroy() // delete all footsteps
 with (obj_player_current) instance_destroy() // delete the current player
 with (obj_player_dead) instance_destroy() // delete all dead bodies
+
 
 // call each objects iteration code, in specific order!
 

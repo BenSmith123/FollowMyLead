@@ -33,7 +33,7 @@ max_hp = hp
 
 hspeed = 3
 
-view_distance = 100
+view_distance = 300
 </string>
           </argument>
         </arguments>

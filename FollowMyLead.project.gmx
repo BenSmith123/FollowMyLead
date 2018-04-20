@@ -12,6 +12,7 @@
   <sprites name="sprites">
     <sprites name="Blocks">
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_wall_2x</sprite>
       <sprite>sprites\spr_wall_breakable</sprite>
       <sprite>sprites\spr_wall_breakable_hor</sprite>
       <sprite>sprites\spr_wall_breakable_vert</sprite>
@@ -66,6 +67,7 @@
       <sprite>sprites\spr_flash</sprite>
       <sprite>sprites\spr_explosion</sprite>
       <sprite>sprites\spr_bullet_spark</sprite>
+      <sprite>sprites\spr_fx_shield_hit</sprite>
     </sprites>
     <sprites name="Buttons">
       <sprite>sprites\spr_title</sprite>
@@ -88,13 +90,13 @@
       <sprite>sprites\spr_loading_circle</sprite>
       <sprite>sprites\spr_debug_next_level</sprite>
     </sprites>
-    <sprite>sprites\spr_fx_shield_hit</sprite>
     <sprite>sprites\icon</sprite>
     <sprite>sprites\spr_lazer_ver</sprite>
     <sprite>sprites\spr_shield_player</sprite>
     <sprite>sprites\spr_gate_vert_top</sprite>
     <sprite>sprites\spr_gate_vert_bottom</sprite>
     <sprite>sprites\sprite64</sprite>
+    <sprite>sprites\sprite69</sprite>
     <sprite>sprites\sprite67</sprite>
   </sprites>
   <backgrounds name="background">
@@ -169,9 +171,11 @@
     <object>objects\obj_player_current</object>
     <object>objects\obj_player_clone</object>
     <object>objects\obj_player_recorder</object>
+    <object>objects\obj_player_dead</object>
     <objects name="Blocks">
       <object>objects\parent_block</object>
       <object>objects\obj_wall</object>
+      <object>objects\obj_wall_2x</object>
       <object>objects\parent_wall_breakable</object>
       <object>objects\obj_wall_breakable_sml</object>
       <object>objects\obj_wall_breakable_vert</object>
@@ -193,6 +197,8 @@
       <object>objects\obj_ai_5</object>
     </objects>
     <object>objects\obj_portal</object>
+    <object>objects\obj_portal_recieve</object>
+    <object>objects\obj_portal_send</object>
     <object>objects\obj_mark_death</object>
     <object>objects\obj_lazer_ver</object>
     <objects name="HUD">
@@ -251,7 +257,6 @@
     </objects>
     <object>objects\obj_get_server_log</object>
     <object>objects\obj_get_server_msg</object>
-    <object>objects\obj_player_dead</object>
     <object>objects\obj_shield_player</object>
     <object>objects\obj_background</object>
     <object>objects\object73</object>
