@@ -84,9 +84,7 @@ ai_behaviour_stand_shoot()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// debug
-//if instance_exists(closest_player) {draw_text(closest_player.x,closest_player.y,"CLOESTPLAYER!!!!")}
-
+            <string>
 draw_sprite(sprite_index,image_index,x,y)
 
 if is_alive = true

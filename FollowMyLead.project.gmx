@@ -41,7 +41,7 @@
     <sprite>sprites\spr_turret_barrel</sprite>
     <sprite>sprites\spr_turret_barrel_large</sprite>
     <sprite>sprites\spr_projectile_1</sprite>
-    <sprite>sprites\spr_projectile_2</sprite>
+    <sprite>sprites\sprite71</sprite>
     <sprites name="HUD">
       <sprite>sprites\spr_pause_button</sprite>
       <sprite>sprites\spr_button_next</sprite>
@@ -95,9 +95,11 @@
     <sprite>sprites\spr_shield_player</sprite>
     <sprite>sprites\spr_gate_vert_top</sprite>
     <sprite>sprites\spr_gate_vert_bottom</sprite>
+    <sprite>sprites\sprite72</sprite>
     <sprite>sprites\sprite64</sprite>
     <sprite>sprites\sprite69</sprite>
     <sprite>sprites\sprite67</sprite>
+    <sprite>sprites\sprite73</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -219,6 +221,7 @@
     </objects>
     <objects name="Effects">
       <object>objects\obj_fx_player_hit</object>
+      <object>objects\obj_bullet_spark</object>
       <object>objects\obj_fx_shield_hit</object>
     </objects>
     <objects name="Buttons">
@@ -252,13 +255,13 @@
       <object>objects\obj_footstep</object>
       <object>objects\obj_spawn_point</object>
       <object>objects\obj_player_joystick</object>
-      <object>objects\obj_bullet_spark</object>
       <object>objects\obj_menu_text</object>
     </objects>
     <object>objects\obj_get_server_log</object>
     <object>objects\obj_get_server_msg</object>
     <object>objects\obj_shield_player</object>
     <object>objects\obj_background</object>
+    <object>objects\obj_fx_shoot_flash</object>
     <object>objects\object73</object>
   </objects>
   <rooms name="rooms">

@@ -86,8 +86,7 @@ else
           <argument>
             <kind>1</kind>
             <string>
-other.hspeed = -other.hspeed
-other.vspeed = -other.vspeed
+instance_destroy(other)
 
 fx = instance_create(x,y,obj_fx_shield_hit)
 fx.obj = obj

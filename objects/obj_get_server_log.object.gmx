@@ -63,9 +63,9 @@ if ds_map_find_value(async_load, "id") == post
     {
         http_response = ds_map_find_value(async_load, "result");
         
-        if string_pos("MSG: ",http_response) != 0 // if the string MSG is found in the response (msg successful)
+        if string_pos("MSG:",http_response) != 0 // if the string MSG is found in the response (msg successful)
         {
-            http_response = string_copy(http_response,6,string_length(http_response))
+            http_response = string_copy(http_response,5,string_length(http_response))
             response_successful = true
             // show_message(http_response) debug
         }   

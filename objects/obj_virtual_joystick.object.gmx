@@ -34,15 +34,14 @@ is_active = true
 // joystick 1: Used on the right, for aiming
 // joystick 2: Used on left for moving
 
-joystick_radius = 140
+joystick_radius = 126
 
-vstick_init(1,WIDTH-joystick_radius-20,HEIGHT-joystick_radius-20,joystick_radius,false,spr_virtual_joystick_back,spr_virtual_joystick_front)
+vstick_init(1,WIDTH-joystick_radius-34,HEIGHT-joystick_radius-34,joystick_radius,false,spr_virtual_joystick_back,spr_virtual_joystick_front)
 
-vstick_init(2,joystick_radius+20,HEIGHT-joystick_radius-20,joystick_radius,false,spr_virtual_joystick_back_2,spr_virtual_joystick_front)
+vstick_init(2,joystick_radius+34,HEIGHT-joystick_radius-34,joystick_radius,false,spr_virtual_joystick_back_2,spr_virtual_joystick_front)
 
 stick_x = vstick_get_x(2)
 stick_y = vstick_get_y(2)
-
 </string>
           </argument>
         </arguments>

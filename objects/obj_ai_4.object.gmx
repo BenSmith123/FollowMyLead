@@ -31,7 +31,7 @@ event_inherited()
 hp = 2
 max_hp = hp
 
-len = point_distance(0,0,26,26)
+len = point_distance(0,0,10,10)
 </string>
           </argument>
         </arguments>
