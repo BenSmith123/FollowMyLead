@@ -6,7 +6,8 @@ if can_shoot = true
     bullet.image_angle = gun_image_angle
     bullet.speed = bullet_speed
     
-    instance_create(x+lengthdir_x(len,gun_image_angle),y+lengthdir_y(len,gun_image_angle),obj_fx_shoot_flash)
+    fx = instance_create(x+lengthdir_x(len,gun_image_angle),y+lengthdir_y(len,gun_image_angle),obj_fx_shoot_flash)
+    fx.image_angle = gun_image_angle
     
     can_shoot = false
     alarm[0] = SHOOT_TIME

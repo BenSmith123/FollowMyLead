@@ -163,12 +163,12 @@ if global.debug_performance
     
     draw_text(WIDTH-20,120,"Objects: "+string(instance_count))
     
-    draw_text(WIDTH-20,150,string(instance_number(obj_player_clone))+" Players / "+string(instance_number(parent_ai))+"AI")
+    draw_text(WIDTH-20,150,string(instance_number(obj_player_clone))+" Players / "+string(instance_number(parent_ai))+" AI")
     
 }
 
 
-if global.debug = true
+if global.debug
 {  
     scr_text1() 
     

@@ -22,7 +22,6 @@
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_player_mask</sprite>
-      <sprite>sprites\sprite70</sprite>
       <sprite>sprites\spr_player_current</sprite>
       <sprite>sprites\spr_player_recorded</sprite>
       <sprite>sprites\spr_player_freeze</sprite>
@@ -31,6 +30,7 @@
       <sprite>sprites\spr_pointer</sprite>
       <sprite>sprites\spr_arrow</sprite>
       <sprite>sprites\spr_button_arrow</sprite>
+      <sprite>sprites\spr_player_numbers</sprite>
     </sprites>
     <sprites name="AI">
       <sprite>sprites\spr_ai_1</sprite>
@@ -41,7 +41,7 @@
     <sprite>sprites\spr_turret_barrel</sprite>
     <sprite>sprites\spr_turret_barrel_large</sprite>
     <sprite>sprites\spr_projectile_1</sprite>
-    <sprite>sprites\sprite71</sprite>
+    <sprite>sprites\spr_projectile_2</sprite>
     <sprites name="HUD">
       <sprite>sprites\spr_pause_button</sprite>
       <sprite>sprites\spr_button_next</sprite>
@@ -65,9 +65,12 @@
       <sprite>sprites\spr_footstep</sprite>
       <sprite>sprites\spr_portal</sprite>
       <sprite>sprites\spr_flash</sprite>
+      <sprite>sprites\spr_fx_player_hit</sprite>
       <sprite>sprites\spr_explosion</sprite>
       <sprite>sprites\spr_bullet_spark</sprite>
       <sprite>sprites\spr_fx_shield_hit</sprite>
+      <sprite>sprites\spr_fx_muzzle_flash</sprite>
+      <sprite>sprites\spr_fx_muzzle_flare</sprite>
     </sprites>
     <sprites name="Buttons">
       <sprite>sprites\spr_title</sprite>
@@ -99,7 +102,6 @@
     <sprite>sprites\sprite64</sprite>
     <sprite>sprites\sprite69</sprite>
     <sprite>sprites\sprite67</sprite>
-    <sprite>sprites\sprite73</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -263,6 +265,7 @@
     <object>objects\obj_background</object>
     <object>objects\obj_fx_shoot_flash</object>
     <object>objects\object73</object>
+    <object>objects\obj_json_example</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_menu</room>

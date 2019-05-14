@@ -36,6 +36,9 @@ life_span = 0 // set by obj_player_current
 
 image_angle2 = 0 // use instead of normal image_angle due to the collision box
 
+num = instance_number(obj_player_clone)
+
+
 //x_inactive_size = 0 // size of the x inactive movement array
 move_x = false // on and off depending on the array_x_inactive
 x_inactive_count = 1 // counter for the x movement inactive array
@@ -280,6 +283,7 @@ print_debug("------ Clone ("+string(id)+") died at "+string(global.counter)+" --
 if hp &lt;= 0 
 {
     is_alive = false
+    image_angle = irandom_range(0,360) // random angle for death sprite
     move_x = false
     move_y = false    
 }
@@ -435,13 +439,8 @@ if is_alive == true
 
 draw_self()
 
-
-// debug shit
-if global.debug_player
-{
-    draw_text(x,y,"id: " +string(id))
-//draw_text(x,y+16,"alive: " +string(is_alive))
-}
+if global.show_player_number
+{draw_sprite(spr_player_numbers,num-1,x,y)} // draw clone number
 
 </string>
           </argument>

@@ -20,6 +20,7 @@ global.error_msg[0] = ""
 global.error_log_size = 0
 
 global.instant_aim = false
+global.show_player_number = true
 
 //alarm[0] = 600 // turn off debug mode
 
