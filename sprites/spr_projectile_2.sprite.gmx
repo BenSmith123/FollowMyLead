@@ -16,11 +16,13 @@
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
     <TextureGroup1>0</TextureGroup1>
+    <TextureGroup2>0</TextureGroup2>
   </TextureGroups>
   <For3D>0</For3D>
   <width>38</width>
   <height>23</height>
   <frames>
     <frame index="0">images\spr_projectile_2_0.png</frame>
+    <frame index="1">images\spr_projectile_2_1.png</frame>
   </frames>
 </sprite>
