@@ -58,7 +58,7 @@ or position_meeting(device_mouse_x(1),device_mouse_y(1),self)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = view_xview[0]+WIDTH
+            <string>x = view_xview[0]+WIDTH / global.debug_zoom
 y = view_yview[0]
 
 draw_sprite(sprite_index,0,WIDTH,0)

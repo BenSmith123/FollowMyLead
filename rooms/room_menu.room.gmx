@@ -66,6 +66,8 @@
     <instance objName="obj_button_about" x="704" y="384" name="inst_819995BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button_level_editor" x="704" y="512" name="inst_44E33E06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_debug_invincible" x="1184" y="544" name="inst_84B6D295" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object79" x="1184" y="672" name="inst_01FFC02B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_debug_next_level" x="864" y="672" name="inst_2EC04C52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

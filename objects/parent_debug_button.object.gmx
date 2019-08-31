@@ -77,23 +77,27 @@ text = ""
           <argument>
             <kind>1</kind>
             <string>
+draw_set_colour(c_white)
+
 if invert_index == false
 {
     draw_sprite(sprite_index,image_index,x,y)
-    
+    /*
     if image_index == 0
     {draw_set_colour(c_white)}
     else
     {draw_set_colour(c_black)}
+    */
 }
 else
 {
     draw_sprite(sprite_index,!image_index,x,y)
-
+    /*
     if image_index == 0
     {draw_set_colour(c_black)}
     else
     {draw_set_colour(c_white)}
+    */
 }
 
 

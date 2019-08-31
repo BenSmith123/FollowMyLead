@@ -7,6 +7,7 @@ global.debug_performance = false
 global.debug_player = false
 global.debug_array_output = false
 global.debug_invincible = false
+global.debug_zoom = 1
 
 global.overall_view = true
 global.version = 1.0

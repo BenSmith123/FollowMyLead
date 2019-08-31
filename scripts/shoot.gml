@@ -13,6 +13,7 @@ if can_shoot = true
     idd.direction = image_angle2
     idd.image_angle = image_angle2
     idd.speed = bullet_speed
+    idd.image_index = 1
     alarm[1] = reload_time
     can_shoot = false
 }

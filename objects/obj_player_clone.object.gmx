@@ -283,7 +283,7 @@ print_debug("------ Clone ("+string(id)+") died at "+string(global.counter)+" --
 if hp &lt;= 0 
 {
     is_alive = false
-    image_angle = irandom_range(0,360) // random angle for death sprite
+    //image_angle = irandom_range(0,360) // random angle for death sprite
     move_x = false
     move_y = false    
 }

@@ -257,6 +257,7 @@
     <instance objName="obj_block_explosive" x="1280" y="32" name="inst_8EBE9138" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_explosive" x="224" y="800" name="inst_2625CC76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_explosive" x="224" y="704" name="inst_7F438C73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_debug_next_level" x="192" y="96" name="inst_3FBA1E61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background10" x="1312" y="1088" w="128" h="128" xo="0" yo="0" id="10000302" name="inst_5F8BAEB6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

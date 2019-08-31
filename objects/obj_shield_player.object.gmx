@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>
 image_speed = 0
+image_alpha = 0.6
 obj = 0
 </string>
           </argument>
@@ -51,6 +52,8 @@ obj = 0
           <argument>
             <kind>1</kind>
             <string>
+if image_alpha &gt; 0.6 { image_alpha -= 0.02} // fade when shot
+
 if instance_exists(obj)
 {
     if obj.is_alive
@@ -86,6 +89,8 @@ else
           <argument>
             <kind>1</kind>
             <string>
+image_alpha = 1
+
 instance_destroy(other)
 
 fx = instance_create(x,y,obj_fx_shield_hit)
