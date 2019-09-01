@@ -1,7 +1,6 @@
 /// movement controls
 
-//stick_multiplier = 1 // on mobile, this effects the player speed based on how far the stick was pulled
-
+// BEFORE MOVEMENT WAS BASED ON DIRECTION - 8 different angles
 
 // WINDOWS AND JOYSTICK
 if IS_WINDOWS
@@ -32,49 +31,52 @@ if move_attack = true
     move_attack = false
 }
 
-dir = vstick_get_direction(2) // joystick move direction
-
 player_speed = 0; //This is our wanted speed, and it would be set depending on which key is pressed. We set it to zero here in case no keys are pressed
 player_speed_y = 0
 
 //// LEFT / RIGHT MOVEMENT ////
 if(move_left)
-    {player_speed -= max_speed} //Wanted speed is to the left, so negative. Since the wanted speed is 0 at the beginning of each step, we can subtract the max speed.
+    {player_speed -= max_speed}; //Wanted speed is to the left, so negative. Since the wanted speed is 0 at the beginning of each step, we can subtract the max speed.
                         //By doing this, if the user is pressing both keys the values will cancel out and give 0.
 if(move_right)
-    {player_speed += max_speed} //Moving right, so adding max speed now
+    {player_speed += max_speed}; //Moving right, so adding max speed now
     
 SpeedX += (player_speed - SpeedX) * accel //This will smoothly add to our movement speed each step until we reach the wanted speed
 
-// collision
+// collision system
 if(place_meeting(x + SpeedX, y, parent_block))
 {
     while(!place_meeting(x + sign(SpeedX), y, parent_block)) {x += sign(SpeedX)} //Basically move to contact
+        
     SpeedX = 0 // Stop movement
 }
 
-x += lengthdir_x(abs(SpeedX),dir)
+x += SpeedX; // Translate position
 
+////////////////////////////
 
 //// UP / DOWN MOVEMENT ////
 if(move_up)
-    {player_speed_y -= max_speed} //Wanted speed is to the left, so negative. Since the wanted speed is 0 at the beginning of each step, we can subtract the max speed.
+    {player_speed_y -= max_speed}; //Wanted speed is to the left, so negative. Since the wanted speed is 0 at the beginning of each step, we can subtract the max speed.
                         //By doing this, if the user is pressing both keys the values will cancel out and give 0.
 if(move_down)
-    {player_speed_y += max_speed} //Moving right, so adding max speed now
+    {player_speed_y += max_speed}; //Moving right, so adding max speed now
     
 SpeedY += (player_speed_y - SpeedY) * accel //This will smoothly add to our movement speed each step until we reach the wanted speed
 
-// collision
+// collision system
 if(place_meeting(x , y + SpeedY, parent_block))
 {
-    while(!place_meeting(x, y + sign(SpeedY) ,parent_block)) {y += sign(SpeedY)} //Basically move to contact
+    while(!place_meeting(x, y + sign(SpeedY) ,parent_block))
+        {y += sign(SpeedY)} //Basically move to contact
+        
     SpeedY = 0 // Stop movement
 }
 
-y += lengthdir_y(abs(SpeedY),dir);
+y += SpeedY; // Translate position
 
 ////////////////////////////
+
 
 
 // player will stop moving when key is released

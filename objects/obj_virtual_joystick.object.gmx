@@ -120,7 +120,8 @@ else
     // if there was a tap on the right side on the screen
     for(i = 0; i &lt;= 3; i++) // loop through the possible device input IDs
     {
-        if device_mouse_check_button_pressed(i,mb_left)
+        // device_mouse_check_button_pressed(i,mb_left) // use this for TAPPING, not holding
+        if device_mouse_check_button(i,mb_left)
         {
             if device_mouse_x_to_gui(i) &gt; WIDTH/2
             {

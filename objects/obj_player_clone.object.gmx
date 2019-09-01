@@ -218,6 +218,7 @@ idd = instance_create(x+lengthdir_x(len,image_angle2),y+lengthdir_y(len,image_an
 idd.direction = image_angle2
 idd.image_angle = image_angle2
 idd.speed = bullet_speed
+idd.image_index = 1
 
 print_debug("clone shot at: "+string(global.counter))
 //print_debug("clone next shot at: " +string(array_shoot[array_shoot_count+1]))

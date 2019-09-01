@@ -143,6 +143,7 @@
     <script>scripts\GUIDE.gml</script>
     <script>scripts\scr_initialise.gml</script>
     <script>scripts\scr_controls.gml</script>
+    <script>scripts\backup_controls.gml</script>
     <script>scripts\create_placeholder.gml</script>
     <script>scripts\particle_effects.gml</script>
     <script>scripts\scr_text1.gml</script>

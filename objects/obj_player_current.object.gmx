@@ -36,7 +36,7 @@ max_speed = 4
 accel = 0.4
 
 can_shoot = true
-reload_time = 15
+reload_time = 20
 
 FOOTSTEP_TIME = 5
 alarm[0] = FOOTSTEP_TIME // create a "footstep"
