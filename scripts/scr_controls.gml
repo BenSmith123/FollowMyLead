@@ -32,16 +32,16 @@ if move_attack = true
     move_attack = false
 }
 
-dir = vstick_get_direction(2) // joystick move direction
+vs_dir = vstick_get_direction(2) // joystick move direction
 
 player_speed = 0; //This is our wanted speed, and it would be set depending on which key is pressed. We set it to zero here in case no keys are pressed
 player_speed_y = 0
 
 //// LEFT / RIGHT MOVEMENT ////
-if(move_left)
-    {player_speed -= max_speed} //Wanted speed is to the left, so negative. Since the wanted speed is 0 at the beginning of each step, we can subtract the max speed.
+//if(move_left)
+    //{player_speed -= max_speed} //Wanted speed is to the left, so negative. Since the wanted speed is 0 at the beginning of each step, we can subtract the max speed.
                         //By doing this, if the user is pressing both keys the values will cancel out and give 0.
-if(move_right)
+//if(move_right)
     {player_speed += max_speed} //Moving right, so adding max speed now
     
 SpeedX += (player_speed - SpeedX) * accel //This will smoothly add to our movement speed each step until we reach the wanted speed
@@ -53,15 +53,12 @@ if(place_meeting(x + SpeedX, y, parent_block))
     SpeedX = 0 // Stop movement
 }
 
-x += lengthdir_x(abs(SpeedX),dir)
-
-
 //// UP / DOWN MOVEMENT ////
-if(move_up)
+//if(move_up)
     {player_speed_y -= max_speed} //Wanted speed is to the left, so negative. Since the wanted speed is 0 at the beginning of each step, we can subtract the max speed.
                         //By doing this, if the user is pressing both keys the values will cancel out and give 0.
-if(move_down)
-    {player_speed_y += max_speed} //Moving right, so adding max speed now
+//if(move_down)
+   // {player_speed_y += max_speed} //Moving right, so adding max speed now
     
 SpeedY += (player_speed_y - SpeedY) * accel //This will smoothly add to our movement speed each step until we reach the wanted speed
 
@@ -72,7 +69,16 @@ if(place_meeting(x , y + SpeedY, parent_block))
     SpeedY = 0 // Stop movement
 }
 
-y += lengthdir_y(abs(SpeedY),dir);
+
+
+if vstick_check(2)
+{
+    x += lengthdir_x(abs(SpeedX),vs_dir)
+    y += lengthdir_y(abs(SpeedY),vs_dir)
+}
+
+SpeedX = 0
+SpeedY = 0
 
 ////////////////////////////
 

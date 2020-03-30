@@ -32,7 +32,7 @@ player_speed = 4
 SpeedX = 0
 SpeedY = 0
 
-max_speed = 4
+max_speed = 8
 accel = 0.4
 
 can_shoot = true
@@ -304,7 +304,7 @@ else
 
 if global.instant_aim {image_angle2 = dir} // no aim delay from the virtual stick
 else
-{image_angle2 = (image_angle2+(sin(degtorad(dir-image_angle2)) * 12))} // 7 = reaction time
+{image_angle2 = round(image_angle2+(sin(degtorad(dir-image_angle2)) * 12))} // 7 = reaction time
 
 //image_angle2 = point_direction(xprevious,yprevious,x,y) // point the way you're walking
 
