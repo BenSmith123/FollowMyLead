@@ -55,7 +55,7 @@ event_inherited()
 
 image_index = global.instant_aim
 
-text = "Toggle instant aim"
+text = "Instant aim"
 </string>
           </argument>
         </arguments>

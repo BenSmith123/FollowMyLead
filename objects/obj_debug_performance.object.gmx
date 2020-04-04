@@ -55,7 +55,7 @@ event_inherited()
 
 image_index = global.debug_performance
 
-text = "Toggle performance testing"
+text = "Performance testing"
 </string>
           </argument>
         </arguments>

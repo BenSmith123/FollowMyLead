@@ -26,8 +26,44 @@
           <argument>
             <kind>1</kind>
             <string>
-event_inherited()
-global.debug = !global.debug
+msg = get_integer_async("Set view_port zoom divider#(1, 1.25, 1.5, 2)", 1)
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="63">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+var i_d = ds_map_find_value(async_load, "id")
+
+if i_d == msg
+{
+    if ds_map_find_value(async_load, "status")
+    {
+        if (ds_map_find_value(async_load, "value") &gt; 0.5 &amp;&amp; ds_map_find_value(async_load, "value") &lt; 3)
+        {
+            global.debug_zoom = ds_map_find_value(async_load, "value")
+        }
+    }
+}
+
 </string>
           </argument>
         </arguments>
@@ -53,9 +89,9 @@ global.debug = !global.debug
             <string>
 event_inherited()
 
-image_index = global.debug
+image_index = global.debug_zoom
 
-text = "Show debug info"
+text = "View Zoom"
 </string>
           </argument>
         </arguments>

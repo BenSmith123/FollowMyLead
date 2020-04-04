@@ -57,7 +57,7 @@ event_inherited()
 
 image_index = global.debug_invincible
 
-text = "Toggle invincibility"
+text = "Invincibility"
 </string>
           </argument>
         </arguments>
