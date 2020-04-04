@@ -31,13 +31,13 @@ player = 0 // set by obj_player (player object ID)
 is_active = true
 
 // VIRTUAL JOYSTICKS
-// joystick 1: Used on the right, for aiming
-// joystick 2: Used on left for moving
+// joystick 1 - right for aiming
+// joystick 2 - left for moving
 
 joystick_radius = 126
 
-x_pos_from_edge = WIDTH / 12
-y_pos_from_edge = HEIGHT / 12
+x_pos_from_edge = WIDTH / 10
+y_pos_from_edge = HEIGHT / 10
 
 // right - aim
 vstick_init(2,joystick_radius+x_pos_from_edge,HEIGHT-joystick_radius-y_pos_from_edge,joystick_radius,false,spr_virtual_joystick_back_2,spr_virtual_joystick_front)

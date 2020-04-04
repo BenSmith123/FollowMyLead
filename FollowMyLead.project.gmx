@@ -230,6 +230,7 @@
     <object>objects\obj_mark_death</object>
     <object>objects\obj_lazer_ver</object>
     <objects name="HUD">
+      <object>objects\parent_hud_button</object>
       <object>objects\obj_virtual_joystick</object>
       <object>objects\obj_pause_button</object>
       <object>objects\obj_next_step</object>
@@ -250,7 +251,7 @@
       <object>objects\obj_bullet_spark</object>
       <object>objects\obj_fx_shield_hit</object>
     </objects>
-    <objects name="Buttons">
+    <objects name="Menu buttons">
       <object>objects\parent_button</object>
       <object>objects\obj_button_play</object>
       <object>objects\obj_button_about</object>
