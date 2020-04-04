@@ -114,10 +114,11 @@
     <sprite>sprites\spr_menu_text_about</sprite>
     <sprite>sprites\spr_menu_text_settings</sprite>
     <sprite>sprites\spr_menu_button_background</sprite>
-    <sprite>sprites\sprite82</sprite>
-    <sprite>sprites\sprite84</sprite>
+    <sprite>sprites\spr_shapes</sprite>
+    <sprite>sprites\spr_reticle</sprite>
     <sprite>sprites\sprite83</sprite>
     <sprite>sprites\sprite86</sprite>
+    <sprite>sprites\sprite92</sprite>
     <sprite>sprites\sprite88_spr_door_lift_0</sprite>
     <sprite>sprites\sprite89_spr_door_lift_1</sprite>
     <sprite>sprites\sprite90_spr_auto_turret_1_1</sprite>
@@ -186,7 +187,6 @@
     <script>scripts\scr_next_iteration.gml</script>
     <script>scripts\scr_debug_keys.gml</script>
     <script>scripts\scr_show_menu_item.gml</script>
-    <script>scripts\src_draw_hud_item.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_arial_1</font>
@@ -273,7 +273,8 @@
       <object>objects\obj_debug_player_info</object>
       <object>objects\obj_debug_data_output</object>
       <object>objects\obj_debug_invincible</object>
-      <object>objects\object79</object>
+      <object>objects\obj_debug_view_zoom</object>
+      <object>objects\obj_debug_resolution</object>
       <object>objects\obj_button_back</object>
       <object>objects\obj_feedback_email</object>
       <object>objects\obj_debug_next_level</object>
@@ -305,6 +306,7 @@
     <object>objects\obj_json_example</object>
     <object>objects\object91</object>
     <object>objects\object92</object>
+    <object>objects\obj_shapes</object>
     <object>objects\object90</object>
   </objects>
   <rooms name="rooms">

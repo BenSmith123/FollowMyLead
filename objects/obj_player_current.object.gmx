@@ -295,7 +295,7 @@ y = obj_portal_recieve.y
 if image_angle2 &gt;= 360 {image_angle2 = 0}
 if image_angle2 &lt; 0 {image_angle2 = 360}
 
-// point at mouse
+// player direction - mouse/joystick
 if IS_MOBILE // mobile
 {
     dir = vstick_get_direction(1)
