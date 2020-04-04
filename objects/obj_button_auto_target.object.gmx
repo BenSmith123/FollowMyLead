@@ -35,6 +35,9 @@ top_right = gui_x
 bottom_left = 0
 bottom_right = sprite_height 
 
+image_speed = 0
+image_index = global.auto_target
+
 </string>
           </argument>
         </arguments>
@@ -60,6 +63,7 @@ bottom_right = sprite_height
             <string>///global.auto_target = !global.auto_target
 
 global.auto_target = !global.auto_target
+image_index = global.auto_target
 
 </string>
           </argument>
