@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>parent_menu_button</parentName>
+  <parentName>parent_menu_button2</parentName>
   <maskName>spr_menu_button</maskName>
   <events/>
   <PhysicsObject>0</PhysicsObject>

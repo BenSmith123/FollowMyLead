@@ -43,7 +43,7 @@ reload_time = 20
 FOOTSTEP_TIME = 5
 alarm[0] = FOOTSTEP_TIME // create a "footstep"
 
-instance_create(x,y,obj_life_bar) // NEEDS CONFIGURING TO OBJ_PLAYER_CURRENT
+instance_create(x,y,obj_hud_life_bar) // NEEDS CONFIGURING TO OBJ_PLAYER_CURRENT
 
 vstick[1,8] = 0 // reset the angle of the vstick
 

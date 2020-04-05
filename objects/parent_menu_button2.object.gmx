@@ -6,9 +6,9 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_menu_button</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -26,7 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>
-image_speed = 0.2
+obj_menu_button_end.y = y
+
+scr_show_menu_item(object_index)
+
 
 </string>
           </argument>
@@ -50,29 +53,13 @@ image_speed = 0.2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// draw arrows next to this
+            <string>
+draw_sprite(spr_menu_button,0,x,y)
 
-if position_meeting(mouse_x,mouse_y,self)
-{
-    image_index = 1
-    
-    if mouse_check_button_pressed(mb_left) 
-    {image_index = 2}
-    
-    if mouse_check_button_released(mb_left) 
-    {event_user(0)}
+draw_self()
 
-    draw_sprite(spr_button_arrow,image_index,bbox_left-20,y)
-    draw_sprite_ext(spr_button_arrow,image_index,bbox_right+20,y,-1,1,0,c_white,1)
-}
-else
-{
-    image_index = 0
-}
 
-// draw self (not image_speed)
-draw_sprite(sprite_index,image_index,x,y)
-
+draw_text(x,y+30,object_index)
 </string>
           </argument>
         </arguments>

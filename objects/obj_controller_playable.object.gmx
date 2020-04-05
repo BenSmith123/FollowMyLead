@@ -30,9 +30,9 @@
 //if IS_MOBILE
 // create HUD
 spacing = WIDTH/12 
-instance_create(0,0,obj_pause_button)
-instance_create(WIDTH-spacing,0,obj_next_step)
-instance_create(WIDTH-spacing * 2,0,obj_button_auto_target)
+instance_create(0,0,obj_hud_pause)
+instance_create(WIDTH-spacing,0,obj_hud_next_player)
+instance_create(WIDTH-spacing * 2,0,obj_hud_auto_target)
 
 if global.debug_performance {show_debug_overlay(true)}
 
