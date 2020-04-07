@@ -23,5 +23,6 @@
   <height>71</height>
   <frames>
     <frame index="0">images\spr_reticle_0.png</frame>
+    <frame index="1">images\spr_reticle_1.png</frame>
   </frames>
 </sprite>

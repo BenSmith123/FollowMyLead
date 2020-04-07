@@ -34,7 +34,7 @@ if num = 2 // iPad/tablet 4:3
 
 
 // show_message(string(num)+" = "+string(base_w)+"x"+string(base_h)) // debug
-text = 'Display ' + string(num) + ' (' + string(WIDTH) + 'x' + string(HEIGHT) + ')'
+text = 'Display ' + string(num) + ' (' + string(base_w) + 'x' + string(base_h) + ')'
 
 print_debug(text)
 
@@ -43,6 +43,8 @@ if num == 5 {num = 0}
 surface_resize(application_surface, base_w, base_h)
 
 window_set_size(base_w, base_h) // temp - windows only
+
+display_set_gui_size(base_w, base_h)
 
 // this centers the view of the room for any given room_size / ratio size
 offset_x = (room_width - base_w) / 2 
@@ -60,4 +62,5 @@ view_xview[0] = offset_x
 view_yview[0] = offset_y
 view_wview[0] = base_w
 view_hview[0] = base_h
+
 

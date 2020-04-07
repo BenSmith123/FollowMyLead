@@ -148,7 +148,6 @@
     <script>scripts\backup_controls.gml</script>
     <script>scripts\create_placeholder.gml</script>
     <script>scripts\particle_effects.gml</script>
-    <script>scripts\scr_text1.gml</script>
     <script>scripts\shoot.gml</script>
     <scripts name="AI">
       <script>scripts\ai_behaviour_move_towards_shoot.gml</script>
@@ -179,6 +178,10 @@
       <script>scripts\vstick_draw.gml</script>
       <script>scripts\vstick_step.gml</script>
       <script>scripts\vstick_init.gml</script>
+    </scripts>
+    <scripts name="Text">
+      <script>scripts\scr_text1.gml</script>
+      <script>scripts\scr_text2.gml</script>
     </scripts>
     <script>scripts\scr_room_init.gml</script>
     <script>scripts\scr_room_enable_camera.gml</script>
@@ -243,6 +246,8 @@
       <objects name="pause menu">
         <object>objects\parent_button_pause</object>
         <object>objects\obj_button_pause_resume</object>
+        <object>objects\obj_button_pause_restart</object>
+        <object>objects\obj_button_pause_exit</object>
       </objects>
     </objects>
     <objects name="Pickups">
@@ -315,6 +320,7 @@
     <object>objects\object92</object>
     <object>objects\obj_shapes</object>
     <object>objects\object90</object>
+    <object>objects\obj_level_leave_room</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_menu</room>

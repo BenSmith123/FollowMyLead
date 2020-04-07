@@ -282,7 +282,7 @@
     <option_ios_advertising_key></option_ios_advertising_key>
     <option_ios_advertising_type>iAds</option_ios_advertising_type>
     <option_ios_app_id>com.indiedev.followmylead</option_ios_app_id>
-    <option_ios_build_version>18</option_ios_build_version>
+    <option_ios_build_version>19</option_ios_build_version>
     <option_ios_certificate>iPhone Developer: Ben Smith (CKZY5KV7GS)</option_ios_certificate>
     <option_ios_device_type>3</option_ios_device_type>
     <option_ios_display_name>FollowMyLead</option_ios_display_name>

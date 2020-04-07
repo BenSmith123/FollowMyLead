@@ -15,11 +15,5 @@ view_yview[0] = 0
 view_wview[0] = WIDTH / zoom
 view_hview[0] = HEIGHT / zoom
 
-if IS_WINDOWS // DEBUG
-{
-    //window_set_fullscreen(true)
-    window_set_size(WIDTH,HEIGHT)
-}
-
-display_set_gui_size(WIDTH,HEIGHT)
+//display_set_gui_size(WIDTH,HEIGHT)
 

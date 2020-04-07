@@ -11,7 +11,7 @@ if instance_exists(parent_ai)
         // line of sight
         if image_angle2 >= point_direction(x, y, target_enemy.x, target_enemy.y)-20 and image_angle2 <= point_direction(x, y, target_enemy.x, target_enemy.y)+20
         {
-            draw_sprite(spr_reticle, 0, target_enemy.x, target_enemy.y)
+            target_locked = true
         
             if (collision_line(x, y, target_enemy.x, target_enemy.y, parent_block, false, true) == noone)
             {
@@ -19,6 +19,10 @@ if instance_exists(parent_ai)
                 dir = point_direction(x,y,target_enemy.x,target_enemy.y)
             }
         }
+    }
+    else
+    {
+        target_locked = false
     }
    
 }
