@@ -31,17 +31,23 @@ player = 0 // set by obj_player (player object ID)
 is_active = true
 
 // VIRTUAL JOYSTICKS
-// joystick 1: Used on the right, for aiming
-// joystick 2: Used on left for moving
+// joystick 1 - right for aiming
+// joystick 2 - left for moving
 
 joystick_radius = 126
 
-vstick_init(1,WIDTH-joystick_radius-34,HEIGHT-joystick_radius-34,joystick_radius,false,spr_virtual_joystick_back,spr_virtual_joystick_front)
+x_pos_from_edge = WIDTH / 10
+y_pos_from_edge = HEIGHT / 10
 
-vstick_init(2,joystick_radius+34,HEIGHT-joystick_radius-34,joystick_radius,false,spr_virtual_joystick_back_2,spr_virtual_joystick_front)
+// right - aim
+vstick_init(2,joystick_radius+x_pos_from_edge,HEIGHT-joystick_radius-y_pos_from_edge,joystick_radius,false,spr_virtual_joystick_back_2,spr_virtual_joystick_front)
+
+// left - movement
+vstick_init(1,WIDTH-joystick_radius-x_pos_from_edge,HEIGHT-joystick_radius-y_pos_from_edge,joystick_radius,false,spr_virtual_joystick_back,spr_virtual_joystick_front)
 
 stick_x = vstick_get_x(2)
 stick_y = vstick_get_y(2)
+
 </string>
           </argument>
         </arguments>
@@ -75,23 +81,28 @@ else
         vstick_step(2)
     }
     
-    
     if IS_MOBILE // mobile virtual joystick!
     {
     
         vs_dir = vstick_get_direction(2)
-    
+        
         if vstick_check(2) // checks if the vstick is being used
-        {
-    
+        {   
             crossover = 23 // crossover size between the angles of the movement (e.g. moving left and up)
             
             // movement with crossover (8-point movement rather than 4-point)     
-            if (vs_dir &gt; 315-crossover || vs_dir &lt;= 45+crossover) {player.move_right = true}
-            if (vs_dir &gt; 225-crossover &amp;&amp; vs_dir &lt;= 315+crossover) {player.move_down = true}
-            if (vs_dir &gt; 135-crossover &amp;&amp; vs_dir &lt;= 225+crossover) {player.move_left = true}
-            if (vs_dir &gt; 45-crossover &amp;&amp; vs_dir &lt;= 135+crossover) {player.move_up = true}
-            
+            // if (vs_dir &gt; 315-crossover || vs_dir &lt;= 45+crossover) {player.move_right = true}
+            // if (vs_dir &gt; 225-crossover &amp;&amp; vs_dir &lt;= 315+crossover) {player.move_down = true}
+            // if (vs_dir &gt; 135-crossover &amp;&amp; vs_dir &lt;= 225+crossover) {player.move_left = true}
+            // if (vs_dir &gt; 45-crossover &amp;&amp; vs_dir &lt;= 135+crossover) {player.move_up = true}
+
+            if vs_dir &gt; 0 {
+                player.move_right = true
+                player.move_down = true
+                player.move_left = true
+                player.move_up = true
+            }
+
             /****** OLD MOVEMENT SYSTEMS ******
             // WITHOUT ANY CROSSOVER: Left, right, up down controls when moving (rather than full 360)
             if (vs_dir &gt; 315 || vs_dir &lt;= 45) {move_right = true}
@@ -114,7 +125,8 @@ else
     // if there was a tap on the right side on the screen
     for(i = 0; i &lt;= 3; i++) // loop through the possible device input IDs
     {
-        if device_mouse_check_button_pressed(i,mb_left)
+        // device_mouse_check_button_pressed(i,mb_left) // use this for TAPPING, not holding
+        if device_mouse_check_button(i,mb_left)
         {
             if device_mouse_x_to_gui(i) &gt; WIDTH/2
             {

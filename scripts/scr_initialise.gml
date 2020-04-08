@@ -7,6 +7,10 @@ global.debug_performance = false
 global.debug_player = false
 global.debug_array_output = false
 global.debug_invincible = false
+global.debug_zoom = 1
+
+// persistent debug controls - delete later
+if global.debug { instance_create(0, 0, obj_controller_debug) } 
 
 global.overall_view = true
 global.version = 1.0
