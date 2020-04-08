@@ -104,7 +104,7 @@ if angle_inactive_count &lt; array_length_1d(array_angle_inactive) // if the end
     alarm[4] = array_angle_inactive[angle_inactive_count] // reset the alarm to stop/start moving again
 }
 else
-{move_angle = false} // if array has ended, stop the movement
+{ move_angle = false } // if array has ended, stop the movement
 
 </string>
           </argument>
@@ -145,7 +145,7 @@ if y_inactive_count &lt; array_length_1d(array_y_inactive) // if the end of the 
     alarm[3] = array_y_inactive[y_inactive_count] // reset the alarm to stop/start moving again
 }
 else
-{move_y = false} // if array has ended, stop the movement
+{ move_y = false } // if array has ended, stop the movement
 
 </string>
           </argument>
