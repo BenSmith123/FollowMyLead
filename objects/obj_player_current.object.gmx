@@ -43,7 +43,7 @@ reload_time = 20
 FOOTSTEP_TIME = 5
 alarm[0] = FOOTSTEP_TIME // create a "footstep"
 
-instance_create(x,y,obj_life_bar) // NEEDS CONFIGURING TO OBJ_PLAYER_CURRENT
+instance_create(x,y,obj_hud_life_bar) // NEEDS CONFIGURING TO OBJ_PLAYER_CURRENT
 
 vstick[1,8] = 0 // reset the angle of the vstick
 
@@ -55,6 +55,7 @@ move_down = false
 move_attack = false
 
 has_fired = false
+target_locked = false // show red rectile when auto-targetting
 
 image_angle2 = 0 // RECORDED (didn't use image_angle because it also changes the collision box, causing wall sticking etc)
 
@@ -295,7 +296,7 @@ y = obj_portal_recieve.y
 if image_angle2 &gt;= 360 {image_angle2 = 0}
 if image_angle2 &lt; 0 {image_angle2 = 360}
 
-// point at mouse
+// player direction - mouse/joystick
 if IS_MOBILE // mobile
 {
     dir = vstick_get_direction(1)
@@ -304,9 +305,10 @@ if IS_MOBILE // mobile
 else
 {dir = point_direction(x,y,mouse_x,mouse_y)} // windows version
 
-if global.instant_aim {image_angle2 = dir} // no aim delay from the virtual stick
+if global.instant_aim 
+{image_angle2 = dir} // no aim delay from the virtual stick
 else
-{image_angle2 = (image_angle2+(sin(degtorad(dir-image_angle2)) * 12))} // 7 = reaction time
+{image_angle2 = (image_angle2+(sin(degtorad(dir-image_angle2)) * 12))} // 12 = reaction time
 
 //image_angle2 = point_direction(xprevious,yprevious,x,y) // point the way you're walking
 
@@ -316,15 +318,19 @@ y = round(y)
 // draw the write pointer if the player is currently playing
 draw_sprite_ext(spr_pointer,0,x+lengthdir_x(len-12,image_angle2),y+lengthdir_y(len-12,image_angle2),image_xscale,image_yscale,image_angle2,image_blend,image_alpha)
 
-draw_self()
+// draw recticle
+if target_locked
+{ draw_sprite(spr_reticle, 1, target_enemy.x, target_enemy.y) }
+else
+{ draw_sprite_ext(spr_reticle,0,x+lengthdir_x(len+140,image_angle2),y+lengthdir_y(len+140,image_angle2),image_xscale,image_yscale,0,image_blend,image_alpha) }
 
+draw_self()
 
 
 // DEBUG STUFF 
 
 //draw_text(x-60,y+40,vstick_get_direction(1))
 //draw_text(x-60,y+60,image_angle2)
-
 
 /*
 if target_enemy != 0
@@ -339,10 +345,6 @@ draw_text(x-60,y,"x"+string(x))
 draw_text(x-60,y+20,"y"+string(y))
 
 draw_text(x-60,y+40,state)
-
-
-
-
 
 </string>
           </argument>

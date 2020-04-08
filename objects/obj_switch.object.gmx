@@ -57,15 +57,18 @@ image_index = active
             <string>
 active = false
 
-if position_meeting(x,y,parent_player) {active = true}
+if (distance_to_object(parent_player) &lt; 24) { active = true } // expand the collision
 
-if position_meeting(x,y,parent_ai) {active = true}
+// dead players will still activate the button
+if (distance_to_object(obj_player_dead) &lt; 24) { active = true }
+
+// if position_meeting(x,y,parent_ai) {active = true} - why?
 
 image_index = active
 
 // fix this
-if instance_exists(obj_gate_verticle)
-{obj_gate_verticle.open = active}
+if instance_exists(object90)
+{object90.active = active}
 
 
 /*
