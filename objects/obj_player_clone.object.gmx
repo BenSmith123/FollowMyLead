@@ -92,12 +92,12 @@ array_angle_inactive[0] = 0
 move_angle = !move_angle
 angle_inactive_count++
 
-/*//// DEBUG //////
+/*/// DEBUG //////
 if move_angle == false
 {print_debug("(C) Angle stopped at "+string(global.counter))}
 else
 {print_debug("(C) Angle started at "+string(global.counter))}
-/////////////////*/
+////////////////*/
 
 if angle_inactive_count &lt; array_length_1d(array_angle_inactive) // if the end of the array is not reached
 {
@@ -391,6 +391,12 @@ move_y = false
 y_inactive_count = 1
 array_y_count = 1
 
+image_angle2 = 0
+move_angle = false
+angle_inactive_count = 0
+array_angle_count = 0
+
+
 
 // BEGIN THE RECORDING SYSTEM VARIABLES
 
@@ -400,6 +406,12 @@ if array_shoot_count != array_length_1d(array_shoot)-1 // if the array has not r
     alarm[1] = array_shoot[array_shoot_count]-1 // reset the alarm for the FIRST time a bullet was fired
     // the -1 will remove the delay from calling this alarm 1/60th of a second late
 }
+
+if array_length_1d(array_angle_inactive) &gt; 1 // not 0 because any declared array has a size of 1 - even if empty
+{
+    alarm[4] = array_angle_inactive[0]-1 // start the countdown until movement
+}
+
 
 // start the countdown until movement
 if array_length_1d(array_x_inactive) &gt; 1 // not 0 because any declared array has a size of 1

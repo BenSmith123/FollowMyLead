@@ -100,7 +100,7 @@
     <sprite>sprites\spr_gate_vert_bottom</sprite>
     <sprite>sprites\sprite72</sprite>
     <sprite>sprites\sprite64</sprite>
-    <sprite>sprites\sprite69</sprite>
+    <sprite>sprites\spr_message_background</sprite>
     <sprite>sprites\sprite92</sprite>
     <sprite>sprites\sprite83</sprite>
     <sprite>sprites\sprite86</sprite>
@@ -288,6 +288,7 @@
     <object>objects\obj_shield_player</object>
     <object>objects\obj_background</object>
     <object>objects\obj_fx_shoot_flash</object>
+    <object>objects\obj_message</object>
     <object>objects\object73</object>
     <object>objects\obj_json_example</object>
     <object>objects\object91</object>

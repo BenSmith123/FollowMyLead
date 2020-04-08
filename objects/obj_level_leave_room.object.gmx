@@ -50,7 +50,8 @@ hold_camera = false
           <argument>
             <kind>1</kind>
             <string>
-if hold_camera {
+if hold_camera 
+{
     view_xview[0] = x - WIDTH / 2
     view_yview[0] = y
 }
