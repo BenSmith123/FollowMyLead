@@ -4,7 +4,6 @@ global.user = "GM"
 
 global.debug = true
 global.debug_performance = false
-global.debug_player = false
 global.debug_array_output = false
 global.debug_invincible = false
 

@@ -40,7 +40,7 @@ bottom_right = y + spr_center_y
 
 is_main_button = false
 
-text = 'Send nudes'
+text = 'TODO*' // TODO
 
 </string>
           </argument>

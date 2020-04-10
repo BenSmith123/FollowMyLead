@@ -31,7 +31,6 @@ User: "+global.user +"
 
 Debugging: "+string(global.debug)+"
 Performance Test: "+string(global.debug_performance)+"
-Player debugging: " +string(global.debug_player)+"
 Player data output: " +string(global.debug_array_output)+"
 
 Instant Aim: "+string(global.instant_aim)+"

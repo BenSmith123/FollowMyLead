@@ -274,7 +274,6 @@
       <object>objects\obj_toggle_debug</object>
       <object>objects\obj_debug_instant_aim</object>
       <object>objects\obj_debug_performance</object>
-      <object>objects\obj_debug_player_info</object>
       <object>objects\obj_debug_data_output</object>
       <object>objects\obj_debug_invincible</object>
       <object>objects\obj_debug_resolution</object>
