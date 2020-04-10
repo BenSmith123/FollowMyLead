@@ -26,12 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>
-gui_x = WIDTH - 240
+sprite_center = sprite_width / 2
+
+gui_x = WIDTH - 280 - sprite_center // - sprite_center to center align the button
 gui_y = 0
 
 // GUI boundry box for tapping
-top_left = gui_x - sprite_width // negative because this button is right align
-top_right = gui_x
+top_left = gui_x - sprite_center// negative because this button is right align
+top_right = gui_x + sprite_center
 bottom_left = 0
 bottom_right = sprite_height 
 

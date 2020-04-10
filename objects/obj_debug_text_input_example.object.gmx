@@ -59,7 +59,7 @@ if i_d == msg
     {
         if (ds_map_find_value(async_load, "value") &gt; 0.5 &amp;&amp; ds_map_find_value(async_load, "value") &lt; 3)
         {
-            global.debug_zoom = ds_map_find_value(async_load, "value")
+            global.view_zoom = ds_map_find_value(async_load, "value")
         }
     }
 }
@@ -89,7 +89,7 @@ if i_d == msg
             <string>
 event_inherited()
 
-image_index = global.debug_zoom
+image_index = global.view_zoom
 
 text = "View Zoom"
 </string>

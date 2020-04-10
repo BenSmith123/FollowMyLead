@@ -18,8 +18,8 @@ if global.overall_view = true // debug (show whole room)
 */
 
 // TEMP - temp fix until the WIDTH and HEIGHT is replaced
-WIDTH2 = WIDTH / global.debug_zoom
-HEIGHT2 = HEIGHT / global.debug_zoom
+WIDTH2 = WIDTH / global.view_zoom
+HEIGHT2 = HEIGHT / global.view_zoom
 
 obj = id
 

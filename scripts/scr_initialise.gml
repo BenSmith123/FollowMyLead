@@ -7,7 +7,6 @@ global.debug_performance = false
 global.debug_player = false
 global.debug_array_output = false
 global.debug_invincible = false
-global.debug_zoom = 1
 
 // persistent debug controls - delete later
 if global.debug { instance_create(0, 0, obj_controller_debug) } 
@@ -15,24 +14,29 @@ if global.debug { instance_create(0, 0, obj_controller_debug) }
 global.overall_view = true
 global.version = 1.0
 
-if IS_MOBILE {global.system = "Mobile"}
-else {global.system = "Windows"}
+if IS_MOBILE 
+{ global.system = "Mobile" }
+else 
+{ global.system = "Windows" }
 
 global.server_message = ""
 
 global.error_msg[0] = ""
 global.error_log_size = 0
 
-global.instant_aim = false
-global.show_player_number = true
+global.instant_aim = false // TODO - this work and/or is a debug?
+
 
 //alarm[0] = 600 // turn off debug mode
 
 global.player_number = 0 // start off as the first player
 
+// gameplay options
 global.auto_target = true
+global.view_zoom = 1.5 // 1 is the native pixel scale
 
-// global.player_array[0] = 0
+global.show_player_number = true
+
 
 
 particle_effects()

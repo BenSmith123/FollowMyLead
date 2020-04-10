@@ -59,15 +59,24 @@ bottom_right = sprite_height
             <kind>1</kind>
             <string>/// deactivate all objects except self, create pause menu buttons
 
-instance_deactivate_all(true) 
+instance_deactivate_all(true)
+instance_activate_object(obj_controller)
 
 // TODO - extract this code to another obj to avoid having persistant variables?
 
-gui_center_y = HEIGHT/2
+gui_center_y = HEIGHT / 2
 
-instance_create(WIDTH/2-300, gui_center_y, obj_button_pause_resume)
-instance_create(WIDTH/2, gui_center_y, obj_button_pause_restart)
-instance_create(WIDTH/2+300, gui_center_y, obj_button_pause_exit)
+// main buttons
+instance_create(WIDTH * 0.25, gui_center_y - 180, obj_button_pause_resume)
+instance_create(WIDTH * 0.5, gui_center_y - 180, obj_button_pause_restart)
+instance_create(WIDTH * 0.75, gui_center_y - 180, obj_button_pause_exit)
+
+// options
+instance_create(WIDTH * 0.20, gui_center_y + 180, obj_button_pause_auto_target)
+instance_create(WIDTH * 0.40, gui_center_y + 180, obj_button_pause_zoom)
+instance_create(WIDTH * 0.60, gui_center_y + 180, obj_button_pause_player_num)
+// instance_create(WIDTH * 0.80, gui_center_y + 180, obj_button_pause_zoom)
+
 
 </string>
           </argument>

@@ -30,10 +30,12 @@ scr_text2()
 
 draw_sprite(sprite_index,image_index,x,y)
 
-draw_text(x, y, text)
+draw_text(x, y-60, text)
+
+if has_icon { draw_sprite(spr_button_pause_icons, icon_spr_index, x, y+60) }
 
 // debug to show boundry box:
-draw_rectangle(top_left, bottom_left, top_right, bottom_right, true)
+// draw_rectangle(top_left, bottom_left, top_right, bottom_right, true)
 
 </string>
           </argument>

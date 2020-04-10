@@ -22,6 +22,7 @@
       <sprite>sprites\spr_gate_verticle</sprite>
       <sprite>sprites\spr_explosive</sprite>
       <sprite>sprites\spr_switch_button</sprite>
+      <sprite>sprites\spr_wall_shadow</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_player_mask</sprite>
@@ -55,12 +56,14 @@
       <sprite>sprites\spr_pause_button</sprite>
       <sprite>sprites\spr_button_next</sprite>
       <sprite>sprites\spr_button_auto_target</sprite>
-      <sprite>sprites\spr_button_shoot</sprite>
       <sprite>sprites\spr_life_bar</sprite>
       <sprite>sprites\spr_virtual_joystick_back</sprite>
       <sprite>sprites\spr_virtual_joystick_back_2</sprite>
       <sprite>sprites\spr_virtual_joystick_front</sprite>
       <sprite>sprites\spr_virtual_joystick_front_2</sprite>
+      <sprite>sprites\spr_pause_button_main</sprite>
+      <sprite>sprites\spr_pause_button_option</sprite>
+      <sprite>sprites\spr_button_pause_icons</sprite>
     </sprites>
     <sprites name="Pickups">
       <sprite>sprites\spr_pickup_mask</sprite>
@@ -95,19 +98,19 @@
       <sprite>sprites\spr_debug_next_level</sprite>
       <sprite>sprites\spr_button_debug_toggle</sprite>
     </sprites>
-    <sprite>sprites\spr_lazer_ver</sprite>
     <sprite>sprites\spr_gate_vert_top</sprite>
     <sprite>sprites\spr_gate_vert_bottom</sprite>
-    <sprite>sprites\sprite72</sprite>
-    <sprite>sprites\sprite64</sprite>
-    <sprite>sprites\spr_message_background</sprite>
-    <sprite>sprites\sprite92</sprite>
-    <sprite>sprites\sprite83</sprite>
-    <sprite>sprites\sprite86</sprite>
-    <sprite>sprites\sprite88_spr_door_lift_0</sprite>
     <sprite>sprites\sprite90_spr_auto_turret_1_1</sprite>
+    <sprite>sprites\spr_lazer_ver</sprite>
+    <sprite>sprites\sprite72</sprite>
+    <sprite>sprites\spr_message_background</sprite>
+    <sprite>sprites\spr_level_leave_room</sprite>
+    <sprite>sprites\spr_light</sprite>
+    <sprite>sprites\sprite88_spr_door_lift_0</sprite>
     <sprite>sprites\spr_shapes</sprite>
-    <sprite>sprites\spr_hud_pause_button</sprite>
+    <sprite>sprites\sprite81</sprite>
+    <sprite>sprites\sprite64</sprite>
+    <sprite>sprites\sprite79</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -120,9 +123,6 @@
     <background>background\background6</background>
     <background>background\background13</background>
     <background>background\background10</background>
-    <background>background\background7</background>
-    <background>background\background8</background>
-    <background>background\background9</background>
     <background>background\background11</background>
   </backgrounds>
   <paths name="paths"/>
@@ -235,6 +235,9 @@
         <object>objects\obj_button_pause_resume</object>
         <object>objects\obj_button_pause_restart</object>
         <object>objects\obj_button_pause_exit</object>
+        <object>objects\obj_button_pause_auto_target</object>
+        <object>objects\obj_button_pause_zoom</object>
+        <object>objects\obj_button_pause_player_num</object>
       </objects>
     </objects>
     <objects name="Pickups">
@@ -271,8 +274,8 @@
       <object>objects\obj_debug_player_info</object>
       <object>objects\obj_debug_data_output</object>
       <object>objects\obj_debug_invincible</object>
-      <object>objects\obj_debug_view_zoom</object>
       <object>objects\obj_debug_resolution</object>
+      <object>objects\obj_debug_text_input_example</object>
       <object>objects\obj_button_back</object>
       <object>objects\obj_debug_next_level</object>
     </objects>
@@ -288,13 +291,13 @@
     <object>objects\obj_shield_player</object>
     <object>objects\obj_background</object>
     <object>objects\obj_fx_shoot_flash</object>
-    <object>objects\obj_message</object>
     <object>objects\object73</object>
     <object>objects\obj_json_example</object>
-    <object>objects\object91</object>
-    <object>objects\object92</object>
+    <object>objects\obj_wall_shadow</object>
+    <object>objects\obj_light</object>
     <object>objects\obj_shapes</object>
     <object>objects\object90</object>
+    <object>objects\obj_message_level_complete</object>
     <object>objects\obj_level_leave_room</object>
   </objects>
   <rooms name="rooms">
