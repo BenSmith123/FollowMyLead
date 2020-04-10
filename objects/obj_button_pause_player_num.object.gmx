@@ -38,9 +38,9 @@ top_right = x + spr_center_x
 bottom_left = y - spr_center_y
 bottom_right = y + spr_center_y
 
-has_icon = false
+is_main_button = false
 
-text = 'Show player numbers'
+text = 'Show player#numbers'
 
 </string>
           </argument>
@@ -67,6 +67,7 @@ text = 'Show player numbers'
             <string>/// toggle global.show_player_number
 
 global.show_player_number =! global.show_player_number
+image_index = global.show_player_number
 
 </string>
           </argument>

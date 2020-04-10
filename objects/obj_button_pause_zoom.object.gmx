@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>
 image_speed = 0
-image_index = global.auto_target
+image_index = 2
 
 spr_center_x = sprite_width / 2
 spr_center_y = sprite_height / 2
@@ -38,7 +38,7 @@ top_right = x + spr_center_x
 bottom_left = y - spr_center_y
 bottom_right = y + spr_center_y 
 
-has_icon = false
+is_main_button = false
 
 text = ''
 

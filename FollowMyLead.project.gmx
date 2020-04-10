@@ -132,6 +132,7 @@
     <scripts name="Text">
       <script>scripts\scr_text1.gml</script>
       <script>scripts\scr_text2.gml</script>
+      <script>scripts\scr_text3.gml</script>
     </scripts>
     <scripts name="AI">
       <script>scripts\ai_behaviour_move_towards_shoot.gml</script>
@@ -179,11 +180,12 @@
     <script>scripts\shoot.gml</script>
     <script>scripts\scr_auto_shoot_enemy.gml</script>
     <script>scripts\scr_next_iteration.gml</script>
-    <script>scripts\scr_pause_menu.gml</script>
+    <script>scripts\scr_pause_menu_events.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_arial_1</font>
     <font>fonts\font_arial_2</font>
+    <font>fonts\font_arial_3</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_controller</object>
@@ -238,6 +240,7 @@
         <object>objects\obj_button_pause_auto_target</object>
         <object>objects\obj_button_pause_zoom</object>
         <object>objects\obj_button_pause_player_num</object>
+        <object>objects\object93</object>
       </objects>
     </objects>
     <objects name="Pickups">

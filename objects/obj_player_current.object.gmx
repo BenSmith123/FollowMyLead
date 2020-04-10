@@ -39,6 +39,7 @@ accel = 0.4
 
 can_shoot = true
 reload_time = 20
+player_sight = 300 // distance before seeing and auto shooting an enemy
 
 FOOTSTEP_TIME = 5
 alarm[0] = FOOTSTEP_TIME // create a "footstep"
@@ -207,7 +208,7 @@ alarm[0] = FOOTSTEP_TIME // repeat
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// camera!
+            <string>/// scr_camera()
 
 scr_camera()
 
@@ -322,7 +323,7 @@ draw_sprite_ext(spr_pointer,0,x+lengthdir_x(len-12,image_angle2),y+lengthdir_y(l
 if target_locked
 { draw_sprite(spr_reticle, 1, target_enemy.x, target_enemy.y) }
 else
-{ draw_sprite_ext(spr_reticle,0,x+lengthdir_x(len+140,image_angle2),y+lengthdir_y(len+140,image_angle2),image_xscale,image_yscale,0,image_blend,image_alpha) }
+{ draw_sprite_ext(spr_reticle,0,x+lengthdir_x(len+player_sight,image_angle2),y+lengthdir_y(len+player_sight,image_angle2),image_xscale,image_yscale,0,image_blend,image_alpha) }
 
 draw_self()
 
