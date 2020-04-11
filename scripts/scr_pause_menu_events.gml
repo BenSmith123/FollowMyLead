@@ -3,13 +3,6 @@
 if text = 'Resume'
 {
     instance_activate_all()
-
-    if instance_exists(obj_player_current)
-    {
-         view_xview = obj_player_current.x
-         view_yview = obj_player_current.y
-    }
-    
     instance_destroy(parent_button_pause)
 }
 

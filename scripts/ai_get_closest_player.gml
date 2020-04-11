@@ -17,6 +17,8 @@ if instance_exists(parent_player)
                     if (collision_line(x, y, global.player_array[i].x, global.player_array[i].y, parent_block, false, true) == noone)
                     {
                         target_player = global.player_array[i] // target the closest player
+                        
+                        // if seen == false { alarm[0] = SHOOT_TIME } // don't shoot instantly when first seeing an enemy
                         seen = true
                     }
                 }

@@ -45,8 +45,8 @@ with (obj_spawn_point) instance_destroy() // destroy the object, SAVE MEMORY
 
 instance_create(global.player_spawn_x,global.player_spawn_y,obj_player_current) // create first player object
 
-lives_hud_x = WIDTH - 200
-lives_hud_y = 48
+lives_hud_x = 32
+lives_hud_y = 32
 </string>
           </argument>
         </arguments>
@@ -136,10 +136,10 @@ else
 
 for (i = 0; i &lt; PLAYER_LIVES_START; i++)
 {
-    if i &gt; PLAYER_LIVES 
-    { draw_sprite(spr_hud_player_lives, 1, lives_hud_x - i * 36, lives_hud_y) }
+    if i &gt;= PLAYER_LIVES 
+    { draw_sprite(spr_hud_player_lives, 1, lives_hud_x + i * 36, lives_hud_y) } // clone
     else
-    { draw_sprite(spr_hud_player_lives, 0, lives_hud_x - i * 36, lives_hud_y) }
+    { draw_sprite(spr_hud_player_lives, 0, lives_hud_x + i * 36, lives_hud_y) } // player life
 }
 
 

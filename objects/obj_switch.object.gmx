@@ -57,10 +57,10 @@ image_index = active
             <string>
 active = false
 
-if (distance_to_object(parent_player) &lt; 24) { active = true } // expand the collision
+if place_meeting(x, y, parent_player) { active = true }
 
 // dead players will still activate the button
-if (distance_to_object(obj_player_dead) &lt; 24) { active = true }
+if place_meeting(x, y, obj_player_dead)  { active = true }
 
 // if position_meeting(x,y,parent_ai) {active = true} - why?
 

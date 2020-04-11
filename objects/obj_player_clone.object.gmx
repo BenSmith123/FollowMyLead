@@ -304,7 +304,7 @@ if is_alive
 {
     if move_x // this is turned on/off via alarm2
     {
-        if array_x_count &lt;= array_length_1d(array_x)// DEBUG TO AVOID CRASH - try figure out the crash and remove this
+        if array_x_count &lt; array_length_1d(array_x)// DEBUG TO AVOID CRASH - try figure out the crash and remove this
         {
             x = array_x[array_x_count] // set x to the number stored in the x_array
             array_x_count++ // increment through the array
@@ -442,8 +442,6 @@ draw_self()
 
 if global.show_player_number
 { draw_sprite(spr_player_numbers,num-1,x,y) } // draw clone number
-
-draw_text(x,y-36,id) // DEBUG
 
 </string>
           </argument>
