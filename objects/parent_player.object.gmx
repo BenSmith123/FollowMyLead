@@ -37,8 +37,7 @@ is_alive = true
 len = point_distance(0,0,26,26) // This is the distance between the tip and the origin
 
 image_speed = 0
-
-
+image_index = 0
 </string>
           </argument>
         </arguments>

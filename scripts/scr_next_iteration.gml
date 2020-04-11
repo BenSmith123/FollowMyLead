@@ -3,9 +3,13 @@
 
 // DELETE OBJECTS
 with (obj_shield_player) instance_destroy()
-with (obj_footstep) instance_destroy() // delete all footsteps
+with (obj_footstep) instance_destroy() // delete all footsteps // TODO - remove footsteps?
 with (obj_player_current) instance_destroy() // delete the current player
 with (obj_player_dead) instance_destroy() // delete all dead bodies
+
+instance_destroy(obj_message_player_died) // if player dead message is already showing, destroy it
+
+// TODO: delete explosion/bullets as well?
 
 
 // call each objects iteration code, in specific order!

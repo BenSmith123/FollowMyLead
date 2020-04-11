@@ -144,8 +144,8 @@ if y_inactive_count &lt; array_length_1d(array_y_inactive) // if the end of the 
 {
     alarm[3] = array_y_inactive[y_inactive_count] // reset the alarm to stop/start moving again
 }
-else
-{ move_y = false } // if array has ended, stop the movement
+// else
+// { move_y = false } // if array has ended, stop the movement
 
 </string>
           </argument>
@@ -176,17 +176,17 @@ x_inactive_count++
 
 ////// DEBUG //////
 if move_x == false
-{print_debug("Stopped at "+string(global.counter))}
+{print_debug("X stopped at "+string(global.counter))}
 else
-{print_debug("Moved at "+string(global.counter))}
+{print_debug("X moved at "+string(global.counter))}
 /////////////////*/
 
 if x_inactive_count &lt; array_length_1d(array_x_inactive) // if the end of the array is not reached
 {
     alarm[2] = array_x_inactive[x_inactive_count] // reset the alarm to stop/start moving again
 }
-else
-{move_x = false} // if array has ended, stop the movement
+// else
+// { move_x = false } // if array has ended, stop the movement
 
 </string>
           </argument>
@@ -220,8 +220,7 @@ idd.image_angle = image_angle2
 idd.speed = bullet_speed
 idd.image_index = 1
 
-print_debug("clone shot at: "+string(global.counter))
-//print_debug("clone next shot at: " +string(array_shoot[array_shoot_count+1]))
+//print_debug("clone shot at: "+string(global.counter))
 
 if array_shoot_count &lt; array_length_1d(array_shoot)-1 // if the array has not reached the end (minus 1 because of array index 0)
 {
@@ -253,7 +252,7 @@ if array_shoot_count &lt; array_length_1d(array_shoot)-1 // if the array has not
             <kind>1</kind>
             <string>/// lifespan over, is_alive = false
 
-is_alive = false
+hp = 0 // this also sets is_alive=false in endStep
 
 print_debug("------ Clone ("+string(id)+") died at "+string(global.counter)+" ------")
 </string>
@@ -283,31 +282,38 @@ print_debug("------ Clone ("+string(id)+") died at "+string(global.counter)+" --
 
 if hp &lt;= 0 
 {
-    is_alive = false
-    //image_angle = irandom_range(0,360) // random angle for death sprite
-    move_x = false
-    move_y = false    
+    hspeed = 0
+    vspeed = 0
+    
+    sprite_index = spr_player_dead
+    image_index = 0
+
+    if is_alive
+    {
+        move_x = false
+        move_y = false
+        image_angle = irandom_range(0,360) // random angle for death sprite
+
+        depth = 220 // change the depth to behind AI etc        
+        is_alive = false
+    }   
 }
 
-// now handled by event_user0: if global.counter == life_span {is_alive = false} // die if the recording has ended
 
-if is_alive == true
+if is_alive
 {
-    if move_x == true // this is turned on/off via alarm2
+    if move_x // this is turned on/off via alarm2
     {
-        if array_x_count &lt; array_length_1d(array_x)// DEBUG TO AVOID CRASH - try figure out the crash and remove this
+        if array_x_count &lt;= array_length_1d(array_x)// DEBUG TO AVOID CRASH - try figure out the crash and remove this
         {
             x = array_x[array_x_count] // set x to the number stored in the x_array
             array_x_count++ // increment through the array
-            
-            if x == 0 {show_message(string(id)+" x is 0")} // DEBUG: REMOVE
         }
         else // DEBUG
-        {show_message(string(id) + " x array has gone out of bounds!")} // DEBUG TO AVOID CRASH
+        { show_message(string(id) + " x array has gone out of bounds!") } // DEBUG TO AVOID CRASH
     }
     
-    //if show_question("Continue to next room?") {room_goto(rm_Level2)}else {game_end()}
-    if move_y == true
+    if move_y
     {
         if array_y_count &lt; array_length_1d(array_y)// DEBUG TO AVOID CRASH - try figure out the crash and remove this
         {
@@ -315,33 +321,15 @@ if is_alive == true
             array_y_count++
         }
         else // DEBUG
-        {show_message(string(id) + " y array has gone out of bounds!")} // DEBUG TO AVOID CRASH
+        { show_message(string(id) + " y array has gone out of bounds!") } // DEBUG TO AVOID CRASH
     }
 
-    
-    
-    if move_angle == true
+    if move_angle
     {
         image_angle2 = array_angle[array_angle_count]
         array_angle_count++
     }
-    
-/*
-    if array_x_count &lt;= array_length_1d(array_x)+1
-    {
-        if array_x[global.counter] != 0
-        {x = array_x[global.counter]}
-    }
-    */
 }
-else
-{
-    sprite_index = spr_player_dead
-    hspeed = 0
-    vspeed = 0
-    depth = 220 // change the depth to behind AI etc
-}
-
 
 </string>
           </argument>
@@ -415,10 +403,10 @@ if array_length_1d(array_angle_inactive) &gt; 1 // not 0 because any declared ar
 
 // start the countdown until movement
 if array_length_1d(array_x_inactive) &gt; 1 // not 0 because any declared array has a size of 1
-{alarm[2] = array_x_inactive[1]-1} // X
+{ alarm[2] = array_x_inactive[1]-1 } // X
 
 if array_length_1d(array_y_inactive) &gt; 1
-{alarm[3] = array_y_inactive[1]-1}
+{ alarm[3] = array_y_inactive[1]-1 }
 
 
 </string>
@@ -444,7 +432,7 @@ if array_length_1d(array_y_inactive) &gt; 1
           <argument>
             <kind>1</kind>
             <string>    
-if is_alive == true
+if is_alive
 {
     // draw the arrow of a recorded player
     draw_sprite_ext(spr_arrow,0,x+lengthdir_x(len-12,image_angle2),y+lengthdir_y(len-12,image_angle2),image_xscale,image_yscale,image_angle2,image_blend,image_alpha)
@@ -453,7 +441,9 @@ if is_alive == true
 draw_self()
 
 if global.show_player_number
-{draw_sprite(spr_player_numbers,num-1,x,y)} // draw clone number
+{ draw_sprite(spr_player_numbers,num-1,x,y) } // draw clone number
+
+draw_text(x,y-36,id) // DEBUG
 
 </string>
           </argument>

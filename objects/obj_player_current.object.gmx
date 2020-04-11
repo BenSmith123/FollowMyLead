@@ -44,7 +44,7 @@ player_sight = 300 // distance before seeing and auto shooting an enemy
 FOOTSTEP_TIME = 5
 alarm[0] = FOOTSTEP_TIME // create a "footstep"
 
-instance_create(x,y,obj_hud_life_bar) // NEEDS CONFIGURING TO OBJ_PLAYER_CURRENT
+instance_create(x,y,obj_hud_life_bar) // NEEDS CONFIGURING TO OBJ_PLAYER_CURRENT - TODO what is this
 
 vstick[1,8] = 0 // reset the angle of the vstick
 
@@ -56,9 +56,11 @@ move_down = false
 move_attack = false
 
 has_fired = false
-target_locked = false // show red rectile when auto-targetting
+target_locked = false // show red rectile when auto-targeting
 
 image_angle2 = 0 // RECORDED (didn't use image_angle because it also changes the collision box, causing wall sticking etc)
+
+show_death_message = true // onlycreate message when player dies normally. not when next iteration was pressed 
 
 // increment player count
 global.player_number += 1
@@ -66,8 +68,6 @@ number = global.player_number
 
 // add this object to the array list
 global.player_array[global.player_number] = self
-
-print_debug(id)
 
 // create a recorder object to record this play through
 instance_create(x,y,obj_player_recorder)
@@ -122,11 +122,18 @@ if IS_MOBILE
 
 obj_player_recorder.life_span = global.counter // set the recorders lifespan
 
+obj_controller_playable.PLAYER_LIVES -= 1
+
+if (show_death_message)
+{
+    instance_destroy(obj_hud_next_player) // hide next player button since death message is basically the same
+    instance_create(WIDTH/2, HEIGHT/2, obj_message_player_died)
+}
+
 print_debug("------ Current player died at "+string(global.counter)+" ------")
 
 // dead body
-obj = instance_create(x,y,obj_player_dead)
-//obj.image_angle = image_angle2
+instance_create(x,y,obj_player_dead)
 
 </string>
           </argument>
@@ -185,7 +192,6 @@ can_shoot = true
 
 
 alarm[0] = FOOTSTEP_TIME // repeat
-
 </string>
           </argument>
         </arguments>
@@ -211,8 +217,6 @@ alarm[0] = FOOTSTEP_TIME // repeat
             <string>/// scr_camera()
 
 scr_camera()
-
-
 </string>
           </argument>
         </arguments>
@@ -304,7 +308,7 @@ if IS_MOBILE // mobile
     if global.auto_target == true {scr_auto_shoot_enemy()} // auto target
 }
 else
-{dir = point_direction(x,y,mouse_x,mouse_y)} // windows version
+{ dir = point_direction(x,y,mouse_x,mouse_y) } // windows version
 
 if global.instant_aim 
 {image_angle2 = dir} // no aim delay from the virtual stick

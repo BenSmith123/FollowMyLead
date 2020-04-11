@@ -100,8 +100,12 @@ array_angle_pause = 0
             <kind>1</kind>
             <string>/// DEBUG: console output
 
+print_debug('RECORDER array_x_count:' + string(array_x_count))
+
+
 if global.debug_array_output
 {
+
     show_debug_message("------ "+string(id)+" ------") 
     show_debug_message("x_size: "+string(x_num))
     show_debug_message("x_inactive_size: "+string(array_x_count))
@@ -123,7 +127,7 @@ if global.debug_array_output
     
     shoot_size: "+string(array_shoot_count)
     
-    show_message_async(debug_output)
+    // show_message_async(debug_output)
     
 }
 
@@ -264,8 +268,7 @@ if instance_exists(player)
     }
     
     
-} 
-
+}
 
 </string>
           </argument>
@@ -311,9 +314,6 @@ if array_shoot_count &gt; 0
     clone.alarm[1] = array_shoot[1]-1 // the -1 makes the x movement exact
 }
 
-//clone.array_shoot_count = array_shoot_count
-
-
 
 // loop through the arrays and copy all variables to clone object
 
@@ -344,8 +344,6 @@ if array_x_count != 0 // stops from crashing if player x didn't move
     // send the x switch array (moving/not moving)
     for(i = 0; i &lt; x_num; i++)
     {clone.array_x_inactive[i] = array_x_inactive[i]}
-    
-    //clone.x_inactive_size = x_num // pass the size of the array - not needed because array_size_1d can get the size
 
     if array_x_count &gt; 0
     {clone.alarm[2] = array_x_inactive[1]-1} // start the countdown until movement

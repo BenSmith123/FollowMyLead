@@ -61,6 +61,13 @@ bottom_right = sprite_height
             <kind>1</kind>
             <string>///scr_next_iteration()
 
+if instance_exists(obj_player_current)
+{
+    obj_player_current.show_death_message = false
+    
+    
+}
+
 scr_next_iteration()
 
 </string>

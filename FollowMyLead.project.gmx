@@ -52,10 +52,10 @@
       <sprite>sprites\spr_button_about</sprite>
       <sprite>sprites\spr_button_level_editor</sprite>
     </sprites>
+    <sprite>sprites\spr_hud_player_lives</sprite>
     <sprites name="HUD">
       <sprite>sprites\spr_pause_button</sprite>
       <sprite>sprites\spr_button_next</sprite>
-      <sprite>sprites\spr_button_auto_target</sprite>
       <sprite>sprites\spr_life_bar</sprite>
       <sprite>sprites\spr_virtual_joystick_back</sprite>
       <sprite>sprites\spr_virtual_joystick_back_2</sprite>
@@ -108,9 +108,8 @@
     <sprite>sprites\spr_light</sprite>
     <sprite>sprites\sprite88_spr_door_lift_0</sprite>
     <sprite>sprites\spr_shapes</sprite>
-    <sprite>sprites\sprite81</sprite>
-    <sprite>sprites\sprite64</sprite>
     <sprite>sprites\sprite79</sprite>
+    <sprite>sprites\sprite80</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -158,7 +157,6 @@
       <script>scripts\vstick_get_direction.gml</script>
       <script>scripts\vstick_get_deviation.gml</script>
       <script>scripts\vstick_check.gml</script>
-      <script>scripts\vstick_check_pressed.gml</script>
       <script>scripts\vstick_check_released.gml</script>
       <script>scripts\vstick_draw.gml</script>
       <script>scripts\vstick_step.gml</script>
@@ -181,6 +179,7 @@
     <script>scripts\scr_auto_shoot_enemy.gml</script>
     <script>scripts\scr_next_iteration.gml</script>
     <script>scripts\scr_pause_menu_events.gml</script>
+    <script>scripts\scr_initialise_playable_level.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_arial_1</font>
@@ -230,7 +229,6 @@
       <object>objects\obj_virtual_joystick</object>
       <object>objects\obj_hud_pause</object>
       <object>objects\obj_hud_next_player</object>
-      <object>objects\obj_hud_auto_target</object>
       <object>objects\obj_hud_life_bar</object>
       <objects name="pause menu">
         <object>objects\parent_button_pause</object>
@@ -300,6 +298,7 @@
     <object>objects\obj_shapes</object>
     <object>objects\object90</object>
     <object>objects\obj_message_level_complete</object>
+    <object>objects\obj_message_player_died</object>
     <object>objects\obj_level_leave_room</object>
   </objects>
   <rooms name="rooms">

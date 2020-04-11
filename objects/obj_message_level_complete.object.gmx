@@ -28,6 +28,8 @@
             <string>
 image_speed = 0
 
+text = ''
+
 </string>
           </argument>
         </arguments>
