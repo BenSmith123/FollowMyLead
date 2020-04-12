@@ -13,11 +13,6 @@ if global.debug { instance_create(0, 0, obj_controller_debug) }
 global.overall_view = true
 global.version = 1.0
 
-if IS_MOBILE 
-{ global.system = "Mobile" }
-else 
-{ global.system = "Windows" }
-
 global.server_message = ""
 
 global.error_msg[0] = ""

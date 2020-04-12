@@ -1,32 +1,10 @@
 /// movement controls
 
-
-// WINDOWS AND JOYSTICK
-if IS_WINDOWS
-{
-    if keyboard_check(ord('A')) {move_left = true} // left
-    if keyboard_check(ord('D')) {move_right = true} // right
-    if keyboard_check(ord('W')) {move_up = true}
-    if keyboard_check(ord('S')) {move_down = true}
-    if mouse_check_button_pressed(mb_left) {move_attack = true}
-    
-    // ALTERNATE KEYS
-    if keyboard_check(vk_left) {move_left = true}
-    if keyboard_check(vk_right) {move_right = true}
-    if keyboard_check(vk_up) {move_up = true}
-    if keyboard_check(vk_down) {move_down = true}
-    if keyboard_check_pressed(vk_space) {move_attack = true}
-}
-
-
-// Movement for MOBILE is handled by obj_virtual_joystick
-
 // SHOOTING
 
-if move_attack = true
+if move_attack
 {
     shoot()
-    //array_shoot[counter] = true
     move_attack = false
 }
 
@@ -68,17 +46,4 @@ if vstick_check(2)
 
 SpeedX = 0
 SpeedY = 0
-
-////////////////////////////
-
-if IS_WINDOWS
-{
-    // player will stop moving when key is released
-    move_left = false
-    move_right = false
-    move_up = false
-    move_down = false
-    // move_attack = false
-}
-
 

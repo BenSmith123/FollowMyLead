@@ -703,12 +703,5 @@
     <option_xbone_texture_page>1024</option_xbone_texture_page>
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
-  <ConfigConstants>
-    <constants number="4">
-      <constant name="WIDTH">1366</constant>
-      <constant name="HEIGHT">768</constant>
-      <constant name="IS_MOBILE">false</constant>
-      <constant name="IS_WINDOWS">true</constant>
-    </constants>
-  </ConfigConstants>
+  <ConfigConstants/>
 </Config>

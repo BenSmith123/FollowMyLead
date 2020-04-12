@@ -81,45 +81,40 @@ else
         vstick_step(2)
     }
     
-    if IS_MOBILE // mobile virtual joystick!
-    {
+    vs_dir = vstick_get_direction(2)
     
-        vs_dir = vstick_get_direction(2)
+    if vstick_check(2) // checks if the vstick is being used
+    {   
+        crossover = 23 // crossover size between the angles of the movement (e.g. moving left and up)
         
-        if vstick_check(2) // checks if the vstick is being used
-        {   
-            crossover = 23 // crossover size between the angles of the movement (e.g. moving left and up)
-            
-            // movement with crossover (8-point movement rather than 4-point)     
-            // if (vs_dir &gt; 315-crossover || vs_dir &lt;= 45+crossover) {player.move_right = true}
-            // if (vs_dir &gt; 225-crossover &amp;&amp; vs_dir &lt;= 315+crossover) {player.move_down = true}
-            // if (vs_dir &gt; 135-crossover &amp;&amp; vs_dir &lt;= 225+crossover) {player.move_left = true}
-            // if (vs_dir &gt; 45-crossover &amp;&amp; vs_dir &lt;= 135+crossover) {player.move_up = true}
+        // movement with crossover (8-point movement rather than 4-point)     
+        // if (vs_dir &gt; 315-crossover || vs_dir &lt;= 45+crossover) {player.move_right = true}
+        // if (vs_dir &gt; 225-crossover &amp;&amp; vs_dir &lt;= 315+crossover) {player.move_down = true}
+        // if (vs_dir &gt; 135-crossover &amp;&amp; vs_dir &lt;= 225+crossover) {player.move_left = true}
+        // if (vs_dir &gt; 45-crossover &amp;&amp; vs_dir &lt;= 135+crossover) {player.move_up = true}
 
-            if vs_dir &gt; 0 {
-                player.move_right = true
-                player.move_down = true
-                player.move_left = true
-                player.move_up = true
-            }
-
-            /****** OLD MOVEMENT SYSTEMS ******
-            // WITHOUT ANY CROSSOVER: Left, right, up down controls when moving (rather than full 360)
-            if (vs_dir &gt; 315 || vs_dir &lt;= 45) {move_right = true}
-            if (vs_dir &gt; 225 &amp;&amp; vs_dir &lt;= 315) {move_down = true}
-            if (vs_dir &gt; 135 &amp;&amp; vs_dir &lt;= 225) {move_left = true}
-            if (vs_dir &gt; 45 &amp;&amp; vs_dir &lt;= 135) {move_up = true}
-            
-            // this moves in any angle etc but doesn't use the collisions etc below (making it able to walk through walls or sticking to solid objects)
-            if place_free(x+lengthdir_x(5,vstick_get_direction(2)),y+lengthdir_y(5,vstick_get_direction(2)))
-            {
-                x+=lengthdir_x(10,vstick_get_direction(2))/3
-                y+=lengthdir_y(10,vstick_get_direction(2))/3
-            }
-            **********************************/
+        if vs_dir &gt; 0 {
+            player.move_right = true
+            player.move_down = true
+            player.move_left = true
+            player.move_up = true
         }
+
+        /****** OLD MOVEMENT SYSTEMS ******
+        // WITHOUT ANY CROSSOVER: Left, right, up down controls when moving (rather than full 360)
+        if (vs_dir &gt; 315 || vs_dir &lt;= 45) {move_right = true}
+        if (vs_dir &gt; 225 &amp;&amp; vs_dir &lt;= 315) {move_down = true}
+        if (vs_dir &gt; 135 &amp;&amp; vs_dir &lt;= 225) {move_left = true}
+        if (vs_dir &gt; 45 &amp;&amp; vs_dir &lt;= 135) {move_up = true}
+        
+        // this moves in any angle etc but doesn't use the collisions etc below (making it able to walk through walls or sticking to solid objects)
+        if place_free(x+lengthdir_x(5,vstick_get_direction(2)),y+lengthdir_y(5,vstick_get_direction(2)))
+        {
+            x+=lengthdir_x(10,vstick_get_direction(2))/3
+            y+=lengthdir_y(10,vstick_get_direction(2))/3
+        }
+        **********************************/
     }
-    
     
     /// SHOOTING!
     // if there was a tap on the right side on the screen

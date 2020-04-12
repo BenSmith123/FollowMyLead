@@ -27,9 +27,6 @@
     <Config name="Default">
       <CopyToMask>33554436</CopyToMask>
     </Config>
-    <Config name="Windows">
-      <CopyToMask>33554436</CopyToMask>
-    </Config>
     <Config name="iPhoneXS">
       <CopyToMask>33554436</CopyToMask>
     </Config>
@@ -47,9 +44,6 @@
       <ConfigOptions>
         <Config name="Default">
           <CopyToMask>17593040736494</CopyToMask>
-        </Config>
-        <Config name="Windows">
-          <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
         <Config name="iPhoneXS">
           <CopyToMask>17593040736494</CopyToMask>

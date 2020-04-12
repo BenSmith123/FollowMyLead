@@ -2,7 +2,6 @@
 <assets>
   <Configs name="configs">
     <Config>Configs\Default</Config>
-    <Config>Configs\Windows</Config>
     <Config>Configs\iPhoneXS</Config>
   </Configs>
   <NewExtensions>

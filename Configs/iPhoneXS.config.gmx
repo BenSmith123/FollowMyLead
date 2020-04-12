@@ -704,9 +704,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="4">
-      <constant name="IS_WINDOWS">false</constant>
-      <constant name="IS_MOBILE">true</constant>
+    <constants number="2">
       <constant name="HEIGHT">1125</constant>
       <constant name="WIDTH">2436</constant>
     </constants>
