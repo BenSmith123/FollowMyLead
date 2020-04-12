@@ -11,9 +11,6 @@ if is_alive = true
             dir = point_direction(x,y,target_player.x,target_player.y)
             
             gun_image_angle = (gun_image_angle+(sin(degtorad(dir-gun_image_angle)) * aiming_speed))
-            
-            print_debug('direction: ' + string(dir))
-            print_debug('gun angle: ' + string(gun_image_angle))
         
             if seen == true
             {

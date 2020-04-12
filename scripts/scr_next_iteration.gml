@@ -2,6 +2,8 @@
 // calls each objects iteration code to reset everything
 
 // DELETE OBJECTS
+instance_destroy(parent_projectile) 
+instance_destroy(obj_explosion)
 with (obj_shield_player) instance_destroy()
 with (obj_footstep) instance_destroy() // delete all footsteps // TODO - remove footsteps?
 with (obj_player_current) instance_destroy() // delete the current player
@@ -9,11 +11,10 @@ with (obj_player_dead) instance_destroy() // delete all dead bodies
 
 instance_destroy(obj_message_player_died) // if player dead message is already showing, destroy it
 
-// TODO: delete explosion/bullets as well?
-
+// get all interactable objects to reset their x/y position and active state
+if instance_exists(parent_interactable_switch) { with (parent_interactable_switch) event_user(0) }
 
 // call each objects iteration code, in specific order!
-
 with (parent_ai) {event_user(0)} // delete ai
 with (obj_placeholder) {event_user(0)} // create objects again - AI, pickups, breakable walls
 

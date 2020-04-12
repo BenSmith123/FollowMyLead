@@ -1,5 +1,7 @@
 /// uses player distance/line of sight to shoot at an enemy
 
+target_locked = false
+
 if instance_exists(parent_ai)
 {
     target_enemy = instance_nearest(x,y,parent_ai) // get the closest enemy object
@@ -19,10 +21,5 @@ if instance_exists(parent_ai)
             }
         }
     }
-    else
-    {
-        target_locked = false
-    }
-   
 }
 

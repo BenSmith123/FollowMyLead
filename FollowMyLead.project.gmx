@@ -16,10 +16,11 @@
       <sprite>sprites\spr_wall_2x</sprite>
       <sprite>sprites\spr_wall_breakable</sprite>
       <sprite>sprites\spr_wall_breakable_hor</sprite>
-      <sprite>sprites\sprite87</sprite>
-      <sprite>sprites\sprite85</sprite>
       <sprite>sprites\spr_wall_breakable_vert</sprite>
-      <sprite>sprites\spr_gate_verticle</sprite>
+      <sprite>sprites\spr_gate_hor</sprite>
+      <sprite>sprites\spr_gate_hor_2x</sprite>
+      <sprite>sprites\spr_gate_ver</sprite>
+      <sprite>sprites\spr_gate_ver_2x</sprite>
       <sprite>sprites\spr_explosive</sprite>
       <sprite>sprites\spr_switch_button</sprite>
       <sprite>sprites\spr_wall_shadow</sprite>
@@ -52,7 +53,6 @@
       <sprite>sprites\spr_button_about</sprite>
       <sprite>sprites\spr_button_level_editor</sprite>
     </sprites>
-    <sprite>sprites\spr_hud_player_lives</sprite>
     <sprites name="HUD">
       <sprite>sprites\spr_pause_button</sprite>
       <sprite>sprites\spr_button_next</sprite>
@@ -64,6 +64,7 @@
       <sprite>sprites\spr_pause_button_main</sprite>
       <sprite>sprites\spr_pause_button_option</sprite>
       <sprite>sprites\spr_button_pause_icons</sprite>
+      <sprite>sprites\spr_hud_player_lives</sprite>
     </sprites>
     <sprites name="Pickups">
       <sprite>sprites\spr_pickup_mask</sprite>
@@ -99,16 +100,16 @@
       <sprite>sprites\spr_button_debug_toggle</sprite>
     </sprites>
     <sprite>sprites\spr_gate_vert_top</sprite>
-    <sprite>sprites\spr_gate_vert_bottom</sprite>
     <sprite>sprites\sprite90_spr_auto_turret_1_1</sprite>
     <sprite>sprites\spr_lazer_ver</sprite>
     <sprite>sprites\sprite72</sprite>
+    <sprite>sprites\sprite87</sprite>
     <sprite>sprites\spr_message_background</sprite>
     <sprite>sprites\spr_level_leave_room</sprite>
     <sprite>sprites\spr_light</sprite>
     <sprite>sprites\sprite88_spr_door_lift_0</sprite>
     <sprite>sprites\spr_shapes</sprite>
-    <sprite>sprites\sprite79</sprite>
+    <sprite>sprites\sprite85</sprite>
     <sprite>sprites\sprite80</sprite>
   </sprites>
   <backgrounds name="background">
@@ -121,7 +122,8 @@
     <background>background\background5</background>
     <background>background\background6</background>
     <background>background\background13</background>
-    <background>background\background10</background>
+    <background>background\bg_tile_stone_4x4</background>
+    <background>background\bg_tile_stone_4x6</background>
     <background>background\background11</background>
   </backgrounds>
   <paths name="paths"/>
@@ -204,9 +206,14 @@
       <object>objects\obj_wall_breakable_vert</object>
       <object>objects\obj_wall_breakable_hor</object>
       <object>objects\obj_block_explosive</object>
-      <object>objects\obj_explosion</object>
       <object>objects\obj_switch</object>
-      <object>objects\obj_gate_verticle</object>
+      <object>objects\parent_interactable_switch</object>
+      <object>objects\parent_gate_horizontal</object>
+      <object>objects\parent_gate_vertical</object>
+      <object>objects\obj_gate_hor</object>
+      <object>objects\obj_gate_hor_2x</object>
+      <object>objects\obj_gate_ver</object>
+      <object>objects\obj_gate_ver_2x</object>
     </objects>
     <object>objects\parent_projectile</object>
     <object>objects\obj_bullet_player</object>
@@ -250,9 +257,11 @@
       <object>objects\obj_pickup_coin</object>
     </objects>
     <objects name="Effects">
+      <object>objects\obj_explosion</object>
       <object>objects\obj_fx_player_hit</object>
       <object>objects\obj_bullet_spark</object>
       <object>objects\obj_fx_shield_hit</object>
+      <object>objects\obj_fx_shoot_flash</object>
     </objects>
     <objects name="Menu buttons">
       <object>objects\parent_menu_button</object>
@@ -290,13 +299,11 @@
     <object>objects\obj_get_server_msg</object>
     <object>objects\obj_shield_player</object>
     <object>objects\obj_background</object>
-    <object>objects\obj_fx_shoot_flash</object>
     <object>objects\object73</object>
     <object>objects\obj_json_example</object>
     <object>objects\obj_wall_shadow</object>
     <object>objects\obj_light</object>
     <object>objects\obj_shapes</object>
-    <object>objects\object90</object>
     <object>objects\obj_message_level_complete</object>
     <object>objects\obj_message_player_died</object>
     <object>objects\obj_level_leave_room</object>

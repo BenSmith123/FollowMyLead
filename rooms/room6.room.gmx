@@ -177,7 +177,7 @@
     <instance objName="obj_wall_2x" x="1280" y="768" name="inst_E1191F41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_2x" x="1280" y="704" name="inst_8A55CFD4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_switch" x="1120" y="768" name="inst_BF447CE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gate_verticle" x="1280" y="864" name="inst_2FF47521" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gate_ver_2x" x="1280" y="864" name="inst_2FF47521" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_2x" x="1344" y="1216" name="inst_A4A82BFD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_2x" x="1408" y="1216" name="inst_8DF859FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_2x" x="1472" y="1216" name="inst_B5435FC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -251,8 +251,8 @@
     <instance objName="obj_block_explosive" x="224" y="704" name="inst_7F438C73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
-    <tile bgName="background10" x="1312" y="1088" w="128" h="128" xo="0" yo="0" id="10000302" name="inst_5F8BAEB6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="background10" x="736" y="0" w="128" h="128" xo="0" yo="0" id="10000303" name="inst_DC74AC7F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_tile_stone_4x4" x="1312" y="1088" w="128" h="128" xo="0" yo="0" id="10000302" name="inst_5F8BAEB6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_tile_stone_4x4" x="736" y="0" w="128" h="128" xo="0" yo="0" id="10000303" name="inst_DC74AC7F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

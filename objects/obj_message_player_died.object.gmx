@@ -54,6 +54,7 @@ else
     
     alarm[0] = 60 // count down to start next iteration
 }
+
 </string>
           </argument>
         </arguments>
@@ -178,16 +179,16 @@ if image_alpha != 1 { image_alpha += 0.02 } // fade in
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 
 scr_text3()
-draw_text_colour(x, y - 80, text_main, c_white, c_white, c_white, c_white, image_alpha)
+draw_text_colour(x, y - 96, text_main, c_white, c_white, c_white, c_white, image_alpha)
 
 scr_text2()
-draw_text_colour(x, y + 120, text_small, c_white, c_white, c_white, c_white, image_alpha)
+draw_text_colour(x, y + 132, text_small, c_white, c_white, c_white, c_white, image_alpha)
 
 // draw icons
 if no_lives_left
 { draw_sprite_ext(spr_button_pause_icons, 1, x, y + 60, image_xscale, image_yscale, image_angle, image_blend, image_alpha) } // restart
 else
-{ draw_sprite_ext(spr_button_pause_icons, 0, x, y + 48, image_xscale, image_yscale, image_angle, image_blend, image_alpha) } // resume
+{ draw_sprite_ext(spr_button_pause_icons, 0, x, y + 36, image_xscale, image_yscale, image_angle, image_blend, image_alpha) } // resume
 
 // debug to show boundry box:
 // draw_rectangle(top_left, bottom_left, top_right, bottom_right, true)

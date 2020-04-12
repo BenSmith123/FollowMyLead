@@ -25,29 +25,35 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited()
+            <string>
+event_inherited()
 
 image_speed = 0
-
 change = false
+object = parent_block
 
-object = obj_wall
+// NOTE: According to the docs, and statements execute both conditions, affecting performance 
 
 // change to scenery block if block sits pointlessly
 if place_meeting(x,y-1,object) // above
 if place_meeting(x-1,y,object) // left
 if place_meeting(x+1,y,object) // right
-{{{change = true}}}
+{{{ change = true }}}
 
+// LEFT
+if place_meeting(x-1,y,object)
+{
+    image_index = 7 // left only
+    if place_meeting(x,y+1,object) { image_index = 2 } // left and below
+}
 
+// RIGHT
+if place_meeting(x+1,y,object) 
+{
+    image_index = 8 // right only
+    if place_meeting(x,y+1,object) { image_index = 3 } // right and below
+}
 
-// left and below
-if place_meeting(x-1,y,object) and place_meeting(x,y+1,object)
-{image_index = 2} 
-
-// right and below
-if place_meeting(x+1,y,object) and place_meeting(x,y+1,object)
-{image_index = 3}
 
 // left and above
 if place_meeting(x-1,y,object) and place_meeting(x,y-1,object)
