@@ -1,15 +1,16 @@
 /// uses player distance/line of sight to shoot at an enemy
 
 target_locked = false
+target_enemy = 0
 
 if instance_exists(parent_ai)
 {
-    target_enemy = instance_nearest(x,y,parent_ai) // get the closest enemy object
-
-    if distance_to_object(target_enemy) < player_sight
+    if distance_to_object(parent_ai) < player_sight // if there is any enemy within player distance
     {
-        // temp = image_angle2-point_direction(x, y, target_enemy.x, target_enemy.y) // TODO - is this used for particles or should be removed?
+        target_enemy = instance_nearest(x+lengthdir_x(len+player_sight,image_angle2),y+lengthdir_y(len+player_sight,image_angle2), parent_ai);
     
+        // temp = image_angle2-point_direction(x, y, target_enemy.x, target_enemy.y) // TODO - is this used for particles or should be removed?
+        
         // line of sight
         if image_angle2 >= point_direction(x, y, target_enemy.x, target_enemy.y)-28 and image_angle2 <= point_direction(x, y, target_enemy.x, target_enemy.y)+28
         {
@@ -22,4 +23,3 @@ if instance_exists(parent_ai)
         }
     }
 }
-

@@ -29,7 +29,6 @@
 event_inherited()
 
 image_speed = 0
-change = false
 object = parent_block
 
 // NOTE: According to the docs, and statements execute both conditions, affecting performance 
@@ -38,64 +37,32 @@ object = parent_block
 if place_meeting(x,y-1,object) // above
 if place_meeting(x-1,y,object) // left
 if place_meeting(x+1,y,object) // right
-{{{ change = true }}}
+{{{ image_index = 0; exit }}}
 
 // LEFT
 if place_meeting(x-1,y,object)
 {
-    image_index = 7 // left only
+    image_index = 6 // left only
     if place_meeting(x,y+1,object) { image_index = 2 } // left and below
+    if place_meeting(x,y-1,object) { image_index = 1 } // left and above
 }
 
 // RIGHT
-if place_meeting(x+1,y,object) 
+if place_meeting(x+1,y,object)
 {
-    image_index = 8 // right only
+    image_index = 7 // right only
     if place_meeting(x,y+1,object) { image_index = 3 } // right and below
+    if place_meeting(x,y-1,object) { image_index = 4 } // right and above
 }
 
 
-// left and above
-if place_meeting(x-1,y,object) and place_meeting(x,y-1,object)
-{image_index = 1}
+// (don't move to LEFT above otherwise right will override it)
+if place_meeting(x+1,y,object)
+if place_meeting(x-1,y,object)
+{{ image_index = 0 }} // left and right
 
-// right and above
-if place_meeting(x+1,y,object) and place_meeting(x,y-1,object)
-{image_index = 4}
-
-
-if place_meeting(x-1,y,object) and place_meeting(x+1,y,object) // not on left or right
-{image_index = 0}
-
-if place_meeting(x,y-1,object) and place_meeting(x,y+1,object) // not on left or right
-{image_index = 5}
-
-if change = true
-{image_index = 0}
-
-//if place_meeting(x,y-1,object) {image_index = 0} // above block
-
-
-/*
-// not left and not below
-if not place_meeting(x-1,y,object) and not place_meeting(x,y+1,object)
-{image_index = 4} 
-
-// not right not below
-if not place_meeting(x+1,y,object) and not place_meeting(x,y+1,object)
-{image_index = 1}
-
-// not left not above
-if not place_meeting(x-1,y,object) and not place_meeting(x,y-1,object)
-{image_index = 3}
-
-// not right not above
-if not place_meeting(x+1,y,object) and not place_meeting(x,y-1,object)
-{image_index = 2}
-
-
-
-
+if place_meeting(x,y-1,object) and place_meeting(x,y+1,object)
+{ image_index = 5 } // top and below
 
 </string>
           </argument>
