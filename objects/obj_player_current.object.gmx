@@ -39,7 +39,7 @@ accel = 0.4
 
 can_shoot = true
 reload_time = 20
-player_sight = 300 // distance before seeing and auto shooting an enemy
+player_sight = 200 // distance before seeing and auto shooting an enemy
 
 FOOTSTEP_TIME = 5
 alarm[0] = FOOTSTEP_TIME // create a "footstep"
@@ -121,7 +121,7 @@ if obj_controller_playable.PLAYER_LIVES == 0 { instance_destroy(obj_hud_next_pla
 if (show_death_message)
 {
     instance_destroy(obj_hud_next_player) // hide next player button since death message is basically the same
-    instance_create(WIDTH/2, HEIGHT/2, obj_message_player_died)
+    instance_create(WIDTH/2, HEIGHT/2, obj_message_level_failed)
 }
 
 print_debug("------ Current player died at "+string(global.counter)+" ------")

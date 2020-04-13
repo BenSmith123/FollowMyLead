@@ -21,6 +21,7 @@
   <width>64</width>
   <height>64</height>
   <frames>
-    <frame index="0">images\spr_wall_2x_0.png</frame>
+    <frame index="0">images\spr_wall_breakable_2x_0.png</frame>
+    <frame index="1">images\spr_wall_breakable_2x_1.png</frame>
   </frames>
 </sprite>

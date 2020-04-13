@@ -229,7 +229,6 @@
     <instance objName="obj_wall" x="1952" y="704" name="inst_CA0F41BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ai_2" x="1856" y="640" name="inst_9CD75BBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ai_3" x="2400" y="1184" name="inst_CD7712C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ai_1" x="1408" y="320" name="inst_A82C7366" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_explosive" x="512" y="1120" name="inst_748E0735" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_explosive" x="1696" y="1024" name="inst_6E4BDFCF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pickup_boost_speed" x="2144" y="1184" name="inst_083737F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -528,6 +527,7 @@
     <instance objName="obj_wall" x="1568" y="1344" name="inst_353C0922" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ai_2" x="1504" y="1312" name="inst_7B2E5B59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_marker_arrow_up" x="1504" y="1312" name="inst_8E3A4083" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ai_5" x="1440" y="1024" name="inst_E067D948" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="&lt;undefined&gt;" x="1504" y="1312" w="192" h="192" xo="0" yo="0" id="10000243" name="inst_95B43451" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

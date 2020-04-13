@@ -2,7 +2,7 @@
 
 global.user = "GM"
 
-global.debug = true
+global.debug = false
 global.debug_performance = false
 global.debug_array_output = false // log data to gamemaker console
 global.debug_invincible = false
@@ -11,7 +11,7 @@ global.debug_invincible = false
 if global.debug { instance_create(0, 0, obj_controller_debug) } 
 
 global.overall_view = true
-global.version = 1.0
+global.version = 0.0
 
 global.server_message = ""
 
@@ -27,7 +27,7 @@ global.player_number = 0 // start off as the first player
 
 // gameplay options
 global.auto_target = true
-global.view_zoom = 1.5 // 1 is the native pixel scale
+global.view_zoom = 2 // 1 is the native pixel scale
 
 global.show_player_number = true
 

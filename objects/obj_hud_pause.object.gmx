@@ -101,7 +101,7 @@ instance_create(WIDTH * 0.80, gui_center_y + 240, object93)
           <argument>
             <kind>1</kind>
             <string>
-draw_sprite(sprite_index,0,gui_x,gui_y)
+draw_sprite(sprite_index, 0, gui_x, gui_y)
 
 // debug to show boundry box:
 draw_rectangle(top_left, bottom_left, top_right, bottom_right, true)

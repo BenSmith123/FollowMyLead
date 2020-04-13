@@ -62,7 +62,7 @@ if point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), top_le
 draw_sprite(sprite_index,image_index,gui_x,gui_y)
 
 // debug to show boundry box:
-draw_rectangle(top_left, bottom_left, top_right, bottom_right, true)
+//draw_rectangle(top_left, bottom_left, top_right, bottom_right, true)
 
 </string>
           </argument>

@@ -11,7 +11,7 @@ with (obj_footstep) instance_destroy() // delete all footsteps // TODO - remove 
 with (obj_player_current) instance_destroy() // delete the current player
 with (obj_player_dead) instance_destroy() // delete all dead bodies
 
-instance_destroy(obj_message_player_died) // if player dead message is already showing, destroy it
+instance_destroy(obj_message_level_failed) // if player dead message is already showing, destroy it
 
 // get all interactable objects to reset their x/y position and active state
 if instance_exists(parent_interactable_switch) { with (parent_interactable_switch) event_user(0) }
@@ -19,7 +19,7 @@ if instance_exists(parent_interactable_switch) { with (parent_interactable_switc
 // // change to reset button if this is the last life
 if obj_controller_playable.PLAYER_LIVES == 1 
 {
-    if instance_exists(obj_hud_next_player) { obj_hud_next_player.image_index = 1 }
+    if instance_exists(obj_hud_next_player) { obj_hud_next_player.is_restart_button = true }
 }
 
 // call each objects iteration code, in specific order!

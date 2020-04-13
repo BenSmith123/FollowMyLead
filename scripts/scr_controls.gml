@@ -4,8 +4,11 @@
 
 if move_attack
 {
-    shoot()
-    move_attack = false
+    if global.counter != 1 // TODO - temp fix to stop shooting after pressing a button
+    {
+        shoot()
+        move_attack = false
+    }
 }
 
 vs_dir = vstick_get_direction(2) // joystick move direction
