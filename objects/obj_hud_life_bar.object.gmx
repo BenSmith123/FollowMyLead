@@ -29,6 +29,8 @@
 image_speed = 0
 image_alpha = 0
 
+lifespan = obj_controller_playable.MAX_ARRAY_SIZE
+
 </string>
           </argument>
         </arguments>
@@ -55,11 +57,10 @@ image_alpha = 0
 if instance_exists(obj_player_current)
 {
     //player = obj_player_current
-    draw_sprite_stretched_ext(sprite_index,image_index,0,-1,WIDTH - (global.counter/3600) * WIDTH,5,image_blend,image_alpha + (global.counter/3600))
+    draw_sprite_stretched_ext(sprite_index,image_index,0,-1,WIDTH - (global.counter/lifespan) * WIDTH,sprite_height,image_blend,image_alpha + (global.counter/lifespan))
 } 
 else
-{instance_destroy()}
-
+{ instance_destroy() }
 
 </string>
           </argument>

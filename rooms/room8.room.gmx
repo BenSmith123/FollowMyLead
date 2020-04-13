@@ -806,8 +806,8 @@
     <instance objName="obj_ai_2" x="160" y="1696" name="inst_1BB0EAF6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ai_2" x="512" y="1568" name="inst_D408EB6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_explosive" x="512" y="1088" name="inst_748E0735" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_turret_angle_left" x="448" y="1248" name="inst_46E6C2DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_turret_angle_up" x="224" y="1344" name="inst_6FDFBB02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_marker_arrow_left" x="448" y="1248" name="inst_46E6C2DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_marker_arrow_up" x="224" y="1344" name="inst_6FDFBB02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_explosive" x="1568" y="992" name="inst_6E4BDFCF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ai_2" x="1504" y="1152" name="inst_D934EE78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pickup_boost_shoot" x="992" y="1376" name="inst_D6DEA51C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -894,17 +894,17 @@
     <instance objName="obj_wall" x="960" y="1184" name="inst_41D6B559" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_switch" x="896" y="1216" name="inst_9753C92D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="224" y="1152" name="inst_FB01BD36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_turret_angle_up" x="352" y="1344" name="inst_AA6D0A47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_marker_arrow_up" x="352" y="1344" name="inst_AA6D0A47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="parent_wall_breakable" x="1696" y="1088" name="inst_6D2971C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="parent_wall_breakable" x="1728" y="1088" name="inst_A8432C77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="parent_wall_breakable" x="192" y="1120" name="inst_36A08972" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="parent_wall_breakable" x="192" y="1088" name="inst_4419717D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pickup_boost_shield" x="1088" y="1152" name="inst_C8A867D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pickup_coin" x="672" y="1664" name="inst_72B56AFA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="object73" x="896" y="1056" name="inst_35158DF4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gate_top_left" x="896" y="1056" name="inst_35158DF4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
-    <tile bgName="background4" x="1344" y="1312" w="150" h="150" xo="0" yo="0" id="10000223" name="inst_06C7CAA0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="&lt;undefined&gt;" x="1344" y="1312" w="150" h="150" xo="0" yo="0" id="10000223" name="inst_06C7CAA0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="&lt;undefined&gt;" x="1632" y="1120" w="256" h="256" xo="0" yo="0" id="10000242" name="inst_FFC8BA42" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="&lt;undefined&gt;" x="1504" y="1312" w="192" h="192" xo="0" yo="0" id="10000243" name="inst_95B43451" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="&lt;undefined&gt;" x="512" y="1312" w="64" h="64" xo="0" yo="0" id="10000246" name="inst_39E840CF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -101,13 +101,13 @@
     <sprite>sprites\spr_gate_vert_top</sprite>
     <sprite>sprites\sprite90_spr_auto_turret_1_1</sprite>
     <sprite>sprites\spr_lazer_ver</sprite>
-    <sprite>sprites\sprite72</sprite>
-    <sprite>sprites\sprite87</sprite>
     <sprite>sprites\spr_message_background</sprite>
     <sprite>sprites\spr_level_leave_room</sprite>
     <sprite>sprites\spr_light</sprite>
     <sprite>sprites\sprite88_spr_door_lift_0</sprite>
     <sprite>sprites\spr_shapes</sprite>
+    <sprite>sprites\sprite72</sprite>
+    <sprite>sprites\sprite87</sprite>
     <sprite>sprites\sprite85</sprite>
     <sprite>sprites\sprite80</sprite>
   </sprites>
@@ -117,11 +117,11 @@
     <background>background\bg_tile_3x3</background>
     <background>background\bg_tile_6x6</background>
     <background>background\background12</background>
-    <background>background\background4</background>
     <background>background\background5</background>
     <background>background\background6</background>
     <background>background\background13</background>
     <background>background\bg_tile_stone_4x4</background>
+    <background>background\bg_tile_stone_4x4_orange</background>
     <background>background\bg_tile_stone_4x6</background>
     <background>background\background11</background>
   </backgrounds>
@@ -209,10 +209,12 @@
       <object>objects\parent_interactable_switch</object>
       <object>objects\parent_gate_horizontal</object>
       <object>objects\parent_gate_vertical</object>
+      <object>objects\parent_gate_rotate</object>
       <object>objects\obj_gate_hor</object>
       <object>objects\obj_gate_hor_2x</object>
       <object>objects\obj_gate_ver</object>
       <object>objects\obj_gate_ver_2x</object>
+      <object>objects\obj_gate_top_left</object>
     </objects>
     <object>objects\parent_projectile</object>
     <object>objects\obj_bullet_player</object>
@@ -254,6 +256,7 @@
       <object>objects\obj_pickup_boost_health</object>
       <object>objects\obj_pickup_boost_shield</object>
       <object>objects\obj_pickup_coin</object>
+      <object>objects\obj_shield_player</object>
     </objects>
     <objects name="Effects">
       <object>objects\obj_explosion</object>
@@ -267,11 +270,7 @@
       <object>objects\obj_button_play</object>
       <object>objects\obj_button_about</object>
       <object>objects\obj_button_level_editor</object>
-    </objects>
-    <objects name="Markers">
-      <object>objects\obj_turret_angle_up</object>
-      <object>objects\obj_turret_angle_left</object>
-      <object>objects\obj_turret_angle_down</object>
+      <object>objects\obj_menu_text</object>
     </objects>
     <objects name="Debug">
       <object>objects\obj_debug_info</object>
@@ -291,15 +290,16 @@
       <object>objects\obj_placeholder</object>
       <object>objects\obj_footstep</object>
       <object>objects\obj_spawn_point</object>
-      <object>objects\obj_player_joystick</object>
-      <object>objects\obj_menu_text</object>
+      <object>objects\obj_marker_arrow_up</object>
+      <object>objects\obj_marker_arrow_left</object>
+      <object>objects\obj_marker_arrow_down</object>
     </objects>
-    <object>objects\obj_get_server_log</object>
-    <object>objects\obj_get_server_msg</object>
-    <object>objects\obj_shield_player</object>
-    <object>objects\obj_background</object>
-    <object>objects\object73</object>
+    <objects name="Server">
+      <object>objects\obj_get_server_log</object>
+      <object>objects\obj_get_server_msg</object>
+    </objects>
     <object>objects\obj_json_example</object>
+    <object>objects\obj_background</object>
     <object>objects\obj_wall_shadow</object>
     <object>objects\obj_light</object>
     <object>objects\obj_shapes</object>
