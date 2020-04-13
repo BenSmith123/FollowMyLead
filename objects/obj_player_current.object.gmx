@@ -63,6 +63,8 @@ image_angle2 = 0 // RECORDED (didn't use image_angle because it also changes the
 
 show_death_message = true // onlycreate message when player dies normally. not when next iteration was pressed 
 
+obj_controller_playable.PLAYER_LIVES -= 1
+
 // increment player count
 global.player_number += 1
 number = global.player_number
@@ -110,7 +112,11 @@ else
 
 obj_player_recorder.life_span = global.counter // set the recorders lifespan
 
-obj_controller_playable.PLAYER_LIVES -= 1
+instance_destroy(obj_virtual_joystick) // destroy both joysticks
+
+print_debug('player_lives ==== ' +string(obj_controller_playable.PLAYER_LIVES))
+
+if obj_controller_playable.PLAYER_LIVES == 0 { instance_destroy(obj_hud_next_player) }
 
 if (show_death_message)
 {
@@ -231,7 +237,7 @@ scr_camera()
 
 scr_controls()
 
-if hp &lt;= 0 {instance_destroy()}
+if hp &lt;= 0 { instance_destroy() }
 
 
 </string>

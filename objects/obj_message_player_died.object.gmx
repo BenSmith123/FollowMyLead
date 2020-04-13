@@ -145,7 +145,7 @@ if no_lives_left
 { room_restart() }
 else
 {
-    if !instance_exists(obj_hud_next_player) { instance_create(WIDTH-WIDTH/12, 0, obj_hud_next_player) }
+    if !instance_exists(obj_hud_next_player) and obj_controller_playable.PLAYER_LIVES &gt; 1 { instance_create(WIDTH-WIDTH/12, 0, obj_hud_next_player) }
     
     scr_next_iteration()
     

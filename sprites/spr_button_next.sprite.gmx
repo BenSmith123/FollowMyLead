@@ -22,5 +22,6 @@
   <height>120</height>
   <frames>
     <frame index="0">images\spr_button_next_0.png</frame>
+    <frame index="1">images\spr_button_next_1.png</frame>
   </frames>
 </sprite>

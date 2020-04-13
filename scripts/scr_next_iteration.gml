@@ -16,6 +16,12 @@ instance_destroy(obj_message_player_died) // if player dead message is already s
 // get all interactable objects to reset their x/y position and active state
 if instance_exists(parent_interactable_switch) { with (parent_interactable_switch) event_user(0) }
 
+// // change to reset button if this is the last life
+if obj_controller_playable.PLAYER_LIVES == 1 
+{
+    if instance_exists(obj_hud_next_player) { obj_hud_next_player.image_index = 1 }
+}
+
 // call each objects iteration code, in specific order!
 with (parent_ai) {event_user(0)} // delete ai
 with (obj_placeholder) {event_user(0)} // create objects again - AI, pickups, breakable walls

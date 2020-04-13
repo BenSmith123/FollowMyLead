@@ -71,92 +71,86 @@ stick_y = vstick_get_y(2)
           <argument>
             <kind>1</kind>
             <string>
-if instance_exists(player) == false
-{instance_destroy()}
-else
+if is_active
 {
-    if is_active
-    {
-        vstick_step(1)
-        vstick_step(2)
-    }
-    
-    vs_dir = vstick_get_direction(2)
-    
-    if vstick_check(2) // checks if the vstick is being used
-    {   
-        crossover = 23 // crossover size between the angles of the movement (e.g. moving left and up)
-        
-        // movement with crossover (8-point movement rather than 4-point)     
-        // if (vs_dir &gt; 315-crossover || vs_dir &lt;= 45+crossover) {player.move_right = true}
-        // if (vs_dir &gt; 225-crossover &amp;&amp; vs_dir &lt;= 315+crossover) {player.move_down = true}
-        // if (vs_dir &gt; 135-crossover &amp;&amp; vs_dir &lt;= 225+crossover) {player.move_left = true}
-        // if (vs_dir &gt; 45-crossover &amp;&amp; vs_dir &lt;= 135+crossover) {player.move_up = true}
-
-        if vs_dir &gt; 0 {
-            player.move_right = true
-            player.move_down = true
-            player.move_left = true
-            player.move_up = true
-        }
-
-        /****** OLD MOVEMENT SYSTEMS ******
-        // WITHOUT ANY CROSSOVER: Left, right, up down controls when moving (rather than full 360)
-        if (vs_dir &gt; 315 || vs_dir &lt;= 45) {move_right = true}
-        if (vs_dir &gt; 225 &amp;&amp; vs_dir &lt;= 315) {move_down = true}
-        if (vs_dir &gt; 135 &amp;&amp; vs_dir &lt;= 225) {move_left = true}
-        if (vs_dir &gt; 45 &amp;&amp; vs_dir &lt;= 135) {move_up = true}
-        
-        // this moves in any angle etc but doesn't use the collisions etc below (making it able to walk through walls or sticking to solid objects)
-        if place_free(x+lengthdir_x(5,vstick_get_direction(2)),y+lengthdir_y(5,vstick_get_direction(2)))
-        {
-            x+=lengthdir_x(10,vstick_get_direction(2))/3
-            y+=lengthdir_y(10,vstick_get_direction(2))/3
-        }
-        **********************************/
-    }
-    
-    /// SHOOTING!
-    // if there was a tap on the right side on the screen
-    for(i = 0; i &lt;= 3; i++) // loop through the possible device input IDs
-    {
-        // device_mouse_check_button_pressed(i,mb_left) // use this for TAPPING, not holding
-        if device_mouse_check_button(i,mb_left)
-        {
-            if device_mouse_x_to_gui(i) &gt; WIDTH/2
-            {
-                if !vstick_check(1) // if the RIGHT stick is NOT being used
-                {player.move_attack = true} // shoot! 
-            }
-            
-            if device_mouse_x_to_gui(i) &lt; WIDTH/2
-            {
-                if !vstick_check(2) // if the LEFT stick is NOT being used
-                {player.move_attack = true} // shoot! 
-            }
-        }
-    }
-    
-    
-    /*
-    /// SHOOTING!!
-    if !(vstick_check(1)) // if the right stick is not being used
-    {
-        if device_mouse_check_button_pressed(0,mb_left) 
-        or device_mouse_check_button_pressed(1,mb_left)
-        or device_mouse_check_button_pressed(2,mb_left)
-        {
-            if device_mouse_x_to_gui(0) &gt; WIDTH/2 // right side of screen
-            or device_mouse_x_to_gui(1) &gt; WIDTH/2
-            or device_mouse_x_to_gui(2) &gt; WIDTH/2
-            {
-                player.move_attack = true // shoot! 
-            }
-        }
-    }
-    */
-
+    vstick_step(1)
+    vstick_step(2)
 }
+
+vs_dir = vstick_get_direction(2)
+
+if vstick_check(2) // checks if the vstick is being used
+{   
+    crossover = 23 // crossover size between the angles of the movement (e.g. moving left and up)
+    
+    // movement with crossover (8-point movement rather than 4-point)     
+    // if (vs_dir &gt; 315-crossover || vs_dir &lt;= 45+crossover) {player.move_right = true}
+    // if (vs_dir &gt; 225-crossover &amp;&amp; vs_dir &lt;= 315+crossover) {player.move_down = true}
+    // if (vs_dir &gt; 135-crossover &amp;&amp; vs_dir &lt;= 225+crossover) {player.move_left = true}
+    // if (vs_dir &gt; 45-crossover &amp;&amp; vs_dir &lt;= 135+crossover) {player.move_up = true}
+
+    if vs_dir &gt; 0 {
+        player.move_right = true
+        player.move_down = true
+        player.move_left = true
+        player.move_up = true
+    }
+
+    /****** OLD MOVEMENT SYSTEMS ******
+    // WITHOUT ANY CROSSOVER: Left, right, up down controls when moving (rather than full 360)
+    if (vs_dir &gt; 315 || vs_dir &lt;= 45) {move_right = true}
+    if (vs_dir &gt; 225 &amp;&amp; vs_dir &lt;= 315) {move_down = true}
+    if (vs_dir &gt; 135 &amp;&amp; vs_dir &lt;= 225) {move_left = true}
+    if (vs_dir &gt; 45 &amp;&amp; vs_dir &lt;= 135) {move_up = true}
+    
+    // this moves in any angle etc but doesn't use the collisions etc below (making it able to walk through walls or sticking to solid objects)
+    if place_free(x+lengthdir_x(5,vstick_get_direction(2)),y+lengthdir_y(5,vstick_get_direction(2)))
+    {
+        x+=lengthdir_x(10,vstick_get_direction(2))/3
+        y+=lengthdir_y(10,vstick_get_direction(2))/3
+    }
+    **********************************/
+}
+
+/// SHOOTING!
+// if there was a tap on the right side on the screen
+for(i = 0; i &lt;= 3; i++) // loop through the possible device input IDs
+{
+    // device_mouse_check_button_pressed(i,mb_left) // use this for TAPPING, not holding
+    if device_mouse_check_button(i,mb_left)
+    {
+        if device_mouse_x_to_gui(i) &gt; WIDTH/2
+        {
+            if !vstick_check(1) // if the RIGHT stick is NOT being used
+            {player.move_attack = true} // shoot! 
+        }
+        
+        if device_mouse_x_to_gui(i) &lt; WIDTH/2
+        {
+            if !vstick_check(2) // if the LEFT stick is NOT being used
+            {player.move_attack = true} // shoot! 
+        }
+    }
+}
+
+
+/*
+/// SHOOTING!!
+if !(vstick_check(1)) // if the right stick is not being used
+{
+    if device_mouse_check_button_pressed(0,mb_left) 
+    or device_mouse_check_button_pressed(1,mb_left)
+    or device_mouse_check_button_pressed(2,mb_left)
+    {
+        if device_mouse_x_to_gui(0) &gt; WIDTH/2 // right side of screen
+        or device_mouse_x_to_gui(1) &gt; WIDTH/2
+        or device_mouse_x_to_gui(2) &gt; WIDTH/2
+        {
+            player.move_attack = true // shoot! 
+        }
+    }
+}
+*/
 
 /*
 if place_meeting(device_mouse_x(0),device_mouse_y(0),self) 
