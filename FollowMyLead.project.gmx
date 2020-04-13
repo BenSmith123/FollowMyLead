@@ -108,7 +108,7 @@
     <sprite>sprites\spr_shapes</sprite>
     <sprite>sprites\sprite72</sprite>
     <sprite>sprites\sprite87</sprite>
-    <sprite>sprites\sprite85</sprite>
+    <sprite>sprites\spr_life_low_warning</sprite>
     <sprite>sprites\sprite80</sprite>
   </sprites>
   <backgrounds name="background">
@@ -304,7 +304,9 @@
     <object>objects\obj_light</object>
     <object>objects\obj_shapes</object>
     <object>objects\obj_message_level_complete</object>
+    <object>objects\obj_message_level_start</object>
     <object>objects\obj_message_player_died</object>
+    <object>objects\obj_life_low_warning</object>
     <object>objects\obj_level_leave_room</object>
   </objects>
   <rooms name="rooms">

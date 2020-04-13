@@ -44,7 +44,6 @@
             <string>
 other.accel = other.accel * 1.5
 other.max_speed = other.max_speed * 1.5
-other.player_speed = other.player_speed * 1.5 // TODO - this isn't used - test without plz
 instance_destroy()
 
 </string>

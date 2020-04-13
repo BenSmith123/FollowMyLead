@@ -27,8 +27,73 @@
             <kind>1</kind>
             <string>
 image_speed = 0
+image_alpha = 0
 
-text = ''
+spr_center_x = sprite_width / 2 - 80 // -80 to make collision box slightly smaller
+spr_center_y = sprite_height / 2 - 80 
+
+// GUI boundry box for tapping
+top_left = x - spr_center_x // center align
+top_right = x + spr_center_x
+bottom_left = y - spr_center_y
+bottom_right = y + spr_center_y 
+
+text_main = 'Level complete!'
+text_small = 'Next level'
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// calculate if button was pressed
+
+if point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), top_left, bottom_left, top_right, bottom_right)
+{
+    if device_mouse_check_button_pressed(0, mb_left)
+    {
+        event_user(0)
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_goto_next()
 
 </string>
           </argument>
@@ -53,7 +118,17 @@ text = ''
           <argument>
             <kind>1</kind>
             <string>
-draw_sprite(sprite_index, image_index, WIDTH / 2, HEIGHT / 2)
+if image_alpha != 1 { image_alpha += 0.02 } // fade in
+
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+
+scr_text3()
+draw_text_colour(x, y - 96, text_main, c_white, c_white, c_white, c_white, image_alpha)
+
+scr_text2()
+draw_text_colour(x, y + 132, text_small, c_white, c_white, c_white, c_white, image_alpha)
+
+draw_sprite_ext(spr_button_pause_icons, 0, x, y + 36, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 
 </string>
           </argument>

@@ -132,17 +132,29 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// DEBUG STUFF
+            <string>
+lives_hud_x = 36
+lives_hud_y = 36
 
+// lives drawn here instead of the player HUD so it doesn't disappear when player dies
 for (i = 0; i &lt; PLAYER_LIVES_START; i++)
 {
+    if (i != 0 and i % 6 == 0) // new line for every 6 lives
+    {
+        lives_hud_x = 36 // left align again
+        lives_hud_y += 36
+    }
+    
     if i &gt;= PLAYER_LIVES 
-    { draw_sprite(spr_hud_player_lives, 1, lives_hud_x + i * 36, lives_hud_y) } // clone
+    { draw_sprite(spr_hud_player_lives, 1, lives_hud_x, lives_hud_y) } // clone
     else
-    { draw_sprite(spr_hud_player_lives, 0, lives_hud_x + i * 36, lives_hud_y) } // player life
+    { draw_sprite(spr_hud_player_lives, 0, lives_hud_x, lives_hud_y) } // player life
+    
+    lives_hud_x += 36
 }
 
 
+/// DEBUG STUFF
 if global.debug_performance
 {
     scr_text1()
