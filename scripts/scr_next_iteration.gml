@@ -4,7 +4,6 @@
 // DELETE OBJECTS
 instance_destroy(parent_projectile) 
 instance_destroy(obj_explosion)
-instance_destroy(obj_life_low_warning)
 
 with (obj_shield_player) instance_destroy()
 with (obj_footstep) instance_destroy() // delete all footsteps // TODO - remove footsteps?
