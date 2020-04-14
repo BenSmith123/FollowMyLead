@@ -111,6 +111,8 @@ instance_deactivate_object(obj_player_current) // freeze the player (don't destr
 alarm[0] = 180 // tell camera to start moving to player
 hold_camera = true
 
+if global.debug { alarm[0] = 20 } // skip the message when debugging
+
 instance_create(WIDTH / 2, HEIGHT / 2, obj_message_level_start)
 
 </string>

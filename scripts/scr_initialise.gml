@@ -2,7 +2,7 @@
 
 global.user = "GM"
 
-global.debug = false
+global.debug = true
 global.debug_performance = false
 global.debug_array_output = false // log data to gamemaker console
 global.debug_invincible = false

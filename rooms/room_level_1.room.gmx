@@ -525,9 +525,8 @@
     <instance objName="obj_wall" x="1536" y="1376" name="inst_EE46500C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1568" y="1376" name="inst_6EA67F0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1568" y="1344" name="inst_353C0922" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ai_2" x="1504" y="1312" name="inst_7B2E5B59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_marker_arrow_up" x="1504" y="1312" name="inst_8E3A4083" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ai_5" x="1440" y="1024" name="inst_E067D948" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ai_2" x="1504" y="1312" name="inst_9601729B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_marker_arrow_up" x="1504" y="1312" name="inst_F2DDBB3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="&lt;undefined&gt;" x="1504" y="1312" w="192" h="192" xo="0" yo="0" id="10000243" name="inst_95B43451" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

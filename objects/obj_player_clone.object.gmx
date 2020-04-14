@@ -309,8 +309,8 @@ if is_alive
             x = array_x[array_x_count] // set x to the number stored in the x_array
             array_x_count++ // increment through the array
         }
-        else // DEBUG
-        { show_message(string(id) + " x array has gone out of bounds!") } // DEBUG TO AVOID CRASH
+        //else // DEBUG
+        //{ show_message(string(id) + " x array has gone out of bounds!") } // DEBUG TO AVOID CRASH
     }
     
     if move_y
@@ -320,8 +320,8 @@ if is_alive
             y = array_y[array_y_count]
             array_y_count++
         }
-        else // DEBUG
-        { show_message(string(id) + " y array has gone out of bounds!") } // DEBUG TO AVOID CRASH
+        //else // DEBUG
+        //{ show_message(string(id) + " y array has gone out of bounds!") } // DEBUG TO AVOID CRASH
     }
 
     if move_angle

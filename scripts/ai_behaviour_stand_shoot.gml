@@ -1,5 +1,9 @@
-// get the closest player, if the player is seen, face the player, shoot
+ // get the closest player, if the player is seen, face the player, shoot
 
+// limit gun_image_angle to be the same as image_angle (0~360) degrees
+if gun_image_angle >= 360 { gun_image_angle = 0 }
+if gun_image_angle < 0 { gun_image_angle = 360 }
+ 
 if is_alive = true
 {
     ai_get_closest_player()
@@ -9,10 +13,9 @@ if is_alive = true
         if distance_to_object(target_player) < 300
         {
             dir = point_direction(x,y,target_player.x,target_player.y)
-            
             gun_image_angle = (gun_image_angle+(sin(degtorad(dir-gun_image_angle)) * aiming_speed))
         
-            if seen == true
+            if seen
             {
                 if round(dir) == round(gun_image_angle) // wait until target locked, don't shoot while gun isn't facing target
                 { ai_shoot() }
