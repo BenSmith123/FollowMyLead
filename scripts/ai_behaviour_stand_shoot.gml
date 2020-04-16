@@ -17,7 +17,8 @@ if is_alive = true
         
             if seen
             {
-                if round(dir) == round(gun_image_angle) // wait until target locked, don't shoot while gun isn't facing target
+                // wait until target locked, don't shoot while gun isn't facing target
+                if abs(dir - gun_image_angle) < 10 // 10 being the difference between the angles - this way the gun doesn't have to be perfectly on the player  
                 { ai_shoot() }
             }
         }

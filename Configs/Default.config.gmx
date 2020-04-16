@@ -282,7 +282,7 @@
     <option_ios_advertising_key></option_ios_advertising_key>
     <option_ios_advertising_type>iAds</option_ios_advertising_type>
     <option_ios_app_id>com.indiedev.followmylead</option_ios_app_id>
-    <option_ios_build_version>20</option_ios_build_version>
+    <option_ios_build_version>22</option_ios_build_version>
     <option_ios_certificate>iPhone Developer: Ben Smith (CKZY5KV7GS)</option_ios_certificate>
     <option_ios_device_type>3</option_ios_device_type>
     <option_ios_display_name>FollowMyLead</option_ios_display_name>
@@ -476,7 +476,7 @@
     <option_textureGroup0_nocropping>0</option_textureGroup0_nocropping>
     <option_textureGroup0_parent>&lt;none&gt;</option_textureGroup0_parent>
     <option_textureGroup0_scaled>0</option_textureGroup0_scaled>
-    <option_textureGroup0_targets>9223372036854775807</option_textureGroup0_targets>
+    <option_textureGroup0_targets>36700236</option_textureGroup0_targets>
     <option_textureGroup_count>1</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_tizen_app_id>http://yourdomain/FollowMyLead</option_tizen_app_id>

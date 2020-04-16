@@ -26,7 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>
-image_speed = 0.2
+image_speed = 0
+
+text = ''
 
 </string>
           </argument>
@@ -50,28 +52,23 @@ image_speed = 0.2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// draw arrows next to this
+            <string>
+image_index = 0
 
 if position_meeting(mouse_x,mouse_y,self)
-{
-    image_index = 1
-    
-    if mouse_check_button_pressed(mb_left) 
-    {image_index = 2}
+{    
+    if mouse_check_button(mb_left) 
+    { image_index = 1 }
     
     if mouse_check_button_released(mb_left) 
-    {event_user(0)}
-
-    draw_sprite(spr_button_arrow,image_index,bbox_left-20,y)
-    draw_sprite_ext(spr_button_arrow,image_index,bbox_right+20,y,-1,1,0,c_white,1)
-}
-else
-{
-    image_index = 0
+    { event_user(0) }
 }
 
-// draw self (not image_speed)
 draw_sprite(sprite_index,image_index,x,y)
+
+scr_text2()
+
+draw_text(x,y + sprite_height / 2 + 16, text)
 
 </string>
           </argument>

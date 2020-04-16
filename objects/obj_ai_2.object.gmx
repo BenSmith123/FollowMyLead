@@ -35,8 +35,10 @@ len = point_distance(0,0,26,26)
 
 gun_image_angle = 0
 
-aiming_speed = 50
+SHOOT_TIME = 40
+aiming_speed = 10
 view_distance = 500
+
 </string>
           </argument>
         </arguments>

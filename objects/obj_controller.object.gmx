@@ -51,27 +51,8 @@ global.debug = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Debug game controls
-
-// if window_get_fullscreen() {window_set_fullscreen(true)} //  reset to fullscreen if player lost focus
-
-if global.user = "GM"
-{
-
-    scr_debug_keys()
-
-    if keyboard_check_pressed(vk_escape) {game_end()}
-
-    if keyboard_check_pressed(ord('I')) {global.debug = !global.debug} // toggle debug mode
-    
-    //if keyboard_check_pressed(ord('P')) {global.final_playthrough = !global.final_playthrough}
-
-    if keyboard_check_pressed(vk_f11) {room_restart()}
-    
-    // if keyboard_check_pressed(vk_f11) {room_goto_next()}
-    
-    if keyboard_check_pressed(vk_f12) {game_restart()}
-}
+            <string>/// if GM, scr_debug_keys()
+if global.user = "GM" { scr_debug_keys() }
 
 </string>
           </argument>

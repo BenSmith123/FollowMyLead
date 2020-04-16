@@ -8,10 +8,10 @@ if num = 5 // native - adaptable
     base_h = display_get_height()
 }
 
-if num = 4 // default 16:9
+if num = 4 // default 16:9 (iPhone 5,6,7)
 {
-    base_w = 1024
-    base_h = 576
+    base_w = 1334
+    base_h = 750
 }
 
 if num = 3 // iphone X and up 19.5:9

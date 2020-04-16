@@ -28,15 +28,15 @@
             <string>
 event_inherited()
 
-hp = 12
+hp = 10
 max_hp = hp
 
-len = point_distance(0,0,60,60)
+len = point_distance(0,0,42,42)
 
 gun_image_angle = 0
 
-SHOOT_TIME = 10
-aiming_speed = 50
+SHOOT_TIME = 15
+aiming_speed = 5
 view_distance = 500
 
 </string>

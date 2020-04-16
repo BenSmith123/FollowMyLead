@@ -26,14 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>
-text = "
-User: "+global.user +"
-
+text = "User: "+global.user +"
 Debugging: "+string(global.debug)+"
 Performance Test: "+string(global.debug_performance)+"
 Player data output: " +string(global.debug_array_output)+"
 
-Instant Aim: "+string(global.instant_aim)+"
 Invincibility: "+string(global.debug_invincible)
 
 
@@ -45,7 +42,7 @@ text_filtered = string_replace_all(text_filter_true,'0','Disabled') // replace a
 
 scr_text1()
 
-draw_text(20,20,text_filtered)
+draw_text(16,8,text_filtered)
 
 </string>
           </argument>

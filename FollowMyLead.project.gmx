@@ -34,7 +34,6 @@
       <sprite>sprites\spr_pointer234234</sprite>
       <sprite>sprites\spr_pointer</sprite>
       <sprite>sprites\spr_arrow</sprite>
-      <sprite>sprites\spr_button_arrow</sprite>
       <sprite>sprites\spr_player_numbers</sprite>
       <sprite>sprites\spr_reticle</sprite>
     </sprites>
@@ -50,8 +49,9 @@
     <sprite>sprites\spr_projectile_2</sprite>
     <sprites name="Menu buttons">
       <sprite>sprites\spr_play_button</sprite>
-      <sprite>sprites\spr_button_about</sprite>
-      <sprite>sprites\spr_button_level_editor</sprite>
+      <sprite>sprites\spr_menu_button_settings</sprite>
+      <sprite>sprites\spr_menu_button_guide</sprite>
+      <sprite>sprites\spr_menu_button_info</sprite>
     </sprites>
     <sprites name="HUD">
       <sprite>sprites\spr_pause_button</sprite>
@@ -65,6 +65,7 @@
       <sprite>sprites\spr_pause_button_option</sprite>
       <sprite>sprites\spr_button_pause_icons</sprite>
       <sprite>sprites\spr_hud_player_lives</sprite>
+      <sprite>sprites\spr_life_low_warning</sprite>
     </sprites>
     <sprites name="Pickups">
       <sprite>sprites\spr_pickup_mask</sprite>
@@ -99,26 +100,20 @@
       <sprite>sprites\spr_debug_next_level</sprite>
       <sprite>sprites\spr_button_debug_toggle</sprite>
     </sprites>
-    <sprite>sprites\spr_gate_vert_top</sprite>
-    <sprite>sprites\sprite90_spr_auto_turret_1_1</sprite>
-    <sprite>sprites\spr_lazer_ver</sprite>
-    <sprite>sprites\spr_message_background</sprite>
-    <sprite>sprites\spr_level_leave_room</sprite>
     <sprite>sprites\spr_light</sprite>
-    <sprite>sprites\sprite88_spr_door_lift_0</sprite>
     <sprite>sprites\spr_shapes</sprite>
     <sprite>sprites\sprite72</sprite>
-    <sprite>sprites\sprite87</sprite>
-    <sprite>sprites\spr_life_low_warning</sprite>
-    <sprite>sprites\sprite80</sprite>
+    <sprite>sprites\sprite84</sprite>
+    <sprite>sprites\sprite85</sprite>
+    <sprite>sprites\spr_message_background</sprite>
+    <sprite>sprites\spr_gate_vert_top</sprite>
+    <sprite>sprites\spr_level_leave_room</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\background0</background>
     <background>background\bg_tile_2x2</background>
     <background>background\bg_tile_3x3</background>
     <background>background\bg_tile_6x6</background>
     <background>background\background12</background>
-    <background>background\background5</background>
     <background>background\background6</background>
     <background>background\background13</background>
     <background>background\bg_tile_stone_4x4</background>
@@ -196,7 +191,6 @@
     <object>objects\obj_player_current</object>
     <object>objects\obj_player_clone</object>
     <object>objects\obj_player_recorder</object>
-    <object>objects\obj_player_dead</object>
     <objects name="Blocks">
       <object>objects\parent_block</object>
       <object>objects\obj_wall</object>
@@ -218,9 +212,27 @@
       <object>objects\obj_gate_ver_2x</object>
       <object>objects\obj_gate_top_left</object>
     </objects>
-    <object>objects\parent_projectile</object>
-    <object>objects\obj_bullet_player</object>
-    <object>objects\obj_bullet_ai</object>
+    <objects name="Map">
+      <object>objects\obj_portal_recieve</object>
+      <object>objects\obj_portal_send</object>
+      <object>objects\parent_pickup</object>
+      <object>objects\obj_pickup_boost_shoot</object>
+      <object>objects\obj_pickup_boost_speed</object>
+      <object>objects\obj_pickup_boost_health</object>
+      <object>objects\obj_pickup_boost_shield</object>
+      <object>objects\obj_pickup_coin</object>
+      <object>objects\obj_shield_player</object>
+      <object>objects\parent_level_leave_room</object>
+      <object>objects\obj_level_leave_top</object>
+      <object>objects\obj_level_leave_bottom</object>
+    </objects>
+    <objects name="In-game">
+      <object>objects\parent_projectile</object>
+      <object>objects\obj_bullet_player</object>
+      <object>objects\obj_bullet_ai</object>
+      <object>objects\obj_player_dead</object>
+      <object>objects\obj_background</object>
+    </objects>
     <objects name="AI">
       <object>objects\parent_ai</object>
       <object>objects\obj_ai_1</object>
@@ -228,18 +240,15 @@
       <object>objects\obj_ai_3</object>
       <object>objects\obj_ai_4</object>
       <object>objects\obj_ai_5</object>
+      <object>objects\obj_mark_death</object>
     </objects>
-    <object>objects\obj_portal</object>
-    <object>objects\obj_portal_recieve</object>
-    <object>objects\obj_portal_send</object>
-    <object>objects\obj_mark_death</object>
-    <object>objects\obj_lazer_ver</object>
     <objects name="HUD">
       <object>objects\parent_hud_button</object>
       <object>objects\obj_virtual_joystick</object>
       <object>objects\obj_hud_pause</object>
       <object>objects\obj_hud_next_player</object>
       <object>objects\obj_hud_life_bar</object>
+      <object>objects\obj_life_low_warning</object>
       <objects name="pause menu">
         <object>objects\parent_button_pause</object>
         <object>objects\obj_button_pause_resume</object>
@@ -251,15 +260,6 @@
         <object>objects\object93</object>
       </objects>
     </objects>
-    <objects name="Pickups">
-      <object>objects\parent_pickup</object>
-      <object>objects\obj_pickup_boost_shoot</object>
-      <object>objects\obj_pickup_boost_speed</object>
-      <object>objects\obj_pickup_boost_health</object>
-      <object>objects\obj_pickup_boost_shield</object>
-      <object>objects\obj_pickup_coin</object>
-      <object>objects\obj_shield_player</object>
-    </objects>
     <objects name="Effects">
       <object>objects\obj_explosion</object>
       <object>objects\obj_fx_player_hit</object>
@@ -267,11 +267,24 @@
       <object>objects\obj_fx_shield_hit</object>
       <object>objects\obj_fx_shoot_flash</object>
     </objects>
+    <objects name="Misc">
+      <object>objects\obj_placeholder</object>
+      <object>objects\obj_footstep</object>
+      <object>objects\obj_spawn_point</object>
+      <object>objects\obj_marker_arrow_up</object>
+      <object>objects\obj_marker_arrow_left</object>
+      <object>objects\obj_marker_arrow_down</object>
+    </objects>
+    <objects name="Server">
+      <object>objects\obj_get_server_log</object>
+      <object>objects\obj_get_server_msg</object>
+    </objects>
     <objects name="Menu buttons">
       <object>objects\parent_menu_button</object>
-      <object>objects\obj_button_play</object>
-      <object>objects\obj_button_about</object>
-      <object>objects\obj_button_level_editor</object>
+      <object>objects\obj_menu_button_play</object>
+      <object>objects\obj_menu_button_settings</object>
+      <object>objects\obj_menu_button_guide</object>
+      <object>objects\obj_menu_button_info</object>
       <object>objects\obj_menu_text</object>
     </objects>
     <objects name="Debug">
@@ -288,34 +301,20 @@
       <object>objects\obj_button_back</object>
       <object>objects\obj_debug_next_level</object>
     </objects>
-    <objects name="Misc">
-      <object>objects\obj_placeholder</object>
-      <object>objects\obj_footstep</object>
-      <object>objects\obj_spawn_point</object>
-      <object>objects\obj_marker_arrow_up</object>
-      <object>objects\obj_marker_arrow_left</object>
-      <object>objects\obj_marker_arrow_down</object>
-    </objects>
-    <objects name="Server">
-      <object>objects\obj_get_server_log</object>
-      <object>objects\obj_get_server_msg</object>
-    </objects>
     <object>objects\obj_json_example</object>
-    <object>objects\obj_background</object>
-    <object>objects\obj_wall_shadow</object>
     <object>objects\obj_light</object>
     <object>objects\obj_shapes</object>
-    <object>objects\obj_message_level_complete</object>
     <object>objects\obj_message_level_start</object>
+    <object>objects\obj_message_level_complete</object>
     <object>objects\obj_message_level_failed</object>
-    <object>objects\obj_life_low_warning</object>
-    <object>objects\obj_level_leave_room</object>
+    <object>objects\obj_wall_shadow</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_menu</room>
     <room>rooms\room_about</room>
     <room>rooms\room_level_1</room>
     <room>rooms\room_level_2</room>
+    <room>rooms\room9</room>
     <room>rooms\room6</room>
     <room>rooms\room_test_1</room>
     <room>rooms\room8</room>
