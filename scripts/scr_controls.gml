@@ -16,8 +16,8 @@ vs_dir = vstick_get_direction(2) // joystick move direction
 player_speed_x = 0 // the wanted speed - use this to control the how fast the player CAN when moving
 player_speed_y = 0
 
-player_speed_x += max_speed // moving right, so adding max speed now
-player_speed_y -= max_speed
+player_speed_x += max_speed * vstick_get_deviation(2) // moving right, so adding max speed now
+player_speed_y -= max_speed * vstick_get_deviation(2) // the deviation will make the movement sensitive to the joystick
 
 SpeedX += (player_speed_x - SpeedX) * accel // smoothly increase the speed until the max speed is reached
 SpeedY += (player_speed_y - SpeedY) * accel

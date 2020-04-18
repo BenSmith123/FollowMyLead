@@ -435,13 +435,14 @@ if array_length_1d(array_y_inactive) &gt; 1
 if is_alive
 {
     // draw the arrow of a recorded player
-    draw_sprite_ext(spr_arrow,0,x+lengthdir_x(len-12,image_angle2),y+lengthdir_y(len-12,image_angle2),image_xscale,image_yscale,image_angle2,image_blend,image_alpha)
+    //draw_sprite_ext(spr_arrow,0,x+lengthdir_x(len-12,image_angle2),y+lengthdir_y(len-12,image_angle2),image_xscale,image_yscale,image_angle2,image_blend,image_alpha)
 }
 
-draw_self()
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle2,image_blend,image_alpha)
 
-if global.show_player_number
-{ draw_sprite(spr_player_numbers,num-1,x,y) } // draw clone number
+// draw_self()
+
+if global.show_player_number { draw_sprite(spr_player_numbers, num-1, x, y) } // draw clone number
 
 </string>
           </argument>

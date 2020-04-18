@@ -30,11 +30,11 @@
 max_hp = 3
 if global.debug_invincible {max_hp = 1000}
 hp = max_hp
-bullet_speed = 16
+bullet_speed = 20
 
 is_alive = true
 
-len = point_distance(0,0,26,26) // This is the distance between the tip and the origin
+len = point_distance(0,0,32,32) // This is the distance between the tip and the origin
 
 image_speed = 0
 image_index = 0

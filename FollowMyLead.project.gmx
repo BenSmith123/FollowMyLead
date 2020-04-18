@@ -23,15 +23,12 @@
       <sprite>sprites\spr_gate_ver_2x</sprite>
       <sprite>sprites\spr_explosive</sprite>
       <sprite>sprites\spr_switch_button</sprite>
-      <sprite>sprites\spr_wall_shadow</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_player_mask</sprite>
       <sprite>sprites\spr_player_current</sprite>
       <sprite>sprites\spr_player_recorded</sprite>
-      <sprite>sprites\spr_player_freeze</sprite>
       <sprite>sprites\spr_player_dead</sprite>
-      <sprite>sprites\spr_pointer234234</sprite>
       <sprite>sprites\spr_pointer</sprite>
       <sprite>sprites\spr_arrow</sprite>
       <sprite>sprites\spr_player_numbers</sprite>
@@ -40,12 +37,11 @@
     <sprites name="AI">
       <sprite>sprites\spr_ai_1</sprite>
       <sprite>sprites\spr_ai_boss</sprite>
+      <sprite>sprites\spr_turret</sprite>
+      <sprite>sprites\spr_turret_large</sprite>
+      <sprite>sprites\spr_turret_barrel_large</sprite>
+      <sprite>sprites\spr_turret_barrel</sprite>
     </sprites>
-    <sprite>sprites\spr_turret</sprite>
-    <sprite>sprites\spr_turret_large</sprite>
-    <sprite>sprites\spr_turret_barrel</sprite>
-    <sprite>sprites\spr_turret_barrel_large</sprite>
-    <sprite>sprites\spr_projectile_1</sprite>
     <sprite>sprites\spr_projectile_2</sprite>
     <sprites name="Menu buttons">
       <sprite>sprites\spr_play_button</sprite>
@@ -58,9 +54,7 @@
       <sprite>sprites\spr_button_next</sprite>
       <sprite>sprites\spr_life_bar</sprite>
       <sprite>sprites\spr_virtual_joystick_back</sprite>
-      <sprite>sprites\spr_virtual_joystick_back_2</sprite>
       <sprite>sprites\spr_virtual_joystick_front</sprite>
-      <sprite>sprites\spr_virtual_joystick_front_2</sprite>
       <sprite>sprites\spr_pause_button_main</sprite>
       <sprite>sprites\spr_pause_button_option</sprite>
       <sprite>sprites\spr_button_pause_icons</sprite>
@@ -100,18 +94,16 @@
       <sprite>sprites\spr_debug_next_level</sprite>
       <sprite>sprites\spr_button_debug_toggle</sprite>
     </sprites>
-    <sprite>sprites\spr_light</sprite>
     <sprite>sprites\spr_shapes</sprite>
     <sprite>sprites\sprite72</sprite>
     <sprite>sprites\sprite84</sprite>
-    <sprite>sprites\sprite85</sprite>
     <sprite>sprites\spr_message_background</sprite>
     <sprite>sprites\spr_gate_vert_top</sprite>
+    <sprite>sprites\spr_player_walking</sprite>
     <sprite>sprites\spr_level_leave_room</sprite>
+    <sprite>sprites\spr_light</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\bg_tile_2x2</background>
-    <background>background\bg_tile_3x3</background>
     <background>background\bg_tile_6x6</background>
     <background>background\background12</background>
     <background>background\background6</background>
@@ -120,6 +112,7 @@
     <background>background\bg_tile_stone_4x4_orange</background>
     <background>background\bg_tile_stone_4x6</background>
     <background>background\background11</background>
+    <background>background\bg_tile_map_scenery</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -232,6 +225,9 @@
       <object>objects\obj_bullet_ai</object>
       <object>objects\obj_player_dead</object>
       <object>objects\obj_background</object>
+      <object>objects\obj_message_level_start</object>
+      <object>objects\obj_message_level_complete</object>
+      <object>objects\obj_message_level_failed</object>
     </objects>
     <objects name="AI">
       <object>objects\parent_ai</object>
@@ -304,10 +300,7 @@
     <object>objects\obj_json_example</object>
     <object>objects\obj_light</object>
     <object>objects\obj_shapes</object>
-    <object>objects\obj_message_level_start</object>
-    <object>objects\obj_message_level_complete</object>
-    <object>objects\obj_message_level_failed</object>
-    <object>objects\obj_wall_shadow</object>
+    <object>objects\obj_fx_muzzle_flare</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_menu</room>
